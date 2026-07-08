@@ -202,30 +202,13 @@ body {
   font-weight: 700 !important;
   margin-top: 4px !important;
 }
-.banner .kw-hint {
-  font-size: 11px;
-  color: var(--tx3);
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.banner .kw-hint code {
-  background: var(--gold-dim);
-  border: 1px solid rgba(212,168,83,.15);
-  padding: 3px 9px;
-  border-radius: 5px;
-  font-family: "SF Mono", Menlo, Consolas, monospace;
-  font-size: 10px;
-  color: var(--gold);
-  letter-spacing: .2px;
-}
+
+
 @media (max-width: 768px) {
   .banner { flex-direction: column; gap: 14px; align-items: flex-start; padding: 24px 16px 20px; }
   .brand { font-size: 28px; letter-spacing: 4px; }
   .brand-sub { font-size: 11px; letter-spacing: 1.5px; }
-  .banner .kw-hint { font-size: 10px; }
-}
+  
 
 /* ═══ TOP BAR — Tab导航 + 时间 + 历史 ═══ */
 .topbar {
@@ -535,7 +518,6 @@ tbody tr:hover td:first-child { color: var(--tx); }
 td span.up, .mod-bd span.up { color: var(--red); font-weight: 700; }
 td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
 /* 安全网：任何包含负数百分比的td（即使有内联样式）强制绿色 */
-td:has(span.dn) { /* .dn已由smartColorize着色 */ }
 /* 表格中的普通数字保持默认色（var(--tx-body)），不再额外标注 */
 .r-up { background: rgba(239,68,68,.05)!important; }
 .r-dn { background: rgba(34,197,94,.05)!important; }
@@ -557,7 +539,7 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
 .sl-tbl col:nth-child(1) { width: 26%; }
 .sl-tbl col:nth-child(2) { width: 14%; }
 .sl-tbl col:nth-child(3) { width: 14%; }
-.sl-tsl col:nth-child(4) { width: 14%; }
+
 .sl-tbl col:nth-child(5) { width: 32%; }
 
 /* ═══ 研报 M1 景气仪表（4列·fixed+nowrap）═══ */
@@ -891,29 +873,11 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
 /* ═══ V7 EXTENDED MODULES — 深度挖掘+自由分析新增模块 ═══ */
 
 /* Module 10: History Track */
-.ht-card {
-  background: var(--card-in);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 18px;
-  margin: 12px 0;
-}
+
 .ht-card h4 { color: var(--gold); font-size: 13.5px; margin-bottom: 10px; font-weight: 600; }
 
 /* Module 11: Sensitivity Analysis */
-.sens-tbl { width: 100%; font-size: 12px; }
-.sens-tbl th { background: #0d1220; color: var(--gold); font-size: 11px; }
-.sens-tbl td.hi { color: #4ade80; font-weight: 700; }
-.sens-tbl td.lo { color: #f87171; font-weight: 700; }
 
-/* Module 12: Summary Table */
-.sum-card {
-  background: linear-gradient(135deg, #121a2a, #172033);
-  border: 1px solid rgba(212,168,83,.15);
-  border-radius: 12px;
-  padding: 20px 22px;
-  margin: 12px 0;
-}
 .sum-card h4 { color: var(--gold); font-size: 14.5px; margin-bottom: 14px; font-weight: 600; }
 .sum-card .k3 { font-size: 13px; color: var(--tx-body); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
 .sum-card .k3:last-child { border-bottom: none; }
@@ -986,6 +950,20 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
 
 /* Footer */
 /* ═══ UNIFIED FOOTER — 数据源 + 触发规则 ═══ */
+
+/* Research keyword tags */
+.kw { margin-top: 12px; }
+.kw strong { font-size: 12px; color: var(--tx2); margin-right: 8px; }
+.kw code {
+  background: rgba(212,168,83,.08);
+  border: 1px solid rgba(212,168,83,.15);
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gold);
+  margin-right: 4px;
+}
 .uf {
   margin-top: 28px;
   padding: 18px 22px;
@@ -1065,7 +1043,6 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
 .empty h3 { font-size: 20px; margin-bottom: 10px; color: var(--tx2); }
 
 /* ═══ ANIMATIONS ═══ */
-.card, .mt-item, .tn a, .hbtn { transition: all .2s ease; }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1104,208 +1081,7 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
   .bs-status { font-size: 9px; }
 
   /* Hide kw-hint on tiny screens to save space */
-  .banner .kw-hint { display: none; }
-
-  /* ── Topbar / Tabs — scrollable horizontally instead of wrapping ── */
-  .topbar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    margin: 14px 0 10px;
-  }
-  .tn {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;        /* hide scrollbar */
-    -webkit-overflow-scrolling: touch;
-    padding: 4px;
-    gap: 4px;
-  }
-  .tn::-webkit-scrollbar { display: none; }
-  .tn a {
-    padding: 8px 12px;
-    font-size: 11.5px;
-    white-space: nowrap;
-    border-radius: 6px;
-    flex-shrink: 0;
-  }
-  .tb-right {
-    justify-content: space-between;
-    gap: 6px;
-  }
-  .tb-time {
-    font-size: 10px;
-    padding: 5px 10px;
-    flex: 1;
-    text-align: center;
-    white-space: nowrap;
-  }
-  .hbtn {
-    padding: 5px 10px;
-    font-size: 10.5px;
-    flex-shrink: 0;
-  }
-
-  /* History dropdown — full width on mobile */
-  .hdd {
-    right: -20px;
-    left: -20px;
-    min-width: auto;
-    width: calc(100% + 40px);
-  }
-
-  /* ── Market tabs: 2×2 grid on portrait phone ── */
-  .mt {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    margin-bottom: 12px;
-  }
-  .mt-item {
-    padding: 10px 6px 9px;
-    border-radius: 8px;
-  }
-  .mt-item .s { font-size: 22px; }
-  .mt-item .l { font-size: 10px; margin-top: 2px; }
-
-  /* ── Cards ── */
-  .card {
-    padding: 14px 14px;
-    border-radius: var(--r-md);
-    margin-bottom: 10px;
-  }
-  .card h2 { font-size: 14px; margin-bottom: 10px; gap: 6px; }
-  .card h2::before { height: 14px; width: 3px; }
-  .card-dark { padding: 14px 16px; }
-  .card-dark h2 { font-size: 15px; }
-  .mod-hd { font-size: 13.5px; padding: 11px 14px; }
-  .mod-bd { padding: 14px 14px; }
-
-  /* ── Score circles ── */
-  .sc-row { gap: 14px; margin-bottom: 12px; }
-  .sc {
-    width: 64px; height: 64px;
-    box-shadow: 0 4px 16px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
-  }
-  .sc .n { font-size: 26px; }
-  .sc .l { font-size: 9px; margin-top: 2px; }
-  .sc-info .h { font-size: 14px; margin-bottom: 3px; }
-  .sc-info .d { font-size: 11.5px; line-height: 1.55; }
-  .mc { width: 46px; height: 46px; }
-  .mc .n { font-size: 17px; }
-  .mc .l { font-size: 7px; }
-
-  /* ── Progress bars (brw) — compact single-line layout ── */
-  .brw {
-    padding: 6px 0;
-    font-size: 12px;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .br-n { width: auto; min-width: 70px; max-width: 90px; font-size: 11px; }
-  .br-t { flex: 1; min-width: 60px; max-width: none; height: 6px; }
-  .br-av { width: 38px; font-size: 11px; order: 3; }
-  .br-v { min-width: 26px; margin-right: 6px; font-size: 11.5px; order: 0; }
-  .br-d { font-size: 10px; max-width: none; order: 4; flex-basis: 100%; }
-
-  /* ── Market rows (mr) ── */
-  .mr { gap: 6px; padding: 5px 0; font-size: 11.5px; }
-  .mr-n { width: auto; min-width: 65px; max-width: 80px; font-size: 11px; }
-  .mr-av { width: 44px; font-size: 11px; }
-  .mr-v { width: 38px; font-size: 11px; }
-  .mr-d { font-size: 10.5px; }
-
-  /* ── Events ── */
-  .ev { padding: 7px 0; font-size: 11.5px; line-height: 1.55; }
-  .et { font-size: 9px; padding: 1px 6px; }
-  .ev-t { font-size: 11.5px; }
-  .ev-b { font-size: 11px; margin-top: 2px; }
-
-  /* ── Tables — compact, scroll inside card if needed ── */
-  table { font-size: 11px; table-layout: auto; }
-  th {
-    padding: 6px 8px;
-    font-size: 9px;
-    white-space: nowrap;
-  }
-  td { padding: 5px 8px; font-size: 11px; line-height: 1.35; }
-
-  /* All fixed-layout tables → auto on mobile */
-  .kline-tbl, .sl-tbl,
-  .mod-bd > table:first-of-type,
-  .mod-bd .sec > table:first-of-type
-  { table-layout: auto; }
-
-  /* Override all colgroup fixed widths */
-  .kline-tbl col, .sl-tbl col,
-  .mod-bd > table:first-of-type col,
-  .mod-bd .sec > table:first-of-type col
-  { width: auto !important; }
-
-  /* Holdings table — proportional widths */
-  table colgroup col:nth-child(1) { width: 26% !important; }
-  table colgroup col:nth-child(2) { width: 14% !important; }
-  table colgroup col:nth-child(3) { width: 12% !important; }
-  table colgroup col:nth-child(4) { width: 12% !important; }
-  table colgroup col:nth-child(5) { width: 13% !important; }
-  table colgroup col:nth-child(6) { width: auto !important; }
-
-  /* ── Summary bar ── */
-  .sb { padding: 9px 12px; font-size: 11px; }
-  .sb .val { font-size: 15px; }
-
-  /* ── Stock layers ── */
-  .sl-hd { font-size: 11px; padding: 7px 12px; }
-  .sl-tbl { font-size: 10.5px; }
-  .sl-tbl th { padding: 6px 9px; font-size: 9.5px; }
-  .sl-tbl td { padding: 6px 9px; }
-
-  /* ── AI panel ── */
-  .ai { padding: 12px 14px; font-size: 11.5px; line-height: 1.75; }
-  .nt { padding: 10px 12px; font-size: 11px; }
-  .al { padding: 10px 12px; font-size: 11px; }
-
-  /* ── Dashboard cards ── */
-  .dg { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .dc { padding: 12px; }
-  .dc .v { font-size: 20px; }
-  .dc .l { font-size: 10px; }
-
-  /* ── Dual columns → stack ── */
-  .dual, .op-big { flex-direction: column; gap: 8px; }
-  .bl, .br2 { padding: 12px 14px; font-size: 11.5px; }
-  .op-d { padding: 14px; }
-  .op-d .d { font-size: 22px; }
-  .op-d .amt { font-size: 15px; }
-  .op-d .det { font-size: 10px; }
-
-  /* ── Verdict / policy cards ── */
-  .ver { padding: 14px 16px; font-size: 11.5px; }
-  .ver h3 { font-size: 13px; }
-  .hlr, .hlg { padding: 12px 14px; font-size: 11.5px; }
-  .ht-card { padding: 12px; }
-  .ht-card h4 { font-size: 12px; }
-  .pol-card, .prf-card, .scn-card, .cf-card { padding: 12px; }
-  .pol-card h4, .prf-card h4, .scn-card h4, .cf-card h4 { font-size: 12px; }
-
-  /* ── Divider ── */
-  .dv { margin: 18px 0 10px; font-size: 11.5px; }
-
-  /* ── Checklist ── */
-  .cl { padding: 6px 0; font-size: 11.5px; }
-  .cl-d { padding: 2px 9px; font-size: 9.5px; min-width: 60px; }
-
-  /* ── Badges ── */
-  .bad { padding: 2px 6px; font-size: 9.5px; }
-
-  /* ── Currency tags ── */
-  .trmb, .thkd { font-size: 9.5px; padding: 1px 6px; }
-
-  /* ── Phase pills ── */
-  .pt { padding: 2px 8px; font-size: 9.5px; }
-
-  /* ── Footer ── */
-  .ft { margin-top: 24px; font-size: 10px; }
-}
+  
 
 /* ── Landscape phones (e.g., iPhone Pro Max landscape) ── */
 @media (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
@@ -1320,65 +1096,7 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
   }
   .brand { font-size: 20px; letter-spacing: 3px; }
   .brand-sub { font-size: 9px; }
-  .banner .kw-hint { display: none; }
-
-  /* Tabs inline, compact */
-  .topbar { margin: 10px 0 8px; }
-  .tn { padding: 3px; gap: 2px; }
-  .tn a { padding: 7px 14px; font-size: 11px; }
-  .tb-right { gap: 6px; }
-  .tb-time { font-size: 10px; padding: 4px 10px; }
-  .hbtn { padding: 4px 10px; font-size: 10px; }
-
-  /* Market: 4 columns but compact */
-  .mt { grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 8px; }
-  .mt-item { padding: 8px 4px 7px; }
-  .mt-item .s { font-size: 18px; }
-  .mt-item .l { font-size: 8px; margin-top: 1px; }
-
-  /* Cards tighter */
-  .card { padding: 12px 16px; margin-bottom: 8px; border-radius: var(--r-sm); }
-  .card h2 { font-size: 13px; margin-bottom: 8px; }
-
-  /* Score circle smaller */
-  .sc-row { gap: 12px; margin-bottom: 10px; }
-  .sc { width: 52px; height: 52px; }
-  .sc .n { font-size: 21px; }
-  .sc .l { font-size: 8px; }
-  .sc-info .h { font-size: 13px; }
-  .sc-info .d { font-size: 11px; }
-
-  /* Progress bars */
-  .brw { padding: 4px 0; gap: 6px; font-size: 11px; }
-  .br-n { width: 72px; font-size: 10.5px; }
-  .br-t { height: 6px; }
-  .br-v { font-size: 10.5px; min-width: 24px; }
-  .br-av { width: 34px; font-size: 10.5px; }
-  .br-d { font-size: 9.5px; max-width: 200px; }
-
-  /* Table */
-  table { font-size: 11px; }
-  th { padding: 6px 10px; font-size: 9px; }
-  td { padding: 6px 10px; }
-
-  /* Other elements */
-  .ev { padding: 5px 0; font-size: 10.5px; }
-  .et { font-size: 8.5px; }
-  .mr { padding: 4px 0; gap: 6px; font-size: 10.5px; }
-  .mr-n { width: 78px; font-size: 10px; }
-  .mr-d { font-size: 9.5px; }
-
-  /* AI panels */
-  .ai { padding: 10px 14px; font-size: 10.5px; line-height: 1.65; }
-  .nt, .al { padding: 8px 12px; font-size: 10px; }
-  .mod-hd { font-size: 13px; padding: 10px 14px; }
-  .mod-bd { padding: 12px 14px; }
-
-  /* Dual columns stay side-by-side in landscape if room permits */
-  .dual, .op-big { flex-direction: row; gap: 8px; }
-
-  .dv { margin-top: 14px; margin-bottom: 8px; }
-}
+  
 </style>
 </head>
 <body>
@@ -2889,7 +2607,8 @@ function renderResearch(data, panel) {
     if (data.module6.review) {
       h += '<div class="sec"><div class="sec-ttl">持仓审查</div><table><colgroup><col/><col/><col/><col/></colgroup><tr><th>标的</th><th>成本/现价</th><th>浮亏</th><th>评估</th></tr>';
       data.module6.review.forEach(function(r){
-        h += '<tr><td><strong>'+r.code+'</strong> '+r.name+'</td><td>'+r.cost+'/'+r.current+'</td><td style="color:'+(r.pnl>=0?'var(--red)':'var(--green)')+'">'+(r.pnl>=0?'+':'')+r.pnl+'%</td><td><span class="bad '+(r.tag_class||'bg')+'">'+r.tag+'</span> '+r.note+'</td></tr>';
+        var pnlColor = (r.pnl != null && r.pnl >= 0) ? 'var(--red)' : (r.pnl != null ? 'var(--green)' : '');
+        h += '<tr><td><strong>'+r.code+'</strong> '+r.name+'</td><td>'+r.cost+'/'+r.current+'</td><td style="color:'+pnlColor+'">'+(r.pnl!=null?(r.pnl>=0?'+':'')+r.pnl+'%':'--')+'</td><td><span class="bad '+(r.tag_class||'bg')+'">'+r.tag+'</span> '+r.note+'</td></tr>';
       });
       h += '</table></div>';
     }
@@ -3380,8 +3099,6 @@ function toggleHist() {
   if (dd) dd.classList.toggle('show');
 }
 
-function metaKey(type) { return type; }
-
 // ═══ 历史下拉菜单渲染 — 30天活跃 + 归档 ═══
 function histLinks() {
   var registry = HIST_REGISTRY[ACTIVE] || [];
@@ -3518,11 +3235,13 @@ function smartColorize(panel) {
     var o = html;
     // Pass 1: Threshold symbols ≤ ≥ → neutral gold
     html = html.replace(/([≤≥])(\d+(?:\.\d+)?%)/g, '$1<span class="price">$2</span>');
-    // Pass 2: ~ approximate values → neutral gold (incl ~-XX%)
-    html = html.replace(/~([+-]?\d+(?:\.\d+)?%)/g, '~<span class="price">$1</span>');
-    // Pass 3: Signed pure percentages, NOT part of ranges (negative lookbehind/lookahead)
+    // Pass 2: ~ approximate values → neutral gold (incl ~-XX%), skip if already contains span
+    html = html.replace(/~([+-]?\d+(?:\.\d+)?%)/g, function(m, pct) {
+      return '~<span class="price">' + pct + '</span>';
+    });
+    // Pass 3: Signed pure percentages, NOT part of ranges, NOT inside existing spans
     html = html.replace(
-      /(?<![-\d.])([+-])(\d+(?:\.\d+)?)%(?![-\d])/g,
+      /(?<![-\d.<])([+-])(\d+(?:\.\d+)?)%(?![-\d>])/g,
       function(m, sign, num) {
         return '<span class="' + (sign === '+' ? 'up' : 'dn') + '">' + m + '</span>';
       }
@@ -3564,14 +3283,14 @@ function smartColorize(panel) {
   panel.querySelectorAll('.brw').forEach(function(row){
     var bar=row.querySelector('.br-f'),val=row.querySelector('.br-v');
     if(!bar||!val)return;
-    if(val.querySelector('span.up,.span.dn'))return;
+    if(val.querySelector('span.up, span.dn'))return;
     var s=val.getAttribute('style');if(s&&s.indexOf('color')!==-1)return;
     var tc=_barToText(bar.style.background||bar.style.backgroundColor);
     if(tc)val.style.color=tc;
   });
   /* ④ Dashboard卡片语义着色 */
   panel.querySelectorAll('.dc .v').forEach(function(el){
-    if(el.querySelector('span.up,.span.dn'))return;
+    if(el.querySelector('span.up, span.dn'))return;
     var s=el.getAttribute('style');if(s&&s.indexOf('color')!==-1)return;
     var t=el.textContent.trim();
     if(/^\+/.test(t)||/涨/.test(t))el.style.color='var(--red)';

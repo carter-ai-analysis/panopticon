@@ -3275,13 +3275,11 @@ function smartColorize(panel) {
     if(_skip(td))return; var h=td.innerHTML;if(!h||!h.trim())return;
     var r=_colorPct(h);if(r)td.innerHTML=r;
   });
-  /* ② 非表格文本着色 */
-  ['.br-v','.mr-v','.mr-d','.ev-t','.ev-b','.cl-b'].forEach(function(s){
-    panel.querySelectorAll(s).forEach(function(el){
+  /* ② 非表格文本着色 — 合并为单次querySelectorAll */
+  panel.querySelectorAll('.br-v,.mr-v,.mr-d,.ev-t,.ev-b,.cl-b').forEach(function(el){
       if(_skip(el))return; var h=el.innerHTML;if(!h||!h.trim())return;
       var r=_colorPct(h);if(r)el.innerHTML=r;
     });
-  });
   /* ③ 进度条数值继承柱子语义色：.br-v ↔ 同行.br-f背景色→文字色 */
   panel.querySelectorAll('.brw').forEach(function(row){
     var bar=row.querySelector('.br-f'),val=row.querySelector('.br-v');

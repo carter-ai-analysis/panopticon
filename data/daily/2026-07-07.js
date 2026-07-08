@@ -1,0 +1,153 @@
+var dailyData = {
+  "type": "daily_report",
+  "date": "2026-07-07",
+  "generated_at": "10:05",
+  "scores": {
+    "macro": {
+      "score": 53,
+      "trend": "neutral",
+      "note": "央行MLF净投放·流动性中性"
+    },
+    "us_stocks": {
+      "score": 62,
+      "trend": "up",
+      "note": "SOX+2.1%·纳指创新高"
+    },
+    "hk_stocks": {
+      "score": 47,
+      "trend": "down",
+      "note": "恒科-1.3%·南向净买入"
+    },
+    "korea": {
+      "score": 32,
+      "trend": "down",
+      "note": "KOSPI-2.1%·ADR簿记压价中"
+    },
+    "a_stocks": {
+      "score": 58,
+      "trend": "neutral",
+      "note": "成交7,200亿·AI板块活跃"
+    }
+  },
+  "holdings": {
+    "a_stocks": [
+      {
+        "code": "300285",
+        "name": "国瓷材料",
+        "shares": 1500,
+        "cost": 97.4,
+        "current": 95.2,
+        "pnl_pct": -2.3,
+        "currency": "RMB"
+      },
+      {
+        "code": "603986",
+        "name": "兆易创新",
+        "shares": 300,
+        "cost": 710.8,
+        "current": 621.0,
+        "pnl_pct": -12.6,
+        "currency": "RMB"
+      },
+      {
+        "code": "000021",
+        "name": "深科技",
+        "shares": 1000,
+        "cost": 56.2,
+        "current": 54.8,
+        "pnl_pct": -2.5,
+        "currency": "RMB"
+      },
+      {
+        "code": "300502",
+        "name": "新易盛",
+        "shares": 100,
+        "cost": 526.3,
+        "current": 498.0,
+        "pnl_pct": -5.4,
+        "currency": "RMB"
+      }
+    ],
+    "hk_stocks": [
+      {
+        "code": "07709",
+        "name": "两倍海力士",
+        "shares": 3500,
+        "cost": 125.45,
+        "current": 98.0,
+        "pnl_pct": -21.9,
+        "currency": "HKD"
+      }
+    ]
+  },
+  "ai_analysis": [
+    {
+      "angle": "MLCC涨价周期",
+      "judgment": "Q3三轮涨价已落地，上游材料端受益明确。国瓷材料全球>30%市占率，钛酸钡壁垒最高。",
+      "action": "维持持有国瓷材料",
+      "confidence": "high"
+    },
+    {
+      "angle": "存储/HBM供需",
+      "judgment": "HBM产能100%售罄至2027，SK海力士独供英伟达。07709 ADR簿记期间承压，7/10挂牌后有望释放。",
+      "action": "07709待补29万HKD，7/8+7/10分批",
+      "confidence": "high"
+    },
+    {
+      "angle": "半导体设备国产替代",
+      "judgment": "北方华创国产设备龙头，但当前875距触发价800-830仍有距离。耐心等回调。",
+      "action": "等800-830分批建仓",
+      "confidence": "medium"
+    },
+    {
+      "angle": "光模块高位风险",
+      "judgment": "光模块年内+282%高位，新易盛PE 79x偏贵。不重仓，020900做DCA即可。",
+      "action": "持有100股观察，不加仓",
+      "confidence": "medium"
+    }
+  ],
+  "triggers": [
+    {
+      "code": "002409",
+      "name": "雅克科技",
+      "condition": "≤185",
+      "current": 191.2,
+      "distance_pct": -3.2
+    },
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "condition": "800-830",
+      "current": 875.0,
+      "distance_pct": -8.6
+    },
+    {
+      "code": "688012",
+      "name": "中微公司",
+      "condition": "420-450",
+      "current": 468.0,
+      "distance_pct": -10.3
+    },
+    {
+      "code": "688008",
+      "name": "澜起科技",
+      "condition": "≤236",
+      "current": 248.0,
+      "distance_pct": -5.1
+    }
+  ],
+  "next_events": [
+    {
+      "date": "2026-07-08",
+      "event": "07709 补仓窗口开启（29万HKD到账）"
+    },
+    {
+      "date": "2026-07-10",
+      "event": "07709 ADR挂牌日 + 腾讯65万RMB到账"
+    },
+    {
+      "date": "2026-07-09",
+      "event": "本周研报（stock-deep-research）"
+    }
+  ]
+};

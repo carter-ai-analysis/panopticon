@@ -3289,19 +3289,17 @@ var ACTIVE = 'daily';
 var HIST_MODE = false; // Track if we're viewing history
 
 // ═══ 历史文件注册表 — 由构建脚本自动生成或手工维护 ═══
-// 注意：当前正在显示的最新数据不要列入（点击无意义）
-// 格式: { tabType: [{date:'YYYY-MM-DD', label:'描述'}] }
+// 命名规则:
+//   日报:   data/daily/YYYY-MM-DD.js
+//   研报:   data/research/YYYY-MM-DD.js
+//   深度挖掘: data/deep_dive/YYYY-MM-DD_{标的名}.js
+//           同标的多次运行: YYYY-MM-DD_{标的名}_v1.js, _v2.js (不覆盖)
+//   自由分析: data/free_analysis/YYYY-MM-DD_{主题}.js
+//           同主题多次: YYYY-MM-DD_{主题}_v1.js, _v2.js
 var HIST_REGISTRY = {
-  daily: [
-    { date: '2026-07-07', label: '第7期日报' },
-    { date: '2026-07-06', label: '第6期日报' }
-  ],
-  research: [
-    // 当前2026-07-08就是最新，不列
-  ],
-  deepdive: [
-    { date: '2026-07-07_国瓷材料', label: '国瓷材料深度挖掘' }
-  ],
+  daily: [],
+  research: [],
+  deepdive: [],
   free: []
 };
 

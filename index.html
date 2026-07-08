@@ -315,6 +315,21 @@ body {
 }
 .hdd-item:last-child { border-bottom: none; }
 .hdd-item:hover { background: var(--card-hi); color: var(--gold); }
+.hdd-arch-header {
+  color: var(--tx3) !important;
+  font-size: 10px !important;
+  letter-spacing: 1px !important;
+  border-top: 2px solid var(--line) !important;
+}
+.hdd-archived { opacity: 0.65; }
+.hdd-archived:hover { opacity: 1; }
+.hdd-footer {
+  font-size: 10px;
+  color: var(--tx3);
+  text-align: center;
+  padding: 10px 14px 12px;
+  border-top: 1px solid var(--line);
+}
 .hdd-empty {
   padding: 24px 18px;
   color: var(--tx3);
@@ -3288,7 +3303,7 @@ var DATA = JSON.parse(JSON.stringify(ORIG_DATA)); // Working copy
 var ACTIVE = 'daily';
 var HIST_MODE = false; // Track if we're viewing history
 
-// ═══ 历史文件注册表 — 由构建脚本自动生成或手工维护 ═══
+// ═══ 历史文件注册表 — 由 build.py 自动扫描 portal/data/ 子目录生成 ═══
 // 命名规则:
 //   日报:   data/daily/YYYY-MM-DD.js
 //   研报:   data/research/YYYY-MM-DD.js
@@ -3296,11 +3311,46 @@ var HIST_MODE = false; // Track if we're viewing history
 //           同标的多次运行: YYYY-MM-DD_{标的名}_v1.js, _v2.js (不覆盖)
 //   自由分析: data/free_analysis/YYYY-MM-DD_{主题}.js
 //           同主题多次: YYYY-MM-DD_{主题}_v1.js, _v2.js
+// 归档规则: >30天的文件自动标记 archived=true, 显示在"归档"区
+// ⚠️ 此变量在 build.py 打包时自动注入, 本地开发时手工维护
 var HIST_REGISTRY = {
-  daily: [],
-  research: [],
-  deepdive: [],
-  free: []
+  "daily": [
+    {
+      "date": "2026-07-08",
+      "label": "2026-07-08",
+      "archived": false,
+      "subdir": "daily"
+    },
+    {
+      "date": "2026-07-07",
+      "label": "2026-07-07",
+      "archived": false,
+      "subdir": "daily"
+    },
+    {
+      "date": "2026-07-06",
+      "label": "2026-07-06",
+      "archived": false,
+      "subdir": "daily"
+    }
+  ],
+  "research": [
+    {
+      "date": "2026-07-08",
+      "label": "2026-07-08",
+      "archived": false,
+      "subdir": "research"
+    }
+  ],
+  "deepdive": [
+    {
+      "date": "2026-07-07_国瓷材料",
+      "label": "2026-07-07 国瓷材料",
+      "archived": false,
+      "subdir": "deep_dive"
+    }
+  ],
+  "free": []
 };
 
 // ═══ 从数据对象自动提取更新时间（不再依赖外部Meta变量） ═══
@@ -3332,17 +3382,46 @@ function toggleHist() {
 
 function metaKey(type) { return type; }
 
-// ═══ 历史下拉菜单渲染 ═══
+// ═══ 历史下拉菜单渲染 — 30天活跃 + 归档 ═══
 function histLinks() {
   var registry = HIST_REGISTRY[ACTIVE] || [];
-  // 过滤掉当前正在查看的条目（如果不在历史模式中，不过滤最新）
+  var now = new Date();
+  var cutoff = new Date(now);
+  cutoff.setDate(cutoff.getDate() - 30);
+
+  // Split: active (≤30d) vs archived (>30d)
+  var active = [];
+  var archived = [];
+  registry.forEach(function(e) {
+    // Check if entry has explicit archived flag
+    if (e.archived) {
+      archived.push(e);
+    } else {
+      // Try to parse date from label
+      var dateMatch = e.label ? e.label.match(/^(\d{4}-\d{2}-\d{2})/) : null;
+      if (dateMatch) {
+        var entryDate = new Date(dateMatch[1]);
+        if (entryDate < cutoff) {
+          archived.push(e);
+        } else {
+          active.push(e);
+        }
+      } else {
+        active.push(e);
+      }
+    }
+  });
+
   var s = '';
 
-  if (!registry.length) {
+  if (!active.length && !archived.length) {
     s += '<div class="hdd-empty">暂无历史记录</div>';
-  } else {
-    s += '<div class="hdd-header">归档记录</div>';
-    registry.forEach(function(e) {
+  }
+
+  // Active section (last 30 days)
+  if (active.length > 0) {
+    s += '<div class="hdd-header">📅 近30天记录</div>';
+    active.forEach(function(e) {
       s += '<div class="hdd-item" onclick="loadHist(\''+e.date+'\')">';
       s += '<span class="hdd-date">'+e.date+'</span>';
       s += '<span class="hdd-label">'+e.label+'</span>';
@@ -3350,10 +3429,24 @@ function histLinks() {
     });
   }
 
-  // If in history mode, add "返回最新" option
+  // Archive section (>30 days)
+  if (archived.length > 0) {
+    s += '<div class="hdd-header hdd-arch-header">📦 归档记录 · ' + archived.length + '条</div>';
+    archived.forEach(function(e) {
+      s += '<div class="hdd-item hdd-archived" onclick="loadHist(\''+e.date+'\')">';
+      s += '<span class="hdd-date">'+e.date+'</span>';
+      s += '<span class="hdd-label">'+e.label+'</span>';
+      s += '</div>';
+    });
+  }
+
+  // Back to latest (when in history mode)
   if (HIST_MODE) {
     s += '<div class="hdd-item hdd-back" onclick="backToLatest()">← 返回最新数据</div>';
   }
+
+  // Footer note
+  s += '<div class="hdd-footer">📌 历史文件永久保留 · 30天自动归档</div>';
   return s;
 }
 

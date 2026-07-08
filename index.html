@@ -1130,22 +1130,34 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
   .ev-t { font-size: 11.5px; }
   .ev-b { font-size: 11px; margin-top: 2px; }
 
-  /* ── Tables — horizontal scroll inside cards ── */
-  table { font-size: 11.5px; }
+  /* ── Tables — compact, scroll inside card if needed ── */
+  table { font-size: 11px; table-layout: auto; }
   th {
-    padding: 7px 10px;
-    font-size: 9.5px;
+    padding: 6px 8px;
+    font-size: 9px;
     white-space: nowrap;
   }
-  td { padding: 7px 10px; }
+  td { padding: 5px 8px; font-size: 11px; line-height: 1.35; }
 
-  /* Holdings table specific */
-  table colgroup col:first-child { width: 28%; }
-  table colgroup col:nth-child(2) { width: 18%; }
-  table colgroup col:nth-child(3) { width: 14%; }
-  table colgroup col:nth-child(4) { width: 14%; }
-  table colgroup col:nth-child(5) { width: 14%; }
-  table colgroup col:nth-child(6) { width: 12%; }
+  /* All fixed-layout tables → auto on mobile */
+  .kline-tbl, .sl-tbl,
+  .mod-bd > table:first-of-type,
+  .mod-bd .sec > table:first-of-type
+  { table-layout: auto; }
+
+  /* Override all colgroup fixed widths */
+  .kline-tbl col, .sl-tbl col,
+  .mod-bd > table:first-of-type col,
+  .mod-bd .sec > table:first-of-type col
+  { width: auto !important; }
+
+  /* Holdings table — proportional widths */
+  table colgroup col:nth-child(1) { width: 26% !important; }
+  table colgroup col:nth-child(2) { width: 14% !important; }
+  table colgroup col:nth-child(3) { width: 12% !important; }
+  table colgroup col:nth-child(4) { width: 12% !important; }
+  table colgroup col:nth-child(5) { width: 13% !important; }
+  table colgroup col:nth-child(6) { width: auto !important; }
 
   /* ── Summary bar ── */
   .sb { padding: 9px 12px; font-size: 11px; }
@@ -2650,7 +2662,7 @@ function renderDaily(data, panel) {
     var sa = data.stock_analysis;
     h += '<div class="dv"><span>可配置标的</span></div>';
     if (sa.core) {
-      h += '<div class="card"><h2>核心配置</h2><table><colgroup><col style="width:140px"/><col style="width:90px"/><col style="width:130px"/><col style="width:90px"/><col/></colgroup><tr><th>标的</th><th>现价</th><th>持仓</th><th>触发</th><th>逻辑</th></tr>';
+      h += '<div class="card"><h2>核心配置</h2><table><colgroup><col style="width:22%"/><col style="width:14%"/><col style="width:18%"/><col style="width:16%"/><col/></colgroup><tr><th>标的</th><th>现价</th><th>持仓</th><th>触发</th><th>逻辑</th></tr>';
       sa.core.forEach(function(c){ h += '<tr><td><strong>'+c.code+'</strong> '+c.name+'</td><td>'+c.price+'</td><td>'+c.position+'</td><td>'+c.trigger+'</td><td>'+c.logic+'</td></tr>'; });
       h += '</table></div>';
     }
@@ -2658,7 +2670,7 @@ function renderDaily(data, panel) {
       h += '<div class="card"><h2>持续监控 · 产业链分层</h2>';
       sa.monitor_layers.forEach(function(l){
         h += '<div class="sl"><div class="sl-hd" style="background:'+(l.color||'linear-gradient(90deg,#8b5cf6,#a78bfa)')+'">'+l.name+'</div>';
-        h += '<table class="sl-tbl"><colgroup><col style="width:120px"/><col style="width:80px"/><col style="width:90px"/><col style="width:110px"/><col/></colgroup><tr><th>标的</th><th>细分</th><th>现价</th><th>入场</th><th>逻辑</th></tr>';
+        h += '<table class="sl-tbl"><colgroup><col style="width:24%"/><col style="width:14%"/><col style="width:16%"/><col style="width:16%"/><col/></colgroup><tr><th>标的</th><th>细分</th><th>现价</th><th>入场</th><th>逻辑</th></tr>';
         l.stocks.forEach(function(s){ h += '<tr><td><strong>'+s.code+'</strong> '+s.name+'</td><td>'+s.sub+'</td><td>'+s.price+'</td><td>'+s.entry+'</td><td>'+s.logic+'</td></tr>'; });
         h += '</table></div>';
       });
@@ -2783,7 +2795,7 @@ function renderResearch(data, panel) {
   });
 
   // M6
-  if (data.module6) {
+  if (data.module6 && (data.module6.review || data.module6.thresholds)) {
     h += '<div class="mod"><div class="mod-hd">标的审查 + 阈值重算</div><div class="mod-bd">';
     if (data.module6.review) {
       h += '<div class="sec"><div class="sec-ttl">持仓审查</div><table><colgroup><col/><col/><col/><col/></colgroup><tr><th>标的</th><th>成本/现价</th><th>浮亏</th><th>评估</th></tr>';

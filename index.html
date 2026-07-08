@@ -208,7 +208,7 @@ body {
   .banner { flex-direction: column; gap: 14px; align-items: flex-start; padding: 24px 16px 20px; }
   .brand { font-size: 28px; letter-spacing: 4px; }
   .brand-sub { font-size: 11px; letter-spacing: 1.5px; }
-  
+}
 
 /* ═══ TOP BAR — Tab导航 + 时间 + 历史 ═══ */
 .topbar {
@@ -1081,7 +1081,122 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
   .bs-status { font-size: 9px; }
 
   /* Hide kw-hint on tiny screens to save space */
-  
+
+  /* ── Topbar ── */
+  .topbar { flex-wrap: wrap; gap: 10px; margin: 16px 0 12px; }
+  .tn { width: 100%; justify-content: center; gap: 2px; padding: 2px; overflow-x: auto; flex-wrap: nowrap; }
+  .tn a { padding: 11px 14px; font-size: 12px; min-width: 60px; text-align: center; }
+  .tb-right { width: 100%; justify-content: center; gap: 8px; order: -1; }
+  .tb-time { font-size: 11px; padding: 5px 10px; }
+
+  /* ── Market tabs ── */
+  .mt { grid-template-columns: repeat(2, 1fr); gap: 6px; margin-bottom: 14px; }
+  .mt-item { padding: 10px 6px 9px; }
+  .mt-item .s { font-size: 22px; }
+  .mt-item .l { font-size: 10px; }
+
+  /* ── Cards ── */
+  .card { padding: 16px 16px; margin-bottom: 12px; border-radius: var(--r-md); overflow-x: auto; }
+  .card h2 { font-size: 14px; margin-bottom: 12px; }
+
+  /* ── Dashboard grid ── */
+  .dg { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .dc { padding: 14px 10px; }
+  .dc .v { font-size: 22px; }
+  .dc .l { font-size: 10.5px; }
+  .dc .s { font-size: 9px; }
+
+  /* ── Score circles ── */
+  .sc-row { flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+  .sc { width: 72px; height: 72px; }
+  .sc .n { font-size: 28px; }
+  .sc-info .h { font-size: 15px; }
+  .sc-info .d { font-size: 12.5px; }
+
+  /* ── Tables ── */
+  table { font-size: 12px; }
+  th { padding: 8px 10px; font-size: 10px; }
+  td { padding: 8px 10px; }
+
+  /* ── Progress bars ── */
+  .brw { flex-wrap: wrap; gap: 6px; }
+  .br-n { width: 75px; font-size: 12px; }
+  .br-t { min-width: 80px; max-width: 100%; }
+  .br-av { width: 40px; font-size: 11px; }
+  .br-v { min-width: 26px; font-size: 12px; }
+  .br-d { max-width: 100%; font-size: 10px; }
+
+  /* ── Market rows ── */
+  .mr { font-size: 12px; }
+  .mr-n { width: 70px; font-size: 11.5px; }
+  .mr-av { width: 46px; font-size: 11px; }
+  .mr-v { width: 40px; font-size: 11px; }
+  .mr-d { font-size: 10.5px; }
+
+  /* ── Events ── */
+  .ev { font-size: 12px; }
+  .et { font-size: 9px; padding: 2px 6px; }
+
+  /* ── History dropdown ── */
+  .hbtn { padding: 7px 11px; font-size: 11px; }
+  .hdd { min-width: 200px; right: auto; left: 50%; transform: translateX(-50%); }
+
+  /* ── Module / Research ── */
+  .mod { border-radius: var(--r-md); margin-bottom: 14px; }
+  .mod-hd { padding: 12px 16px; font-size: 14px; }
+  .mod-bd { padding: 16px 16px; }
+  .sec-ttl { font-size: 13px; margin-bottom: 10px; }
+
+  /* ── Dual columns ── */
+  .dual { flex-direction: column; gap: 10px; }
+
+  /* ── Operation cards ── */
+  .op-big { flex-direction: column; gap: 10px; }
+  .op-d .d { font-size: 22px; }
+  .op-d .amt { font-size: 15px; }
+
+  /* ── Timeline info list ── */
+  .tl { flex-direction: column; }
+  .tl-i { padding: 10px 12px; border-right: none; border-bottom: 2px solid var(--card); border-radius: 8px 8px 0 0; }
+  .tl-i.lst { border-bottom: none; border-radius: 0 0 8px 8px; }
+
+  /* ── Phase panels ── */
+  .pn { padding: 12px 14px; font-size: 12px; }
+
+  /* ── AI/Note/Alert panels ── */
+  .ai { padding: 13px 16px; font-size: 12.5px; }
+  .nt { padding: 12px 14px; font-size: 11.5px; }
+  .al { padding: 12px 14px; font-size: 11.5px; }
+
+  /* ── Verdict panel ── */
+  .ver { padding: 16px 18px; font-size: 12.5px; }
+  .ver h3 { font-size: 14px; }
+
+  /* ── Sum bar ── */
+  .sb { padding: 10px 14px; flex-wrap: wrap; gap: 8px; }
+  .sb .val { font-size: 15px; }
+
+  /* ── Divider ── */
+  .dv { margin: 20px 0 10px; font-size: 12px; }
+
+  /* ── Stock layers ── */
+  .sl-tbl { font-size: 11px; }
+  .sl-tbl th, .sl-tbl td { padding: 6px 8px; }
+
+  /* ── Card-dark ── */
+  .card-dark { padding: 16px 18px; border-radius: var(--r-md); }
+  .card-dark h2 { font-size: 15px; }
+
+  /* ── Checklist ── */
+  .cl { font-size: 12px; }
+  .cl-d { font-size: 10px; min-width: 62px; padding: 2px 10px; }
+
+  /* ── HLR/HGL ── */
+  .hlr, .hlg { padding: 14px 16px; font-size: 12.5px; }
+
+  /* ── Scenario/Counterfactual/Policy/Profit cards ── */
+  .pol-card, .prf-card, .scn-card, .cf-card { padding: 14px; margin: 10px 0; border-radius: 8px; }
+}
 
 /* ── Landscape phones (e.g., iPhone Pro Max landscape) ── */
 @media (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
@@ -1096,7 +1211,7 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
   }
   .brand { font-size: 20px; letter-spacing: 3px; }
   .brand-sub { font-size: 9px; }
-  
+}
 </style>
 </head>
 <body>

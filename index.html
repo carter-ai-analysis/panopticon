@@ -2693,10 +2693,14 @@ function renderDeepDive(data, panel) {
       } else if (kv.type==='table') {
         h += '<div class="card"><h2>'+kv.title+'</h2>';
         var kvcg = '';
-        kv.headers.forEach(function(){ kvcg += '<col/>'; });
-        h += '<table><colgroup>'+kvcg+'</colgroup><thead><tr>'; kv.headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-        kv.rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c, ci){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-        h += '</tbody></table>';
+        if (kv.headers && kv.headers.length) {
+          kv.headers.forEach(function(){ kvcg += '<col/>'; });
+          h += '<table><colgroup>'+kvcg+'</colgroup><thead><tr>';
+          kv.headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; });
+          h += '</tr></thead><tbody>';
+          kv.rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c, ci){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
+          h += '</tbody></table>';
+        }
         if (kv.note) h += '<div class="rref" style="margin-top:8px">'+kv.note+'</div>';
         h += '</div>';
       } else if (kv.type==='text') {
@@ -3199,17 +3203,16 @@ function loadHist(date) {
       else if (ACTIVE === 'free') DATA.freeAnalysis = histData;
       HIST_MODE = true;
       switchTab(ACTIVE);
-      // Clean up — delete both possible variables to prevent leakage
+      // Clean up — set to undefined (var globals can't be deleted)
       delete window._historyData;
       var vn = HIST_VAR_MAP[ACTIVE];
       if (vn) try { delete window[vn]; } catch(e) { window[vn] = undefined; }
     }
   };
   s.onerror = function() {
-    // File doesn't exist — show friendly message
     var p = document.getElementById('pc');
     if (p) {
-      p.innerHTML = '<div class="card" style="text-align:center;padding:48px 24px"><h2 style="justify-content:center">📭 历史数据尚未归档</h2><p style="color:var(--tx2);font-size:13px;margin-top:12px">'+date+' 的历史数据将在Skill产出后自动保存</p><p style="color:var(--tx3);font-size:12px;margin-top:8px">路径: data/'+tabDir+'/'+date+'.js</p></div>';
+      p.innerHTML = '<div class="card" style="text-align:center;padding:48px 24px"><h2 style="justify-content:center">历史数据尚未归档</h2><p style="color:var(--tx2);font-size:13px;margin-top:12px">'+date+' 的历史数据将在Skill产出后自动保存</p><p style="color:var(--tx3);font-size:12px;margin-top:8px">路径: data/'+tabDir+'/'+date+'.js</p><div class="hdd-item hdd-back" style="display:inline-block;margin-top:16px;padding:10px 20px;border-top:none;cursor:pointer" onclick="backToLatest()">返回最新数据</div></div>';
     }
   };
   // Clean up old script tags

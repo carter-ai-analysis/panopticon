@@ -3231,12 +3231,36 @@ function histLinks() {
 
   var s = '';
 
-  if (!active.length && !archived.length) {
+  // ── 当前数据条目（始终显示，等同于"返回最新数据"）──
+  var curData = null, curLabel = '', curDate = '';
+  if (ACTIVE === 'daily' && ORIG_DATA.daily) {
+    curDate = ORIG_DATA.daily.generatedAt || new Date().toISOString().slice(0,10);
+    curLabel = curDate;
+  } else if (ACTIVE === 'research' && ORIG_DATA.research) {
+    curDate = ORIG_DATA.research.date || new Date().toISOString().slice(0,10);
+    curLabel = curDate;
+  } else if (ACTIVE === 'deepdive' && ORIG_DATA.deepDive) {
+    curDate = ORIG_DATA.deepDive.date || '';
+    curLabel = (ORIG_DATA.deepDive.name || '深度挖掘') + (curDate ? ' · ' + curDate : '');
+  } else if (ACTIVE === 'free' && ORIG_DATA.freeAnalysis) {
+    curDate = ORIG_DATA.freeAnalysis.date || '';
+    // 截断过长的title
+    var ft = ORIG_DATA.freeAnalysis.title || '自由分析';
+    curLabel = (ft.length > 20 ? ft.slice(0,20)+'…' : ft) + (curDate ? ' · ' + curDate : '');
+  }
+
+  if (!active.length && !archived.length && !curLabel) {
     s += '<div class="hdd-empty">暂无历史记录</div>';
   }
 
-  // Active section (last 30 days)
-  if (active.length > 0) {
+  // ── 当前数据（等同于"返回最新数据"，始终显示在最前面）──
+  if (curLabel) {
+    s += '<div class="hdd-header">📅 近30天记录</div>';
+    s += '<div class="hdd-item" onclick="backToLatest()">';
+    s += '<span class="hdd-date">'+(curDate || '当前')+'</span>';
+    s += '<span class="hdd-label">'+curLabel+'</span>';
+    s += '</div>';
+  } else if (active.length > 0) {
     s += '<div class="hdd-header">📅 近30天记录</div>';
     active.forEach(function(e, i) {
       // First entry = currently displayed data → same as "返回最新数据"

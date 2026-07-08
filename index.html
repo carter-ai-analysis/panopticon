@@ -970,7 +970,82 @@ td:has(span.dn) { /* .dn已由smartColorize着色 */ }
 .sc .n { text-shadow: 0 0 20px rgba(212,168,83,.15); }
 
 /* Footer */
-.ft { text-align: center; font-size: 11px; color: var(--tx3); margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--line); }
+/* ═══ UNIFIED FOOTER — 数据源 + 触发规则 ═══ */
+.uf {
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #0c1018, #111827);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.uf-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.uf-src {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.uf-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  background: var(--gold-dim);
+  color: var(--gold);
+  border: 1px solid rgba(212,168,83,.18);
+  white-space: nowrap;
+}
+.uf-info {
+  font-size: 10.5px;
+  color: var(--tx3);
+  line-height: 1.5;
+}
+.uf-rules {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: rgba(255,255,255,.02);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.uf-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.uf-rules code {
+  background: var(--card-hi);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 9.5px;
+  color: var(--cyan);
+  white-space: nowrap;
+}
+
+/* Mobile footer */
+@media (max-width: 768px) {
+  .uf { padding: 12px 14px; margin-top: 18px; }
+  .uf-badge { font-size: 9px; padding: 2px 8px; }
+  .uf-info { font-size: 9px; }
+  .uf-rules { gap: 4px; padding: 8px 10px; }
+  .uf-title { font-size: 10px; }
+  .uf-rules code { font-size: 8px; padding: 2px 6px; }
+  .ft { font-size: 10px; margin-top: 8px; }
+}
+
+.ft { text-align: center; font-size: 11px; color: var(--tx3); margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
 .empty { text-align: center; padding: 120px 20px; color: var(--tx3); }
 .empty h3 { font-size: 20px; margin-bottom: 10px; color: var(--tx2); }
 
@@ -2693,7 +2768,6 @@ function renderDaily(data, panel) {
     }
   }
 
-  h += '<div class="ft">PANOPTICON · AI独立研判 · 不构成投资建议</div>';
   panel.innerHTML = h;
 }
 
@@ -2820,7 +2894,6 @@ function renderResearch(data, panel) {
   }
 
   h += '<div class="card kw"><strong>关键词</strong><br><code>生成研报</code><code>深度挖掘：标的</code><code>分析：问题</code></div>';
-  h += '<div class="ft">AI产业链深度研报 · '+(data.date||'')+' · 不构成投资建议</div>';
   panel.innerHTML = h;
 }
 </script>
@@ -3039,7 +3112,6 @@ function renderDeepDive(data, panel) {
     h += '</div>';
   }
 
-  h += '<div class="ft">AI独立研判 · '+(data.date||'')+' · '+(data.source||'')+' · 不构成投资建议</div>';
   panel.innerHTML = h;
 }
 </script>
@@ -3201,7 +3273,6 @@ function renderFreeAnalysis(data, panel) {
     }
   });
 
-  h += '<div class="ft">AI独立研判 · '+(data.date||'')+' · 不构成投资建议</div>';
   panel.innerHTML = h;
 }
 </script>
@@ -3424,6 +3495,33 @@ function smartColorize(panel) {
   });
 }
 
+// ═══ 数据源标注（按Tab类型）═══
+function getDataSourceInfo(type) {
+  var map = {
+    daily: {
+      skill: 'stock-daily',
+      sources: 'westock-data(行情/财报) + neodata(宏观/基金/板块) + WebSearch(产业新闻)',
+      depth: '5层数据源链：wb-finance → TDX MCP → neodata → WebSearch → 标注'
+    },
+    research: {
+      skill: 'stock-deep-research',
+      sources: 'westock-data + neodata + TDX MCP(多期财报/研报/股东) + WebSearch(产业前瞻)',
+      depth: '全产业链7模块·30分钟深度阅读级'
+    },
+    deepdive: {
+      skill: 'stock-alert Mode 2-TDX',
+      sources: 'TDX MCP(10期财报/研报/股东/公告) + westock-data + neodata + WebSearch',
+      depth: '12维度深度挖掘·4000-6000字'
+    },
+    free: {
+      skill: 'stock-alert Mode 2 Free',
+      sources: 'westock-data + neodata + WebSearch(产业新闻/竞品)',
+      depth: '11维度自由分析·3000-6000字'
+    }
+  };
+  return map[type] || map.daily;
+}
+
 function switchTab(type) {
   ACTIVE = type;
   var titles = { daily: '日报', research: '研报', deepdive: '深度挖掘', free: '自由分析' };
@@ -3436,7 +3534,6 @@ function switchTab(type) {
   h += '<div class="brand">PANOPTICON</div>';
   h += '<div class="brand-sub"><span class="bs-icon">◆</span> AI全球资产配置终端 <span class="bs-sep">·</span> <span class="bs-status">LIVE</span></div>';
   h += '</div>';
-  h += '<div class="kw-hint"><code>生成日报</code><code>生成研报</code><code>深度挖掘：标的</code><code>分析：问题</code></div>';
   h += '</div>';
 
   // Top bar: tabs + time + history
@@ -3466,6 +3563,21 @@ function switchTab(type) {
   }
   /* 渲染完成后统一智能着色（红涨绿跌 + 价格金色）*/
   smartColorize(p);
+
+  // ═══ 统一页脚：数据源标注 + 触发规则 ═══
+  var ds = getDataSourceInfo(type);
+  var footer = '<div class="uf"><div class="uf-top">';
+  footer += '<div class="uf-src"><span class="uf-badge">🔬 ' + ds.skill + '</span>';
+  footer += '<span class="uf-info">数据：' + ds.sources + '</span>';
+  footer += '<span class="uf-info">深度：' + ds.depth + '</span></div>';
+  footer += '</div>';
+  footer += '<div class="uf-rules">';
+  footer += '<span class="uf-title">⚡ 触发规则</span>';
+  footer += '<code>生成日报并部署：</code><code>生成研报并部署：</code><code>深度挖掘并部署：标的</code><code>自由分析并部署：问题</code><code>部署到网页</code>';
+  footer += '<span style="color:var(--tx3);font-size:9.5px;margin-left:6px">其他对话不部署</span>';
+  footer += '</div>';
+  footer += '<div class="ft">PANOPTICON · AI独立研判 · 不构成投资建议</div></div>';
+  p.innerHTML += footer;
 }
 
 // Init — create container then render

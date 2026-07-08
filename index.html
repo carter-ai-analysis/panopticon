@@ -3238,8 +3238,10 @@ function histLinks() {
   // Active section (last 30 days)
   if (active.length > 0) {
     s += '<div class="hdd-header">📅 近30天记录</div>';
-    active.forEach(function(e) {
-      s += '<div class="hdd-item" onclick="loadHist(\''+e.date+'\')">';
+    active.forEach(function(e, i) {
+      // First entry = currently displayed data → same as "返回最新数据"
+      var action = i === 0 ? 'backToLatest()' : "loadHist('"+e.date+"')";
+      s += '<div class="hdd-item" onclick="'+action+'">';
       s += '<span class="hdd-date">'+e.date+'</span>';
       s += '<span class="hdd-label">'+e.label+'</span>';
       s += '</div>';

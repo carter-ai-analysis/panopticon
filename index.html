@@ -2655,12 +2655,59 @@ function renderDeepDive(data, panel) {
   var h = '';
 
   // ═══ Header ═══
-  h += '<div class="card-dark"><h2>'+(data.emoji||'')+' '+data.title+'</h2><div class="sub">'+(data.date||'')+' · '+(data.source||'')+'</div></div>';
+  h += '<div class="card-dark"><h2>'+(data.emoji||'')+' '+data.title+'</h2><div class="sub">'+(data.date||'')+' · '+(data.source||data.subtitle||'')+'</div></div>';
 
-  // ═══ 模块1: K线速览 ═══
-  if (data.kline) {
-    h += '<div class="card"><h2>'+data.kline.title+'</h2>';
-    if (data.kline.headers && data.kline.rows) {
+  // ═══ Sections 数组渲染（v8+ 格式）═══
+  if (data.sections && data.sections.length) {
+    data.sections.forEach(function(sec) {
+      var st = sec.type || 'text';
+      var title = sec.title || '';
+
+      if (st === 'text') {
+        h += '<div class="card"><h2>'+title+'</h2><div style="font-size:13px;line-height:1.8">'+sec.content+'</div></div>';
+      }
+      else if (st === 'table') {
+        h += '<div class="card"><h2>'+title+'</h2>';
+        if (sec.headers && sec.rows) {
+          var cg = '';
+          sec.headers.forEach(function(){ cg += '<col/>'; });
+          h += '<table><colgroup>'+cg+'</colgroup><thead><tr>';
+          sec.headers.forEach(function(th){ h += '<th>'+th+'</th>'; });
+          h += '</tr></thead><tbody>';
+          sec.rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
+          h += '</tbody></table>';
+        }
+        h += '</div>';
+      }
+      else if (st === 'highlight_red') {
+        h += '<div class="hlr"><strong style="font-size:14px">'+title+'</strong><br><br>'+sec.content+'</div>';
+      }
+      else if (st === 'highlight_green') {
+        h += '<div class="hlg"><strong style="font-size:14px">'+title+'</strong><br><br>'+sec.content+'</div>';
+      }
+      else if (st === 'op_plan') {
+        h += '<div class="card"><h2>'+title+'</h2>';
+        if (sec.days) {
+          sec.days.forEach(function(d){ h += '<div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.03)"><strong style="color:var(--gold)">'+d.day+'</strong><div style="margin-top:4px;font-size:13px">'+d.detail+'</div></div>'; });
+        }
+        h += '</div>';
+      }
+      else if (st === 'verdict') {
+        h += '<div class="ver"><h3>'+title+'</h3><div>'+sec.content+'</div></div>';
+      }
+      else if (st === 'bull_bear') {
+        h += '<div class="card"><h2>'+title+'</h2>';
+        h += '<div class="dual"><div class="bl"><div class="lbl">Bull Case</div>'+sec.bull+'</div><div class="br2"><div class="lbl">Bear Case</div>'+sec.bear+'</div></div>';
+        h += '</div>';
+      }
+    });
+  }
+  // ═══ 旧版格式兼容（v1-7）═══
+  else {
+    // ═══ 模块1: K线速览 ═══
+    if (data.kline) {
+      h += '<div class="card"><h2>'+data.kline.title+'</h2>';
+      if (data.kline.headers && data.kline.rows) {
       h += '<table class="kline-tbl"><colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup><thead><tr>';
       data.kline.headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; });
       h += '</tr></thead><tbody>';
@@ -2864,6 +2911,8 @@ function renderDeepDive(data, panel) {
     }
     if (data.summary_table.top3) h += '<div style="margin-top:10px;padding:10px;background:#0c1018;border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.7;color:var(--tx-body)"><b style="color:var(--gold)">如果只记3个数字：</b>'+data.summary_table.top3+'</div>';
     h += '</div>';
+  }
+
   }
 
   panel.innerHTML = h;

@@ -1613,7 +1613,7 @@ a:focus-visible, button:focus-visible, .mt-item:focus-visible,
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:47",
+  "generated_at": "2026-07-11 01:49",
   "scores": {
     "macro": {
       "score": 50,
@@ -2389,7 +2389,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:47",
+  "generated_at": "2026-07-11 01:49",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -3269,7 +3269,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-11 01:47",
+  "date": "2026-07-11 01:49",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -3618,7 +3618,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-11 01:47"
+  "generated_at": "2026-07-11 01:49"
 };
 </script>
 <script>
@@ -4445,18 +4445,26 @@ function switchTab(type) {
       document.body.appendChild(prog);
     }
 
-    // 2. 遍历所有 h2 → 找 section 容器（兼容日报/研报/深度挖掘/自由分析）
-    var allH2 = p.querySelectorAll('h2');
+    // 2. 遍历所有 section 标题（h2 + .mod-hd）→ 找容器（兼容4个tab）
+    var headers = p.querySelectorAll('h2, .mod-hd');
     snavCards = [];
     var items = [];
-    allH2.forEach(function(h2, idx) {
-      // 最近的可滚动容器：card / card-dark / mod / 否则用 h2 自身
-      var container = h2.closest('.card, .card-dark, .mod');
-      var target = container || h2;
-      if (!target.id) target.id = 'sec-' + type + '-' + idx;
-      var title = h2.textContent.trim().substring(0, 14).replace(/'/g,"\\'").replace(/"/g,'');
-      snavCards.push(target);
-      items.push('<a href="#'+target.id+'" onclick="event.preventDefault();window._pnv=1;panHighlight(this,\''+target.id+'\');var t=document.getElementById(\''+target.id+'\');if(t)t.scrollIntoView({behavior:\'smooth\',block:\'start\'});setTimeout(function(){window._pnv=0;},600);return false;">'+title+'</a>');
+    headers.forEach(function(hdr, idx) {
+      var container, title;
+      if (hdr.classList.contains('mod-hd')) {
+        // 研报：.mod-hd 的容器是父级 .mod
+        container = hdr.closest('.mod');
+        title = hdr.textContent.trim().substring(0, 14);
+      } else {
+        // 日报/深度挖掘/自由分析：h2 的容器是 card/card-dark/mod 或 h2 自身
+        container = hdr.closest('.card, .card-dark, .mod') || hdr;
+        title = hdr.textContent.trim().substring(0, 14);
+      }
+      if (!container) return;
+      if (!container.id) container.id = 'sec-' + type + '-' + idx;
+      title = title.replace(/'/g,"\\'").replace(/"/g,'');
+      snavCards.push(container);
+      items.push('<a href="#'+container.id+'" onclick="event.preventDefault();window._pnv=1;panHighlight(this,\''+container.id+'\');var t=document.getElementById(\''+container.id+'\');if(t)t.scrollIntoView({behavior:\'smooth\',block:\'start\'});setTimeout(function(){window._pnv=0;},600);return false;">'+title+'</a>');
     });
 
     // 3. 导航栏 DOM

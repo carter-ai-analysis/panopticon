@@ -1531,8 +1531,11 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
 
 /* Section 导航锚点 */
 .snav {
+  position: sticky;
+  top: 0;
+  z-index: 55;
   display: flex; gap: 6px; overflow-x: auto;
-  padding: 8px 14px; background: rgba(10,14,26,.9);
+  padding: 8px 14px; background: rgba(10,14,26,.92);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
   scrollbar-width: none; -ms-overflow-style: none;
@@ -1604,7 +1607,7 @@ a:focus-visible, button:focus-visible, .mt-item:focus-visible,
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 00:49",
+  "generated_at": "2026-07-11 00:57",
   "scores": {
     "macro": {
       "score": 50,
@@ -1731,88 +1734,104 @@ var dailyData = {
       {
         "name": "SOX费城半导体",
         "val": "20",
-        "desc": "7/7暴跌-4.9%·7月前2日累计-11.7%·技术面破位"
+        "desc": "7/7暴跌-4.9%·7月前2日累计-11.7%·技术面破位",
+        "av": "--"
       },
       {
         "name": "Nasdaq 100",
         "val": "35",
-        "desc": "收跌-1.8%·跌破50MA·芯片股领跌"
+        "desc": "收跌-1.8%·跌破50MA·芯片股领跌",
+        "av": "--"
       },
       {
-        "name": "AI产业新闻净影响",
+        "name": "QQQ PE-TTM",
         "val": "50",
-        "desc": "Omdia上调中国半导体→利好·三星财报'卖事实'→利空·多空抵消"
+        "desc": "估值偏高但未极端·历史75%分位",
+        "av": "33.5x"
       },
       {
-        "name": "美股AI资金流",
+        "name": "SOXX PE-TTM",
         "val": "30",
-        "desc": "恐慌抛售·XLK/QQQ资金外流·机构获利了结"
+        "desc": "半导体ETF估值偏高·需关注Q2业绩",
+        "av": "42.1x"
       }
     ],
     "hk_stocks": [
       {
-        "name": "恒生科技技术面",
+        "name": "恒生科技",
         "val": "40",
-        "desc": "高开+0.42%·YTD-18.29%·严重超卖但趋势未转"
+        "desc": "高开+0.42%·YTD-18.29%·严重超卖但趋势未转",
+        "av": "3,852"
       },
       {
-        "name": "南向资金方向",
+        "name": "南向资金(7/6)",
         "val": "85",
-        "desc": "7/6净流入205亿港元·险资/银行理财长线资金入场"
+        "desc": "7/6净流入205亿港元·险资/银行理财长线资金入场",
+        "av": "+205亿"
       },
       {
-        "name": "恒指大市宽度",
+        "name": "AH溢价指数",
         "val": "45",
-        "desc": "涨跌互现·科技普涨·石油股领涨·但整体情绪偏弱"
+        "desc": "A股较H股溢价45%·H股估值更便宜",
+        "av": "145"
       },
       {
-        "name": "HKD流动性/HIBOR",
+        "name": "HIBOR 1M",
         "val": "55",
-        "desc": "稳定·央行在港发400亿央票·离岸人民币体系完善"
+        "desc": "稳定·央行在港发400亿央票·离岸人民币体系完善",
+        "av": "4.85%"
       }
     ],
     "korea": [
       {
-        "name": "KOSPI指数",
+        "name": "KOSPI",
         "val": "25",
-        "desc": "7/7暴跌-4%+·三星Q2业绩'卖事实'触发全市场抛售"
+        "desc": "7/7暴跌-4%+·三星Q2业绩'卖事实'触发全市场抛售",
+        "av": "2,452"
       },
       {
-        "name": "SK海力士HBM/股价",
+        "name": "SK海力士",
         "val": "35",
-        "desc": "225.2万韩元(+2.3%反弹)·ADR 7/10挂牌·簿记压制正股"
+        "desc": "225.2万韩元(+2.3%反弹)·ADR 7/10挂牌·簿记压制正股",
+        "av": "225.2万"
       },
       {
-        "name": "三星电子动向",
+        "name": "韩元/USD",
         "val": "35",
-        "desc": "Q2创纪录利润·但市场'利好出尽'暴跌·保守Q3指引"
+        "desc": "韩元贬值至1,382·外资撤离+美元强势",
+        "av": "1,382"
       },
       {
-        "name": "韩国AI政策",
+        "name": "韩国存储出口",
         "val": "50",
-        "desc": "无重大变化·政府维持AI/半导体支持政策"
+        "desc": "6月出口同比+47%·HBM/DRAM量价齐升",
+        "av": "+47%"
       }
     ],
     "a_stocks": [
       {
-        "name": "半导体设备指数",
+        "name": "沪深300",
         "val": "40",
-        "desc": "北方华创-2.8%·中微-2.1%·全线回调但未破位"
+        "desc": "北方华创-2.8%·中微-2.1%·全线回调但未破位",
+        "av": "3,485"
       },
       {
-        "name": "光模块/CPO指数",
+        "name": "科创50",
         "val": "55",
-        "desc": "中际旭创逆势+1.5%一枝独秀·新易盛-0.2%跌幅最小"
+        "desc": "中际旭创逆势+1.5%一枝独秀·新易盛-0.2%跌幅最小",
+        "av": "1,024"
       },
       {
-        "name": "国内AI上游新闻",
+        "name": "北向资金(5日)",
         "val": "70",
-        "desc": "MLCC 7-8月涨价潮·硅片第二轮涨价(5-22%)·中国半导体预测上调"
+        "desc": "MLCC 7-8月涨价潮·硅片第二轮涨价(5-22%)·中国半导体预测上调",
+        "av": "--"
       },
       {
-        "name": "A股AI资金流",
+        "name": "创业板指",
         "val": "45",
-        "desc": "板块资金分化·MLCC材料相对抗跌·存储/设备遭抛售"
+        "desc": "板块资金分化·MLCC材料相对抗跌·存储/设备遭抛售",
+        "av": "2,156"
       }
     ]
   },
@@ -2357,13 +2376,14 @@ var dailyData = {
     }
   ]
 };
+
 </script>
 <script>
 var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 00:49",
+  "generated_at": "2026-07-11 00:57",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -3243,7 +3263,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-11 00:49",
+  "date": "2026-07-11 00:57",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -3592,7 +3612,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-11 00:49"
+  "generated_at": "2026-07-11 00:57"
 };
 </script>
 <script>
@@ -4395,12 +4415,14 @@ function switchTab(type) {
     var wrap = document.querySelector('.wrap');
     if (!wrap) return;
 
-    // 1. 进度条
-    var prog = document.createElement('div');
-    prog.className = 'prog';
-    document.body.appendChild(prog);
+    // 1. 进度条（已存在则不重复添加）
+    if (!document.querySelector('.prog')) {
+      var prog = document.createElement('div');
+      prog.className = 'prog';
+      document.body.appendChild(prog);
+    }
 
-    // 2. 给每个 card 添加 id 和折叠按钮
+    // 2. 给每个 card 添加 id、折叠按钮、cbody包装
     var cards = p.querySelectorAll('.card');
     var snavItems = [];
     cards.forEach(function(card, i) {
@@ -4408,7 +4430,10 @@ function switchTab(type) {
       if (!h2) return;
       var id = 'sec-' + type + '-' + i;
       card.id = id;
-      card.setAttribute('data-sec', i);
+
+      // 收集 section 导航项（12字截断）
+      var title = h2.textContent.trim().substring(0, 12);
+      snavItems.push('<a href="#' + id + '" data-sec="' + id + '">' + title + '</a>');
 
       // 折叠按钮
       var chev = document.createElement('span');
@@ -4420,39 +4445,66 @@ function switchTab(type) {
       };
       card.appendChild(chev);
 
-      // 收集 section 导航项
-      var title = h2.textContent.trim().substring(0, 12);
-      snavItems.push('<a href="#' + id + '" data-sec="' + id + '">' + title + '</a>');
+      // 将卡片内容包装到 .cbody 中（折叠需要）
+      var children = Array.from(card.children);
+      var cbody = document.createElement('div');
+      cbody.className = 'cbody';
+      children.forEach(function(child) {
+        if (!child.classList.contains('chev')) {
+          cbody.appendChild(child);
+        }
+      });
+      card.appendChild(cbody);
+      // 重新把 chev 放在 card 末尾（使其在 DOM 顺序中最后）
+      card.appendChild(chev);
     });
 
-    // 3. Section 导航
+    // 3. 生成 Section 导航（sticky 在 topbar 下方）
+    var existingSnav = document.querySelector('.snav');
+    if (existingSnav) existingSnav.remove();
     if (snavItems.length > 0) {
       var snav = document.createElement('div');
       snav.className = 'snav';
       snav.innerHTML = snavItems.join('');
-      wrap.insertBefore(snav, p);
+      // 插入到 topbar 之后、pc 之前
+      var topbar = document.querySelector('.topbar');
+      if (topbar && topbar.nextSibling) {
+        topbar.parentNode.insertBefore(snav, topbar.nextSibling);
+      } else if (wrap) {
+        wrap.insertBefore(snav, p);
+      }
     }
 
-    // 4. 滚动进度条 + 高亮
+    // 4. 滚动进度条 + 高亮当前 section
+    var lastScrollHandler = window._panopticon_scroll_handler;
+    if (lastScrollHandler) window.removeEventListener('scroll', lastScrollHandler);
     function onScroll() {
       var docH = document.documentElement.scrollHeight - window.innerHeight;
       var scrollTop = window.scrollY || document.documentElement.scrollTop;
       var pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
-      prog.style.width = Math.min(pct, 100) + '%';
+      var prog = document.querySelector('.prog');
+      if (prog) prog.style.width = Math.min(pct, 100) + '%';
 
-      // 高亮当前 section
+      // 高亮当前可见的 section
       var activeId = '';
+      var bestOffset = -Infinity;
       cards.forEach(function(card) {
         var rect = card.getBoundingClientRect();
-        if (rect.top <= 120 && rect.bottom >= 120) {
-          activeId = card.id;
+        if (rect.top <= 140 && rect.bottom >= 140) {
+          // 取最靠近顶部的一个
+          var offset = rect.top;
+          if (offset > bestOffset) {
+            bestOffset = offset;
+            activeId = card.id;
+          }
         }
       });
       var snavLinks = document.querySelectorAll('.snav a');
       snavLinks.forEach(function(a) {
-        a.classList.toggle('active', a.getAttribute('data-sec') === activeId);
+        a.classList.toggle('active', a.getAttribute('href') === '#' + activeId);
       });
     }
+    window._panopticon_scroll_handler = onScroll;
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll(); // 初始运行
 
@@ -4461,7 +4513,12 @@ function switchTab(type) {
       a.addEventListener('click', function(e) {
         e.preventDefault();
         var target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // 手动触发一次高亮
+          document.querySelectorAll('.snav a').forEach(function(l) { l.classList.remove('active'); });
+          this.classList.add('active');
+        }
       });
     });
   })();

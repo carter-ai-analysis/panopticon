@@ -1212,6 +1212,77 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
   .brand { font-size: 20px; letter-spacing: 3px; }
   .brand-sub { font-size: 9px; }
 }
+
+/* ════════════════════════════════════════════════════════════════ */
+/* 自由格式内容区 — AI自主决定样式·不与portal卡片系统冲突 */
+/* ════════════════════════════════════════════════════════════════ */
+.dd-free-content, .fa-free-content {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--tx-body);
+}
+.dd-free-content h1, .fa-free-content h1 { font-size: 1.3em; margin: 20px 0 10px; color: var(--red); }
+.dd-free-content h2, .fa-free-content h2 { font-size: 1.15em; margin: 18px 0 8px; color: var(--tx-title); }
+.dd-free-content h3, .fa-free-content h3 { font-size: 1.05em; margin: 14px 0 6px; color: var(--tx-title); }
+.dd-free-content p, .fa-free-content p { margin: 8px 0; }
+.dd-free-content ul, .fa-free-content ul,
+.dd-free-content ol, .fa-free-content ol { padding-left: 20px; margin: 8px 0; }
+.dd-free-content li { margin: 4px 0; }
+.dd-free-content table, .fa-free-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 0.88em;
+}
+.dd-free-content th, .fa-free-content th {
+  background: var(--red);
+  color: #fff;
+  padding: 7px 8px;
+  text-align: left;
+  font-weight: 600;
+}
+.dd-free-content td, .fa-free-content td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--line);
+}
+.dd-free-content blockquote, .fa-free-content blockquote {
+  border-left: 3px solid var(--red);
+  padding: 8px 14px;
+  margin: 10px 0;
+  background: rgba(212,168,83,.05);
+  color: var(--tx2);
+}
+.dd-free-content code, .fa-free-content code {
+  background: rgba(255,255,255,.05);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.dd-free-content hr, .fa-free-content hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 16px 0;
+}
+.dd-free-content strong, .fa-free-content strong { color: var(--tx-title); }
+.dd-free-content .up, .fa-free-content .up { color: var(--red); }
+.dd-free-content .down, .fa-free-content .down { color: var(--green); }
+.dd-free-content .tag, .fa-free-content .tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.82em;
+  font-weight: 600;
+  margin: 0 2px;
+}
+.dd-free-content .tag-r, .fa-free-content .tag-r { background: rgba(239,68,68,.12); color: var(--red); }
+.dd-free-content .tag-g, .fa-free-content .tag-g { background: rgba(34,197,94,.12); color: var(--green); }
+.dd-free-content .tag-y, .fa-free-content .tag-y { background: rgba(245,158,11,.12); color: var(--amber); }
+@media (max-width: 768px) {
+  .dd-free-content, .fa-free-content { font-size: 13px; }
+  .dd-free-content table, .fa-free-content table { font-size: 0.78em; }
+  .dd-free-content th, .fa-free-content th { padding: 5px 6px; }
+  .dd-free-content td, .fa-free-content td { padding: 4px 6px; }
+}
 </style>
 </head>
 <body>
@@ -1219,7 +1290,7 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-09 16:48",
+  "generated_at": "2026-07-10 17:14",
   "scores": {
     "macro": {
       "score": 50,
@@ -1969,7 +2040,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-09 16:48",
+  "generated_at": "2026-07-10 17:14",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -2410,9 +2481,9 @@ var deepDiveData = {
   "name": "全持仓双任务",
   "emoji": "⚔",
   "title": "PANOPTICON 双任务深度研判 · 7/9收盘：科创50暴涨8.41%·海力士ADR明日决战·120万+30万HKD全配置方案",
-  "date": "2026-07-09 16:48",
+  "date": "2026-07-10 17:14",
   "subtitle": "数据源：WebSearch实时行情+产业新闻+资金流向·时效：7/9收盘·按新规则标注数据时效",
-  "generated_at": "2026-07-09 16:48",
+  "generated_at": "2026-07-10 17:14",
   "rating": 5,
   "max_rating": 5,
   "sections": [
@@ -2525,7 +2596,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-09 16:48",
+  "date": "2026-07-10 17:14",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -2874,7 +2945,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-09 16:48"
+  "generated_at": "2026-07-10 17:14"
 };
 </script>
 <script>
@@ -3151,435 +3222,110 @@ function renderResearch(data, panel) {
 }
 </script>
 <script>
-// deep-dive.js — v7 深度挖掘：12维度详尽分析框架（2026-07-08升级）
-// 新增：历史追踪(10) + 敏感性分析(11) + 数据速查表(12)
+// deep-dive.js — v8 自由格式·AI自主决定输出逻辑框架和外观样式
+// 数据格式: { content: "完整HTML" } → 直接渲染
+// 兼容旧格式: { sections: [...] } → 降级为simple-text渲染
 function renderDeepDive(data, panel) {
-  if (!data) { panel.innerHTML = '<div class="empty"><h3>暂无深度挖掘</h3><p>运行「深度挖掘：标的代码」获取个股分析</p></div>'; return; }
-  var h = '';
+  if (!data) {
+    panel.innerHTML = '<div class="empty"><h3>暂无深度挖掘</h3><p>运行「深度挖掘：标的」获取分析</p></div>';
+    return;
+  }
 
-  // ═══ Header ═══
-  h += '<div class="card-dark"><h2>'+(data.emoji||'')+' '+data.title+'</h2><div class="sub">'+(data.date||'')+' · '+(data.source||data.subtitle||'')+'</div></div>';
+  // ═══ 新格式: content 字段直接作为 HTML 渲染（AI 自由决定样式）═══
+  if (data.content) {
+    var h = '';
+    // 标题区（从data元信息生成，不依赖content内重复标题）
+    h += '<div class="card-dark"><h2>'+(data.emoji||'⛏')+' '+(data.title||'深度挖掘')+'</h2>';
+    if (data.date || data.subtitle) {
+      h += '<div class="sub">'+(data.date||'')+(data.subtitle?' · '+data.subtitle:'')+'</div>';
+    }
+    h += '</div>';
+    // AI 自由输出的完整 HTML
+    h += '<div class="dd-free-content">'+data.content+'</div>';
+    panel.innerHTML = h;
+    return;
+  }
 
-  // ═══ Sections 数组渲染（v8+ 格式）═══
+  // ═══ 旧格式: sections 数组 → simple-text 降级渲染 ═══
   if (data.sections && data.sections.length) {
+    var h2 = '';
+    h2 += '<div class="card-dark"><h2>'+(data.emoji||'')+' '+data.title+'</h2><div class="sub">'+(data.date||'')+' · '+(data.subtitle||'')+'</div></div>';
     data.sections.forEach(function(sec) {
-      var st = sec.type || 'text';
-      var title = sec.title || '';
-
-      if (st === 'text') {
-        h += '<div class="card"><h2>'+title+'</h2><div style="font-size:13px;line-height:1.8">'+sec.content+'</div></div>';
+      h2 += '<div class="card">';
+      if (sec.title) h2 += '<h2>'+sec.title+'</h2>';
+      var content = sec.content || sec.bull || '';
+      if (sec.bear) content += '<br><br><b>Bear Case:</b><br>'+sec.bear;
+      if (sec.days) { sec.days.forEach(function(d){ content += '<br><br><b>'+d.day+':</b> '+d.detail; }); }
+      if (sec.headers && sec.rows) {
+        content += '<table><tr>';
+        sec.headers.forEach(function(hh){ content += '<th>'+hh+'</th>'; });
+        content += '</tr>';
+        sec.rows.forEach(function(r){ content += '<tr>'; r.forEach(function(c){ content += '<td>'+c+'</td>'; }); content += '</tr>'; });
+        content += '</table>';
       }
-      else if (st === 'table') {
-        h += '<div class="card"><h2>'+title+'</h2>';
-        if (sec.headers && sec.rows) {
-          var cg = '';
-          sec.headers.forEach(function(){ cg += '<col/>'; });
-          h += '<table><colgroup>'+cg+'</colgroup><thead><tr>';
-          sec.headers.forEach(function(th){ h += '<th>'+th+'</th>'; });
-          h += '</tr></thead><tbody>';
-          sec.rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-          h += '</tbody></table>';
-        }
-        h += '</div>';
-      }
-      else if (st === 'highlight_red') {
-        h += '<div class="hlr"><strong style="font-size:14px">'+title+'</strong><br><br>'+sec.content+'</div>';
-      }
-      else if (st === 'highlight_green') {
-        h += '<div class="hlg"><strong style="font-size:14px">'+title+'</strong><br><br>'+sec.content+'</div>';
-      }
-      else if (st === 'op_plan') {
-        h += '<div class="card"><h2>'+title+'</h2>';
-        if (sec.days) {
-          sec.days.forEach(function(d){ h += '<div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.03)"><strong style="color:var(--gold)">'+d.day+'</strong><div style="margin-top:4px;font-size:13px">'+d.detail+'</div></div>'; });
-        }
-        h += '</div>';
-      }
-      else if (st === 'verdict') {
-        h += '<div class="ver"><h3>'+title+'</h3><div>'+sec.content+'</div></div>';
-      }
-      else if (st === 'bull_bear') {
-        h += '<div class="card"><h2>'+title+'</h2>';
-        h += '<div class="dual"><div class="bl"><div class="lbl">Bull Case</div>'+sec.bull+'</div><div class="br2"><div class="lbl">Bear Case</div>'+sec.bear+'</div></div>';
-        h += '</div>';
-      }
+      h2 += '<div style="font-size:13px;line-height:1.8">'+content+'</div></div>';
     });
-  }
-  // ═══ 旧版格式兼容（v1-7）═══
-  else {
-    // ═══ 模块1: K线速览 ═══
-    if (data.kline) {
-      h += '<div class="card"><h2>'+data.kline.title+'</h2>';
-      if (data.kline.headers && data.kline.rows) {
-      h += '<table class="kline-tbl"><colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup><thead><tr>';
-      data.kline.headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; });
-      h += '</tr></thead><tbody>';
-      data.kline.rows.forEach(function(r){ h += '<tr class="'+(r.cls||'')+'">'; r.cells.forEach(function(c,i){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.kline.note) h += '<div style="font-size:12px;color:var(--tx2);margin-top:6px">'+data.kline.note+'</div>';
-    if (data.kline.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+data.kline.ai_judgment+'</div>';
-    h += '</div>';
+    panel.innerHTML = h2;
+    return;
   }
 
-  // ═══ 模块2: 基本面深度分析 ═══
-  if (data.fundamentals) {
-    h += '<div class="card"><h2>基本面深度分析</h2>';
-    if (data.fundamentals.table_headers && data.fundamentals.table_rows) {
-      var fcg = '';
-      data.fundamentals.table_headers.forEach(function(){ fcg += '<col/>'; });
-      h += '<table><colgroup>'+fcg+'</colgroup><thead><tr>'; data.fundamentals.table_headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-      data.fundamentals.table_rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.fundamentals.note) h += '<div style="font-size:12px;color:var(--tx2);margin-top:6px">'+data.fundamentals.note+'</div>';
-    if (data.fundamentals.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+data.fundamentals.ai_judgment+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块3: 资金流向深度分析 ═══
-  if (data.fund_flow) {
-    h += '<div class="card"><h2>资金流向：谁在买、谁在卖</h2>';
-    if (data.fund_flow.rows) {
-      h += '<table><colgroup><col/><col/><col/></colgroup><thead><tr><th>指标</th><th>数值</th><th>解读</th></tr></thead><tbody>';
-      data.fund_flow.rows.forEach(function(r){ h += '<tr><td>'+r.label+'</td><td>'+r.value+'</td><td>'+r.note+'</td></tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.fund_flow.note) h += '<div style="font-size:12px;color:var(--tx2);margin-top:6px">'+data.fund_flow.note+'</div>';
-    if (data.fund_flow.rule_ref) h += '<div class="rref" style="margin-top:8px">'+data.fund_flow.rule_ref+'</div>';
-    if (data.fund_flow.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+data.fund_flow.ai_judgment+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块4: 关键变量/特殊分析 ═══
-  if (data.key_variables) {
-    data.key_variables.forEach(function(kv){
-      if (kv.type==='highlight') {
-        h += '<div class="hlr"><strong style="font-size:14px">'+kv.title+'</strong><br><br>'+kv.content+'</div>';
-      } else if (kv.type==='table') {
-        h += '<div class="card"><h2>'+kv.title+'</h2>';
-        var kvcg = '';
-        if (kv.headers && kv.headers.length) {
-          kv.headers.forEach(function(){ kvcg += '<col/>'; });
-          h += '<table><colgroup>'+kvcg+'</colgroup><thead><tr>';
-          kv.headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; });
-          h += '</tr></thead><tbody>';
-          kv.rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c, ci){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-          h += '</tbody></table>';
-        }
-        if (kv.note) h += '<div class="rref" style="margin-top:8px">'+kv.note+'</div>';
-        h += '</div>';
-      } else if (kv.type==='text') {
-        h += '<div class="card"><h2>'+kv.title+'</h2><div style="font-size:13px;line-height:1.8">'+kv.content+'</div></div>';
-      }
-    });
-  }
-
-  // ═══ 模块5: 产业与竞争格局 ═══
-  if (data.industry) {
-    h += '<div class="card"><h2>产业与竞争格局</h2>';
-    if (data.industry.content) h += '<div style="font-size:13px;line-height:1.8">'+data.industry.content+'</div>';
-    if (data.industry.table_headers && data.industry.table_rows) {
-      var icg = '';
-      data.industry.table_headers.forEach(function(){ icg += '<col/>'; });
-      h += '<table style="margin-top:10px"><colgroup>'+icg+'</colgroup><thead><tr>'; data.industry.table_headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-      data.industry.table_rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.industry.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+data.industry.ai_judgment+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块6: AI深度研判 + 两面分析 ═══
-  if (data.ai_analysis) {
-    h += '<div class="card"><h2>'+data.ai_analysis.title+'</h2>';
-    // Dual boxes
-    if (data.ai_analysis.bull || data.ai_analysis.bear) {
-      h += '<div class="dual"><div class="bl"><div class="lbl">看多逻辑</div>'+(data.ai_analysis.bull||'')+'</div><div class="br2"><div class="lbl">看空风险</div>'+(data.ai_analysis.bear||'')+'</div></div>';
-    }
-    // Analysis content
-    if (data.ai_analysis.content) h += '<div style="font-size:13px;line-height:1.9">'+data.ai_analysis.content+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块7: AI独立研判（多段落深度分析） ═══
-  if (data.ai_deep) {
-    h += '<div class="card" style="background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(124,58,237,.04));border:1.5px solid rgba(139,92,246,.18)">';
-    h += '<h2>'+data.ai_deep.title+'</h2><div style="font-size:13px;line-height:1.9">'+data.ai_deep.content+'</div></div>';
-  }
-
-  // ═══ 模块8: 持仓对比 ═══
-  if (data.peer_compare) {
-    h += '<div class="card"><h2>'+data.peer_compare.title+'</h2>';
-    if (data.peer_compare.table_headers && data.peer_compare.table_rows) {
-      var pcg = '';
-      data.peer_compare.table_headers.forEach(function(){ pcg += '<col/>'; });
-      h += '<table><colgroup>'+pcg+'</colgroup><thead><tr>'; data.peer_compare.table_headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-      data.peer_compare.table_rows.forEach(function(r){ h += '<tr class="'+(r.cls||'')+'">'; r.cells.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.peer_compare.note) h += '<div style="font-size:12px;color:var(--tx2);margin-top:6px">'+data.peer_compare.note+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块9: 操作建议 ═══
-  if (data.operation) {
-    h += '<div class="card"><h2>操作建议</h2>';
-    if (data.operation.position_summary) h += '<div style="font-size:12px;color:var(--tx2);margin-bottom:10px">'+data.operation.position_summary+'</div>';
-    if (data.operation.verdict_box) {
-      var vb = data.operation.verdict_box;
-      var cls = vb.type==='hold'?'pn-b':vb.type==='buy'?'pn-a':vb.type==='warn'?'pn-a':'pn-c';
-      h += '<div class="pn '+cls+'"><strong>'+(vb.label||'')+'</strong> '+vb.content+'</div>';
-    }
-    if (data.operation.steps_table_headers && data.operation.steps_table_rows) {
-      var scg = '';
-      data.operation.steps_table_headers.forEach(function(){ scg += '<col/>'; });
-      h += '<table style="margin-top:8px"><colgroup>'+scg+'</colgroup><thead><tr>';
-      data.operation.steps_table_headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-      data.operation.steps_table_rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.operation.rule_ref) h += '<div class="rref" style="margin-top:10px">'+data.operation.rule_ref+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块10: 最终判断 ═══
-  if (data.verdict) {
-    h += '<div class="card" style="background:linear-gradient(135deg,rgba(91,143,222,.05),rgba(59,130,246,.03));border:1.5px solid rgba(91,143,222,.2)"><h2>'+data.verdict.title+'</h2><div style="font-size:13px;line-height:1.9;color:var(--tx-body)">'+data.verdict.content+'</div></div>';
-  }
-
-  // ═══ 催化剂日历 ═══
-  if (data.catalyst) {
-    h += '<div class="card"><h2>近期催化剂</h2>';
-    if (data.catalyst.rows) {
-      h += '<table><colgroup><col/><col/><col/></colgroup><thead><tr><th>日期/事件</th><th>影响方向</th><th>详细分析</th></tr></thead><tbody>';
-      data.catalyst.rows.forEach(function(r){ h += '<tr><td>'+r.event+'</td><td>'+r.direction+'</td><td>'+r.analysis+'</td></tr>'; });
-      h += '</tbody></table>';
-    }
-    h += '</div>';
-  }
-
-  // ═══ 模块10: 历史结论追踪（v7新增）═══
-  if (data.history_track) {
-    h += '<div class="card"><h2>📋 历次分析追踪</h2>';
-    if (data.history_track.last_analysis) {
-      var la = data.history_track.last_analysis;
-      h += '<div style="background:var(--card-in);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:12px">';
-      h += '<div style="font-size:11px;color:var(--tx3);margin-bottom:6px">上次分析 · '+(la.date||'--')+'</div>';
-      h += '<div style="display:flex;gap:16px;flex-wrap:wrap">';
-      if (la.rating!=null) h += '<div><b>评分</b>：'+la.rating+'/'+(la.max_rating||5)+'</div>';
-      if (la.verdict) h += '<div><b>判断</b>：'+la.verdict+'</div>';
-      if (la.action) h += '<div><b>建议</b>：'+la.action+'</div>';
-      h += '</div></div>';
-    }
-    if (data.history_track.changes && data.history_track.changes.length) {
-      h += '<table><colgroup><col/><col/><col/></colgroup><thead><tr><th>判断项</th><th>上次结论</th><th>本次结论</th></tr></thead><tbody>';
-      data.history_track.changes.forEach(function(c){ h += '<tr><td>'+c.item+'</td><td>'+c.old+'</td><td>'+(c.is_changed?'<span style="color:var(--purple);font-weight:600">'+c.new+'</span>':c.new)+'</td></tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.history_track.prediction_check) {
-      h += '<div class="ai" style="margin-top:10px"><strong>预测验证</strong><br>'+data.history_track.prediction_check+'</div>';
-    }
-    if (data.history_track.ai_judgment) h += '<div class="rref" style="margin-top:8px">'+data.history_track.ai_judgment+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块11: 敏感性分析（v7新增）═══
-  if (data.sensitivity) {
-    h += '<div class="card"><h2>⚡ 敏感性分析（What-If）</h2>';
-    if (data.sensitivity.table_headers && data.sensitivity.table_rows) {
-      var secg = '';
-      data.sensitivity.table_headers.forEach(function(){ secg += '<col/>'; });
-      h += '<table><colgroup>'+secg+'</colgroup><thead><tr>'; data.sensitivity.table_headers.forEach(function(th){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-      data.sensitivity.table_rows.forEach(function(r){ h += '<tr>'; r.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-      h += '</tbody></table>';
-    }
-    if (data.sensitivity.analysis) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+data.sensitivity.analysis+'</div>';
-    h += '</div>';
-  }
-
-  // ═══ 模块12: 关键数据速查表（v7新增）═══
-  if (data.summary_table) {
-    h += '<div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,.04),rgba(37,99,235,.03));border:1.5px solid rgba(59,130,246,.18)"><h2>📊 关键数据速查表</h2>';
-    if (data.summary_table.headers && data.summary_table.rows) {
-      var stcg = '';
-      data.summary_table.headers.forEach(function(){ stcg += '<col/>'; });
-      h += '<table style="font-size:12px"><colgroup>'+stcg+'</colgroup><thead><tr>'; data.summary_table.headers.forEach(function(th){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-      data.summary_table.rows.forEach(function(r){
-        var hl = r.highlight ? ' style="background:rgba(212,168,83,.1);font-weight:600;color:var(--gold)"' : '';
-        h += '<tr'+hl+'>'; r.cells.forEach(function(c){ h += '<td>'+c+'</td>'; });
-        h += '</tr>';
-      });
-      h += '</tbody></table>';
-    }
-    if (data.summary_table.top3) h += '<div style="margin-top:10px;padding:10px;background:#0c1018;border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.7;color:var(--tx-body)"><b style="color:var(--gold)">如果只记3个数字：</b>'+data.summary_table.top3+'</div>';
-    h += '</div>';
-  }
-
-  }
-
-  panel.innerHTML = h;
+  // ═══ 无数据 ═══
+  panel.innerHTML = '<div class="empty"><h3>暂无深度挖掘</h3><p>数据格式不支持</p></div>';
 }
 </script>
 <script>
-// free-analysis.js — v7 自由分析：11维度深度框架（2026-07-08升级·信息量×2）
-// 新增：政策监管(8) / 产业链利润(9) / 量化情景(10) / 反事实推演(11)
+// free-analysis.js — v8 自由格式·AI自主决定输出逻辑框架和外观样式
+// 数据格式: { content: "完整HTML" } → 直接渲染
+// 兼容旧格式: { sections: [...] } → 降级为simple-text渲染
 function renderFreeAnalysis(data, panel) {
-  if (!data) { panel.innerHTML = '<div class="empty"><h3>暂无自由分析</h3><p>运行「分析：问题」获取AI自由研判</p></div>'; return; }
-  var h = '';
+  if (!data) {
+    panel.innerHTML = '<div class="empty"><h3>暂无自由分析</h3><p>运行「分析：问题」获取AI自由研判</p></div>';
+    return;
+  }
 
-  h += '<div class="card-dark"><h2>'+(data.emoji||'')+' '+(data.title||'自由分析')+'</h2><div class="sub">'+(data.date||'')+' · '+(data.subtitle||'')+'</div></div>';
+  // ═══ 新格式: content 字段直接作为 HTML 渲染（AI 自由决定样式）═══
+  if (data.content) {
+    var h = '';
+    h += '<div class="card-dark"><h2>'+(data.emoji||'🧠')+' '+(data.title||'自由分析')+'</h2>';
+    if (data.date || data.subtitle) {
+      h += '<div class="sub">'+(data.date||'')+(data.subtitle?' · '+data.subtitle:'')+'</div>';
+    }
+    h += '</div>';
+    h += '<div class="fa-free-content">'+data.content+'</div>';
+    panel.innerHTML = h;
+    return;
+  }
 
-  (data.sections||[]).forEach(function(sec) {
-    var t = sec.type||'text';
-
-    // Table (持仓/对比/清单)
-    if (t==='table') {
-      h += '<div class="card"><h2>'+sec.title+'</h2>';
+  // ═══ 旧格式: sections 数组 → simple-text 降级渲染 ═══
+  if (data.sections && data.sections.length) {
+    var h2 = '';
+    h2 += '<div class="card-dark"><h2>'+(data.emoji||'')+' '+(data.title||'自由分析')+'</h2><div class="sub">'+(data.date||'')+' · '+(data.subtitle||'')+'</div></div>';
+    data.sections.forEach(function(sec) {
+      h2 += '<div class="card">';
+      if (sec.title) h2 += '<h2>'+sec.title+'</h2>';
+      var content = sec.content || sec.policy_table || '';
       if (sec.table_headers && sec.table_rows) {
-        var cg = '';
-        sec.table_headers.forEach(function(){ cg += '<col/>'; });
-        h += '<table><colgroup>'+cg+'</colgroup><thead><tr>'; sec.table_headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-        sec.table_rows.forEach(function(r){ h += '<tr class="'+(r.cls||'')+'">'; r.cells.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-        h += '</tbody></table>';
-      }
-      if (sec.note) h += '<div style="font-size:12px;color:var(--tx2);margin-top:6px">'+sec.note+'</div>';
-      if (sec.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
-
-    // Purple analysis card
-    else if (t==='purple') {
-      h += '<div class="card" style="background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(124,58,237,.04));border:1.5px solid rgba(139,92,246,.18)"><h2>'+sec.title+'</h2><div style="font-size:13px;line-height:1.9;color:var(--tx-body)">'+sec.content+'</div></div>';
-    }
-
-    // Green deployment plan
-    else if (t==='green_plan') {
-      h += '<div class="card" style="background:rgba(34,197,94,.04);border:1.5px solid rgba(34,197,94,.15)"><h2>'+sec.title+'</h2>';
-      if (sec.timeline) {
-        h += '<div class="tl">';
-        sec.timeline.forEach(function(t,i){ h += '<div class="tl-i'+(i===sec.timeline.length-1?' lst':'')+'"><div class="d">'+t.date+'</div><div class="a">'+t.label+'</div></div>'; });
-        h += '</div>';
-      }
-      if (sec.table_headers && sec.table_rows) {
-        var cg2 = '';
-        sec.table_headers.forEach(function(){ cg2 += '<col/>'; });
-        h += '<table style="margin-top:8px"><colgroup>'+cg2+'</colgroup><thead><tr>'; sec.table_headers.forEach(function(th, idx){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-        sec.table_rows.forEach(function(r){ h += '<tr class="'+(r.cls||'')+'">'; r.cells.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-        h += '</tbody></table>';
-      }
-      if (sec.note) h += '<div class="rref" style="margin-top:10px">'+sec.note+'</div>';
-      if (sec.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
-
-    // Dual box
-    else if (t==='dual') {
-      h += '<div class="card"><h2>'+sec.title+'</h2><div class="dual"><div class="bl"><div class="lbl">'+(sec.bull_title||'看多')+'</div>'+sec.bull_content+'</div><div class="br2"><div class="lbl">'+(sec.bear_title||'看空')+'</div>'+sec.bear_content+'</div></div>';
-      if (sec.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
-
-    // Verdict
-    else if (t==='verdict') {
-      h += '<div class="ver"><h3>'+sec.title+'</h3><div>'+sec.content+'</div></div>';
-    }
-
-    // Highlight
-    else if (t==='highlight') {
-      h += '<div class="hlr"><strong style="font-size:14px">'+sec.title+'</strong><br><br>'+sec.content+'</div>';
-    }
-
-    // Green
-    else if (t==='green') {
-      h += '<div class="hlg"><strong style="font-size:14px">'+sec.title+'</strong><br><br>'+sec.content+'</div>';
-    }
-
-    // Rule ref
-    else if (t==='rule_ref') {
-      h += '<div class="rref">'+sec.content+'</div>';
-    }
-
-    // Policy/Regulation card (v7新增·维度8)
-    else if (t==='policy') {
-      h += '<div class="card" style="background:linear-gradient(135deg,rgba(245,158,11,.04),rgba(245,158,11,.02));border:1.5px solid rgba(245,158,11,.15);border-left:4px solid var(--amber)"><h2>🏛 '+sec.title+'</h2><div style="font-size:13px;line-height:1.8;color:var(--tx-body)">'+sec.content+'</div>';
-      if (sec.policy_table) {
-        var pcg = '';
-        sec.policy_table.headers.forEach(function(){ pcg += '<col/>'; });
-        h += '<table style="margin-top:10px"><colgroup>'+pcg+'</colgroup><thead><tr>'; sec.policy_table.headers.forEach(function(th){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-        sec.policy_table.rows.forEach(function(r){ h += '<tr>'; r.cells.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>'; });
-        h += '</tbody></table>';
-      }
-      if (sec.ai_judgment) h += '<div class="nt" style="margin-top:10px"><strong>AI研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
-
-    // Profit Chain / Value Distribution (v7新增·维度9)
-    else if (t==='profit_chain') {
-      h += '<div class="card"><h2>💰 '+sec.title+'</h2>';
-      if (sec.content) h += '<div style="font-size:13px;line-height:1.8;margin-bottom:12px">'+sec.content+'</div>';
-      if (sec.chain_table && sec.chain_table.headers) {
-        var chg = '';
-        sec.chain_table.headers.forEach(function(){ chg += '<col/>'; });
-        h += '<table><colgroup>'+chg+'</colgroup><thead><tr>'; sec.chain_table.headers.forEach(function(th){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-        sec.chain_table.rows.forEach(function(r){
-          var isWinner = r.is_winner;
-          h += '<tr'+(isWinner?' style="background:rgba(34,197,94,.08);font-weight:600;color:var(--green-accent)"':'')+'>'; r.cells.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>';
+        content += '<table><tr>';
+        sec.table_headers.forEach(function(hh){ content += '<th>'+hh+'</th>'; });
+        content += '</tr>';
+        sec.table_rows.forEach(function(r){
+          content += '<tr>';
+          (r.cells||r).forEach(function(c){ content += '<td>'+c+'</td>'; });
+          content += '</tr>';
         });
-        h += '</tbody></table>';
+        content += '</table>';
       }
-      if (sec.winner_analysis) h += '<div class="hlg" style="margin-top:10px"><b>谁在赚最多的钱？</b><br>'+sec.winner_analysis+'</div>';
-      if (sec.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
+      if (sec.bull_content) content += '<br><br><b>看多:</b><br>'+sec.bull_content;
+      if (sec.bear_content) content += '<br><br><b>看空:</b><br>'+sec.bear_content;
+      if (sec.timeline) { sec.timeline.forEach(function(t){ content += '<br><br><b>'+t.date+':</b> '+t.label; }); }
+      if (sec.ai_judgment) content += '<br><br><b>AI研判:</b><br>'+sec.ai_judgment;
+      h2 += '<div style="font-size:13px;line-height:1.8">'+content+'</div></div>';
+    });
+    panel.innerHTML = h2;
+    return;
+  }
 
-    // Scenario Matrix (v7新增·维度10)
-    else if (t==='scenario') {
-      h += '<div class="card" style="background:linear-gradient(135deg,rgba(16,185,129,.03),rgba(5,150,105,.02));border:1.5px solid rgba(16,185,129,.15)"><h2>🎲 '+sec.title+'</h2>';
-      if (sec.scenario_table && sec.scenario_table.headers) {
-        var scg = '';
-        sec.scenario_table.headers.forEach(function(){ scg += '<col/>'; });
-        h += '<table><colgroup>'+scg+'</colgroup><thead><tr>'; sec.scenario_table.headers.forEach(function(th){ h += '<th>'+th+'</th>'; }); h += '</tr></thead><tbody>';
-        sec.scenario_table.rows.forEach(function(r){
-          var cls = r.probability==='25%'?'r-wa':r.probability==='50%'?'':'';
-          h += '<tr'+(cls?' class="'+cls+'"':'')+'>'; r.cells.forEach(function(c){ h += '<td>'+c+'</td>'; }); h += '</tr>';
-        });
-        h += '</tbody></table>';
-      }
-      if (sec.expected_value) h += '<div style="margin-top:12px;padding:12px;background:#0c1018;border:1px solid var(--line);border-radius:8px;color:var(--tx-body)"><b style="color:var(--gold)">概率加权期望收益：</b>'+sec.expected_value+'</div>';
-      if (sec.underpriced) h += '<div class="ai" style="margin-top:10px"><strong>被低估的情景</strong><br>'+sec.underpriced+'</div>';
-      if (sec.ai_judgment) h += '<div style="margin-top:10px;padding:12px;background:var(--card-in);border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.7;color:var(--tx-body)"><strong style="color:var(--blue)">AI综合研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
-
-    // Counterfactual Analysis (v7新增·维度11)
-    else if (t==='counterfactual') {
-      h += '<div class="card" style="background:linear-gradient(135deg,rgba(239,68,68,.04),rgba(220,38,38,.02));border:1.5px solid rgba(239,68,68,.18);border-left:4px solid var(--red)"><h2>🔄 '+sec.title+'</h2><div style="font-size:13px;line-height:1.9;color:var(--tx-body)">'+sec.content+'</div>';
-      if (sec.counterfactuals && sec.counterfactuals.length) {
-        h += '<div style="margin-top:14px">';
-        sec.counterfactuals.forEach(function(cf){
-          h += '<div style="padding:10px 14px;margin-bottom:8px;background:#0c1018;border:1px solid var(--line);border-radius:8px;border-left:3px solid var(--amber)">';
-          h += '<b style="color:var(--red)">如果 '+(cf.if_what||'...')+' 没有发生 → </b><br>';
-          h += '<span style="color:var(--tx2)">'+(cf.then_what||'...')+'</span>';
-          if (cf.insight) h += '<br><br><b>洞察：</b>'+cf.insight;
-          h += '</div>';
-        });
-        h += '</div>';
-      }
-      if (sec.pricing_assumption) h += '<div class="pn pn-a" style="margin-top:12px"><strong>当前价格隐含的核心假设</strong><br>'+sec.pricing_assumption+'</div>';
-      if (sec.ai_judgment) h += '<div class="rref" style="margin-top:10px"><strong>AI研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
-
-    // Default text card
-    else {
-      h += '<div class="card"><h2>'+sec.title+'</h2><div style="font-size:13px;line-height:1.9">'+sec.content+'</div>';
-      if (sec.ai_judgment) h += '<div class="ai" style="margin-top:10px"><strong>AI研判</strong><br>'+sec.ai_judgment+'</div>';
-      h += '</div>';
-    }
-  });
-
-  panel.innerHTML = h;
+  panel.innerHTML = '<div class="empty"><h3>暂无自由分析</h3><p>数据格式不支持</p></div>';
 }
 </script>
 <script>

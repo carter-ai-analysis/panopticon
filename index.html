@@ -423,6 +423,12 @@ body {
 .card {
   background: var(--card);
   border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  padding: 24px 26px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  position: relative;
+}
   padding: 24px 26px;
   margin-bottom: 16px;
   border: 1px solid var(--line);
@@ -1607,7 +1613,7 @@ a:focus-visible, button:focus-visible, .mt-item:focus-visible,
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:10",
+  "generated_at": "2026-07-11 01:18",
   "scores": {
     "macro": {
       "score": 50,
@@ -2383,7 +2389,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:10",
+  "generated_at": "2026-07-11 01:18",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -3263,7 +3269,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-11 01:10",
+  "date": "2026-07-11 01:18",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -3612,7 +3618,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-11 01:10"
+  "generated_at": "2026-07-11 01:18"
 };
 </script>
 <script>
@@ -4415,7 +4421,7 @@ function switchTab(type) {
     var wrap = document.querySelector('.wrap');
     if (!wrap) return;
 
-    // 1. 进度条（已存在则不重复添加）
+    // 1. 进度条（只添加一次）
     if (!document.querySelector('.prog')) {
       var prog = document.createElement('div');
       prog.className = 'prog';
@@ -4435,27 +4441,25 @@ function switchTab(type) {
       var title = h2.textContent.trim().substring(0, 12);
       snavItems.push('<a href="#' + id + '" data-sec="' + id + '">' + title + '</a>');
 
-      // 折叠按钮
-      var chev = document.createElement('span');
-      chev.className = 'chev';
-      chev.innerHTML = '▼';
-      chev.onclick = function(e) {
-        e.stopPropagation();
-        card.classList.toggle('collapsed');
-      };
-      card.appendChild(chev);
-
       // 将卡片内容包装到 .cbody 中（折叠需要）
       var children = Array.from(card.children);
       var cbody = document.createElement('div');
       cbody.className = 'cbody';
       children.forEach(function(child) {
-        if (!child.classList.contains('chev')) {
-          cbody.appendChild(child);
-        }
+        cbody.appendChild(child);
       });
       card.appendChild(cbody);
-      // 重新把 chev 放在 card 末尾（使其在 DOM 顺序中最后）
+
+      // 折叠按钮（直接操作 style.display，不依赖 CSS 类）
+      var chev = document.createElement('span');
+      chev.className = 'chev';
+      chev.textContent = '▼';
+      chev.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isCollapsed = cbody.style.display === 'none';
+        cbody.style.display = isCollapsed ? '' : 'none';
+        chev.textContent = isCollapsed ? '▼' : '▶';
+      });
       card.appendChild(chev);
     });
 
@@ -4466,12 +4470,10 @@ function switchTab(type) {
       var snav = document.createElement('div');
       snav.className = 'snav';
       snav.innerHTML = snavItems.join('');
-      // 插入到 topbar 之后、pc 之前
+      // 插入到 topbar 之后
       var topbar = document.querySelector('.topbar');
-      if (topbar && topbar.nextSibling) {
+      if (topbar && topbar.parentNode) {
         topbar.parentNode.insertBefore(snav, topbar.nextSibling);
-      } else if (wrap) {
-        wrap.insertBefore(snav, p);
       }
     }
 
@@ -4485,13 +4487,15 @@ function switchTab(type) {
       var prog = document.querySelector('.prog');
       if (prog) prog.style.width = Math.min(pct, 100) + '%';
 
+      // 如果是 click 导航触发的滚动，跳过 auto-highlight
+      if (window._panopticon_navigating) return;
+
       // 高亮当前可见的 section
       var activeId = '';
       var bestOffset = -Infinity;
       cards.forEach(function(card) {
         var rect = card.getBoundingClientRect();
-        if (rect.top <= 140 && rect.bottom >= 140) {
-          // 取最靠近顶部的一个
+        if (rect.top <= 140 && rect.bottom >= 60) {
           var offset = rect.top;
           if (offset > bestOffset) {
             bestOffset = offset;
@@ -4508,17 +4512,29 @@ function switchTab(type) {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll(); // 初始运行
 
-    // 5. 平滑滚动到锚点
+    // 5. 点击导航：平滑滚动 + 高亮 + 防 scroll 覆盖
     document.querySelectorAll('.snav a').forEach(function(a) {
       a.addEventListener('click', function(e) {
         e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // 手动触发一次高亮
-          document.querySelectorAll('.snav a').forEach(function(l) { l.classList.remove('active'); });
-          this.classList.add('active');
-        }
+        var targetId = this.getAttribute('href');
+        var target = document.querySelector(targetId);
+        if (!target) return;
+
+        // 设置标志，防止 scroll 事件覆盖高亮
+        window._panopticon_navigating = true;
+        // 手动高亮当前项
+        document.querySelectorAll('.snav a').forEach(function(l) { l.classList.remove('active'); });
+        this.classList.add('active');
+
+        // 平滑滚动
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // 滚动结束后清除标志（1.5秒后）
+        clearTimeout(window._panopticon_navigate_timer);
+        window._panopticon_navigate_timer = setTimeout(function() {
+          window._panopticon_navigating = false;
+          onScroll(); // 最后再运行一次高亮
+        }, 1500);
       });
     });
   })();

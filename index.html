@@ -1277,11 +1277,126 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
 .dd-free-content .tag-r, .fa-free-content .tag-r { background: rgba(239,68,68,.12); color: var(--red); }
 .dd-free-content .tag-g, .fa-free-content .tag-g { background: rgba(34,197,94,.12); color: var(--green); }
 .dd-free-content .tag-y, .fa-free-content .tag-y { background: rgba(245,158,11,.12); color: var(--amber); }
+.dd-free-content .tag-b, .fa-free-content .tag-b { background: rgba(41,128,185,.12); color: var(--blue); }
+/* 独立分析报告常用组件 */
+.dd-free-content .card, .fa-free-content .card {
+  background: rgba(255,255,255,.03);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border-left: 3px solid var(--red);
+}
+.dd-free-content .card.green, .fa-free-content .card.green { border-left-color: var(--green); }
+.dd-free-content .card.blue, .fa-free-content .card.blue { border-left-color: var(--blue); }
+.dd-free-content .card p, .fa-free-content .card p { margin: 4px 0; font-size: 0.88em; }
+.dd-free-content .hl, .fa-free-content .hl {
+  background: rgba(245,158,11,.15);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--amber);
+}
+.dd-free-content .hl-r, .fa-free-content .hl-r {
+  background: rgba(239,68,68,.12);
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: var(--red);
+}
+.dd-free-content .verdict, .fa-free-content .verdict {
+  background: linear-gradient(135deg, rgba(20,20,40,.95), rgba(30,30,55,.95));
+  border: 1px solid rgba(212,168,83,.2);
+  border-radius: 6px;
+  padding: 18px;
+  margin: 16px 0;
+}
+.dd-free-content .verdict h3, .fa-free-content .verdict h3 { color: #ffd700; margin-top: 0; }
+.dd-free-content .verdict p, .fa-free-content .verdict p { color: #ddd; }
+.dd-free-content .verdict li, .fa-free-content .verdict li { color: #ccc; margin: 4px 0; font-size: 0.88em; }
+.dd-free-content .timeline, .fa-free-content .timeline {
+  position: relative;
+  padding-left: 24px;
+  margin: 16px 0;
+}
+.dd-free-content .timeline::before, .fa-free-content .timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--red);
+}
+.dd-free-content .tl-item, .fa-free-content .tl-item { position: relative; margin-bottom: 14px; }
+.dd-free-content .tl-item::before, .fa-free-content .tl-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--red);
+}
+.dd-free-content .tl-item.g::before, .fa-free-content .tl-item.g::before { background: var(--green); }
+.dd-free-content .tl-item.b::before, .fa-free-content .tl-item.b::before { background: var(--blue); }
+.dd-free-content .tl-date, .fa-free-content .tl-date {
+  font-size: 0.75em;
+  color: var(--tx3);
+  font-weight: 600;
+}
+.dd-free-content .tl-text, .fa-free-content .tl-text { font-size: 0.85em; }
+.dd-free-content .dec, .fa-free-content .dec {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+.dd-free-content .dec-node, .fa-free-content .dec-node {
+  flex: 1;
+  min-width: 140px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.8em;
+  text-align: center;
+}
+.dd-free-content .dec-node strong, .fa-free-content .dec-node strong {
+  display: block;
+  color: var(--red);
+  font-size: 0.95em;
+}
+.dd-free-content .num, .fa-free-content .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+/* Hero header (standalone report) */
+.dd-free-content .hero, .fa-free-content .hero {
+  text-align: center;
+  padding: 20px 0 14px;
+  border-bottom: 2px solid var(--red);
+  margin-bottom: 18px;
+}
+.dd-free-content .hero .sub, .fa-free-content .hero .sub {
+  font-size: 0.85em;
+  color: var(--tx3);
+  margin-top: 6px;
+}
+.dd-free-content .flag, .fa-free-content .flag {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.75em;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin: 6px 4px 0;
+}
 @media (max-width: 768px) {
   .dd-free-content, .fa-free-content { font-size: 13px; }
   .dd-free-content table, .fa-free-content table { font-size: 0.78em; }
   .dd-free-content th, .fa-free-content th { padding: 5px 6px; }
   .dd-free-content td, .fa-free-content td { padding: 4px 6px; }
+  .dd-free-content .dec, .fa-free-content .dec { flex-direction: column; }
 }
 </style>
 </head>
@@ -1290,7 +1405,7 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-10 17:14",
+  "generated_at": "2026-07-10 17:19",
   "scores": {
     "macro": {
       "score": 50,
@@ -2040,7 +2155,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-10 17:14",
+  "generated_at": "2026-07-10 17:19",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -2478,116 +2593,440 @@ var researchData = {
 var deepDiveData = {
   "type": "deep_dive",
   "target": "PORTFOLIO",
-  "name": "全持仓双任务",
+  "name": "双任务研判7.10",
   "emoji": "⚔",
-  "title": "PANOPTICON 双任务深度研判 · 7/9收盘：科创50暴涨8.41%·海力士ADR明日决战·120万+30万HKD全配置方案",
-  "date": "2026-07-10 17:14",
-  "subtitle": "数据源：WebSearch实时行情+产业新闻+资金流向·时效：7/9收盘·按新规则标注数据时效",
-  "generated_at": "2026-07-10 17:14",
+  "title": "PANOPTICON 双任务深度研判 · 7/10收盘：半导体血洗日·兆易-7.76%·国瓷-8.29%·海力士ADR挂牌首日",
+  "date": "2026-07-10 16:50",
+  "subtitle": "数据源: WebSearch(实时行情+产业新闻+财报)+TDX MCP(300285/603986/002371) · 数据时效: 7/10收盘",
+  "generated_at": "2026-07-10 16:50",
   "rating": 5,
   "max_rating": 5,
-  "sections": [
-    {
-      "id": "s1",
-      "title": "☁ 今日宏观背景：科创50暴8.41%·半导体全线爆发·成交2.93万亿",
-      "type": "highlight_green",
-      "content": "<b>7月9日是今年A股最强的一天。</b>科创50暴8.41%创史上最大单日涨幅之一，上证指数涨1.65%站4036点。全市场成交2.93万亿（放量3500亿）。<br><br><b>核心催化：</b><br>• <b>长鑫科技IPO：</b>7月9日凌晨公布招股意向书，7月16日申购日确认——2026年A股最大IPO，产业链覆盖30家上市公司，总市值超3万亿<br>• <b>央行政策：</b>二季度货币政策例会明确——信贷资源优先向AI算力/硬科技倾斜<br>• <b>资金集中进入：</b>电子板块净流入312亿，钱从光伏锂电/稀土抽离转向芯片龙头<br>• <b>兆易创新涨停!</b>37亿封板，长电科技涨停，通富微电涨停，中芯国际涨超10%市值超贵州茅台"
-    },
-    {
-      "id": "s2",
-      "title": "任务一：07709海力士ADR挂牌后操作策略 —— 44万HKD已建仓·30万待补·目栉250HKD",
-      "type": "text",
-      "content": "<b>一、ADR基本面硬数据（7/9最新）：</b><br>• 发行价166美元/ADS，1 ADS=0.1股韩股，10 ADS=1股<br>• 总规模：280亿美元，超额认购数倍，承销商提前关闭簿记<br>• 基石投资者锁定70亿美元，美国长线基金起订2亿美元<br>• 纳斯达克挂牌时间：7月10日（明天），代码SKHY<br><br><b>二、定价逻辑分析：</b><br>ADR价格对应韩股价格：166美元/ADS × 10 = 1660美元/股。当前韩股级别（基于7月初242.5万韩元）→ 约计1750美元。即ADR定价相对当前正股约有5%折价。这是典型的IPO折价，但鐈记压价效应今天结束。<br><br><b>三、短期(1-2周)价格区间研判：</b><br><b>│ 情景 │ 概率 │ 07709价格区间 │ 关键假设</b><br>│ ADR首日溢价10-20% │ 40% │ 100-125 │ 超额认购情绪传导正股<br>│ ADR平稳挂牌溢价5-10% │ 35% │ 90-100 │ “买预期卖事实”压制溢价<br>│ ADR破发/市场风险回避 │ 25% │ 65-80 │ 全球半导体持续回调<br><br><b>四、上行250 vs 下探60-70的概率评估：</b><br>• <b>上行至250HKD：</b>概率约35-40%。需要满足：ADR首波溢价传导正股 + HBM3E订单持续增长 + Q3财报超预期 + 全球半导体情绪回暖。路径：挂牌后半年内分两波上涨（如果Q2财报好——4-5个月内到250）<br>• <b>下探至60-70HKD：</b>概率约25%。触发条件：ADR破发后“利好出尽” + 全球存储周期见顶信号 + 英伟达Rubin减单。如果60真到了，说明市场否决了存储周期，需重新评估。<br><br><b>五、30万HKD补仓策略：</b><br>• <b>第一步(7月10日·明天)：</b>ADR挂牌后，如果07709回调到100-110区间，补仓<b>10万HKD</b>（異纤26%-33%比例）<br>• <b>第二步(1周内)：</b>如果价格继续上行到120-130，补仓<b>10万HKD</b>。如果价格回调到80-90，补仓<b>10万HKD</b><br>• <b>第三步(2周内)：</b>剩余10万HKD观望。如果价格跌到70以下→补足剩余。如果已经160+→不追。<br><br><b>☁ AI研判：</b>30万HKD不要一次性打完。ADR首日波动剧烈，分步建仓可以在不同价位分散风险。目栉分两波：短期省170-190(挂牌后反弹1-2周)，中期省250(需要Q2财报配合)。硬止损70 HKD不变。"
-    },
-    {
-      "id": "s3",
-      "title": "任务二：A股4持仓+120万配置 —— 科创50暴8.41%之后，半导体是反转还是反弹？",
-      "type": "text",
-      "content": "<b>一、当前4持仓状态（按你确认的实际持仓）：</b><br>│ 标的 │ 持股/股·成本 │ 金额/万 │ 7/9收盘“涨停” │ 浮盈/万<br>│ 5146兆易创新 │ 300·710.80 │ 21.3 │ “涨停” │ “+?%”<br>│ 5146国瓷材料 │ 2000·92.90 │ 18.6 │ 跟随反弹 │ “-?”<br>│ 5146新易盛 │ 100·526.30 │ 5.3 │ 跟随反弹 │ “-?”<br>│ 5146深科技 │ 1000·56.20 │ 5.6 │ 跟随反弹 │ “-?”<br>“合计：”级50万(原始投入) + 账户10万 + 60万到账 = 120万可配置<br><br><b>二、关键判断：反转还是反弹？</b><br>“综合判断：更像反转而非简单反弹”。理由：<br>• “量能配合：”成交放量到2.93万亿(放量3500亿)——这不是抄底资金，是机构资金的集中进场<br>• “政策配合：”央行明确“信贷优先向AI算力/硬科技倾斜” + 长鑫IPO催化——政策+产业双重驱动<br>• “板块分化：”科创50暴8.41%同时能源金属继续跌——资金从“旧经济”向“AI半导体”的转移是结构性的，不是短期的<br>• “中报行情配合：”兆易创新/长电科技等6家已披露中报预增——业绩支撑股价<br>• “资金流向配合：”电子板块512亿净流入——机构在用真金白银投票(近日数据，非Q1陈旧数据)<br><br><b>三、120万建仓节奏与标的优先级：</b><br>“│ 优先级 │ 标的 │ 理由 │ 建议份额”<br>│ ★★★ │ 兆易创新603986 │ 存储龙头+今日涨停= “”市场认可“”·长鑫IPO直接催化 │ 补仓30-40万<br>│ ★★★ │ 国瓷材料300285 │ 超跌反弹+涨价传导迟后= “”被低估“” │ 补仓20-30万<br>│ ★★ │ 深科技000021 │ 中报预增76-88%+长鑫封测= “”硬数据“” │ 加仓5-10万<br>│ ★★ │ 新易盛300502 │146光模块#2·高位·小仓位可控 │ 不补不进<br>│ ★ │ 北方华创002371 │ 780以下第一笔·设备龙头 │ 3-5万(等回调)<br>│ ★ │ 雅克科技002409 │146跟随反弹·HBM前驱体·等180以下 │ 3-5万(等回调)<br>“合计建议配置：”61-90万/120万 = 51-75%仓位<br><br><b>“四、具体建仓时间表：”</b><br>• “昌天7月10日：”先用10-15万打底仓。优先国瓷(超跌最多·最需要仓位)。如果兆易回调到涨停价附近也进10万。<br>• “本周7月13-15日：”等长鑫IPO申购日(7/16)前的“”预期发酵“”波段，逐步加仓兆易/深66科技<br>• “本周7月16日：”长鑫申购日——观察市场反应。如果“”利好出尽“”回调，正是加仓时机。如果持续上涨，继续加仓。<br>• “下周7月20-25日：”评估仓位，保†—-30万备用。"
-    },
-    {
-      "id": "s4",
-      "title": "⚔ 统一执行书：明天7/10 —— 全球AI半导体“双重催化日”",
-      "type": "op_plan",
-      "days": [
-        {
-          "day": "明早7/10 AM",
-          "detail": "“查看SK海力士ADR(SKHY)首日开盘价”。如果首日溢价10%+→正股必跟涨→ 07709可能涨40-50%在前期。等价格稳定后再衔仓，不要在前15分钟追涨。"
-        },
-        {
-          "day": "明早7/10 全天",
-          "detail": "“07709操作：”如果在100-110区间→补10万HKD。如果暴涨到130+→剈减仓“”1000-1500“”股锁定部分利润，等回调再补。“A股操作：”国瓷优先补仓（跌到76-80进10-15万）。兆易如果没有回调也进5万“”踩实“”。"
-        },
-        {
-          "day": "本周 7/13-15",
-          "detail": "“长鑫IPO申购日(7/16)前的预期发酵期”。如果价格回调，加仓兆易+深科技。如果价格持续上涨，提高止损位保护已有利润。"
-        },
-        {
-          "day": "7/16 长鑫申购日",
-          "detail": "“观察市场反应”。如果“”利好出尽“”回调，正是加仓时机。如果持续上涨，继续配置。"
-        },
-        {
-          "day": "持续监控",
-          "detail": "“硬止损：”07709: 70HKD / 国瓷: 68元 / 兆易: 550元 / 深科技: 48元 / 新易盛: 480元。“保†20——30——万RMB备用：”不打光。“目标收益80-100%”对应一年内持仓市值翻倍。"
-        }
-      ]
-    },
-    {
-      "id": "s5",
-      "title": "⚡ 风险矩阵与概率加权",
-      "type": "table",
-      "headers": [
-        "风险",
-        "概率",
-        "影响程度",
-        "对冲/缓解",
-        "优先级"
-      ],
-      "rows": [
-        [
-          "ADR破发/利好出尽",
-          "25%",
-          "高（-20%）",
-          "07709止损70·A股受当10%回调",
-          "“★★★”"
-        ],
-        [
-          "A股半导体反弹后再回调",
-          "30%",
-          "中（-10%）",
-          "分批建仓而非一次性打满·保201-30万备用",
-          "“★★”"
-        ],
-        [
-          "英伟达Rubin减单实锤",
-          "20%",
-          "中（-15%）",
-          "HBM3E订单增加弥补HBM4减少·海力士仍是唯一供应商",
-          "“★★★”"
-        ],
-        [
-          "中报不及预期(国瓷·兆易)",
-          "15%",
-          "中低（-8%）",
-          "兆易存储价格上行已确认·国瓷涨价传导迟后也已计入",
-          "“★★”"
-        ],
-        [
-          "全球经济衰退+A股系统性风险",
-          "10%",
-          "高（-30%）",
-          "这是极端情景·但不是不可能。到时全线止损",
-          "“★★★”"
-        ]
-      ]
-    },
-    {
-      "id": "s6",
-      "title": "📌 AI最终裁决",
-      "type": "verdict",
-      "content": "<b>“核心判断：明天7/10是全球AI半导体“”双重催化日“”——海力士ADR挂牌 + A股科创50暴8.41%反转。现在不是恐慌的时候，是按计划执行的时候。”</b><br><br><b>“最重要的”</b>判断：<br>1、“”A股半导体更像反转而非反弹“”——量能2.93万亿+央行政策+长鑫IPO催化+中报预增= 201”四重驱动“”。Q1陈旧资金流数据不用。<br>2、“”海力士ADR 280亿超额认购= “”“”全球顶级机构用真金白银确认存储AI价倬“”“”“”。笼记卖压今天结束，明天挂牌= “”“”新的开始“”“”。<br>3、“”120万分批建仓= “”“”不要一次性打光“”“”。明天先进10-15万打底仓，本周内配到约50万，剩余45——60万在长鑫IPO申购日前后进场。保†20-30万备用。<br>4、“”目标80-100%是1年目标= “”“”不是一个月“”“”。持仓、分批、止损。三个动作做好了，目标就可达。<br><br><b>“”我最有信心的判断：“”</b>明天双重催化后，1-2周内A股半导体会有持续性表现。07709在ADR挂牌后最晚1个月内回到100以上。<br><br><b>“”我最不确定的判断：“”</b>短期价格路径。ADR首日可能“”利好出尽“”短暂回调，也可能“”溢价传导“”加速上涨。这取决于承销商对冲头寸和首日流动性。但无论哪种路径，中长期逻辑不变。"
-    }
-  ]
+  "content": `<h2 id="t1">一、A股AI半导体板块操作策略</h2>
+
+<div class="card">
+<p><strong>⚡ 今日关键背景</strong>：7/10 A股放量大跌——沪指<span class="down">-1.0%</span>、深成指<span class="down">-2.29%</span>、创业板指<span class="down">-4.37%</span>。成交3.39万亿（放量4748亿）。主力资金净流出398亿。<strong>半导体全线暴跌</strong>：兆易创新<span class="down">-7.76%</span>、国瓷材料<span class="down">-8.29%</span>、北方华创<span class="down">-8.81%</span>。但大盘仍有3900+个股收红——<strong>半导体板块出现明显的获利了结+资金轮动</strong>。</p>
+</div>
+
+<h3 id="t1-1">1.1 市场环境：半导体"末日审判"日</h3>
+
+<table>
+<tr><th>指标</th><th>7/10数据</th><th>信号</th></tr>
+<tr><td>沪指</td><td class="num">~4027 <span class="down">-1.0%</span></td><td><span class="tag tag-y">均线支撑位</span></td></tr>
+<tr><td>创业板指</td><td class="num"><span class="down">-4.37%</span></td><td><span class="tag tag-r">领跌</span></td></tr>
+<tr><td>科创50</td><td class="num"><span class="down">-2%</span></td><td><span class="tag tag-y">从+8.41%高位回调</span></td></tr>
+<tr><td>两市成交</td><td class="num">3.39万亿</td><td><span class="tag tag-r">放量4748亿·恐慌出逃</span></td></tr>
+<tr><td>主力净流出</td><td class="num"><span class="down">-398亿</span></td><td><span class="tag tag-r">大幅流出</span></td></tr>
+<tr><td>涨跌比</td><td class="num">~3900涨/1000跌</td><td><span class="tag tag-g">个股普涨·板块分化</span></td></tr>
+<tr><td>半导体主力</td><td class="num"><span class="down">-94.99亿→净流出</span></td><td><span class="tag tag-r">昨天还在大幅流入</span></td></tr>
+<tr><td>资金轮动</td><td class="num">航天装备+军工</td><td><span class="tag tag-b">半导体→军工切换</span></td></tr>
+</table>
+
+<div class="card blue">
+<p><strong>📊 AI研判</strong>：这不是系统性崩盘——3900只个股收红说明市场整体并未恐慌。<strong>半导体板块的暴跌是获利了结+资金轮动，而非基本面恶化。</strong>昨天（7/9）科创50暴涨8.41%后，今天回调2%+，属于暴涨后的正常获利兑现。关键问题是：这次回调会走多远？</p>
+</div>
+
+<h3 id="t1-2">1.2 细分赛道全景对比</h3>
+
+<table>
+<tr><th>赛道</th><th>代表标的</th><th>7/10表现</th><th>PE(TTM)</th><th>景气度</th><th>资金信号</th><th>当前位置</th></tr>
+<tr>
+  <td><strong>存储芯片</strong></td>
+  <td>兆易创新</td>
+  <td class="down">-7.76%</td>
+  <td class="num">~317x</td>
+  <td><span class="tag tag-g">H1净利+1099%</span></td>
+  <td><span class="tag tag-r">净流出85亿</span></td>
+  <td>高位回调</td>
+</tr>
+<tr>
+  <td><strong>MLCC/材料</strong></td>
+  <td>国瓷材料</td>
+  <td class="down">-8.29%</td>
+  <td class="num">120.7x</td>
+  <td><span class="tag tag-y">Q2涨价5-15%</span></td>
+  <td><span class="tag tag-r">板块同跌</span></td>
+  <td>中低位</td>
+</tr>
+<tr>
+  <td><strong>半导体设备</strong></td>
+  <td>北方华创</td>
+  <td class="down">-8.81%</td>
+  <td class="num">92.5x</td>
+  <td><span class="tag tag-g">国产替代核心</span></td>
+  <td><span class="tag tag-r">净流出3.4亿</span></td>
+  <td>高位·接近前高</td>
+</tr>
+<tr>
+  <td><strong>CPO光模块</strong></td>
+  <td>中际旭创</td>
+  <td><span class="down">-19%</span>(6/23-7/3)</td>
+  <td class="num">极高</td>
+  <td><span class="tag tag-y">1.6T放量·技术替代风险</span></td>
+  <td><span class="tag tag-r">55亿撤离</span></td>
+  <td>中期调整</td>
+</tr>
+<tr>
+  <td><strong>PCB</strong></td>
+  <td>沪电/深南</td>
+  <td>板块同跌</td>
+  <td class="num">中高</td>
+  <td><span class="tag tag-y">算力需求支撑</span></td>
+  <td><span class="tag tag-r">主力撤离</span></td>
+  <td>中期调整</td>
+</tr>
+</table>
+
+<div class="card">
+<p><strong>🔑 赛道相对排序</strong>（从优到劣）：</p>
+<p>① <strong>存储芯片</strong> — 业绩最强（H1+1099%），但PE泡沫消化需要时间</p>
+<p>② <strong>半导体设备</strong> — 确定性最高（国产替代），但当前位置接近前高，回调即机会</p>
+<p>③ <strong>MLCC</strong> — 最被低估，涨价传导尚未充分反映到股价</p>
+<p>④ <strong>CPO</strong> — 估值极端+技术替代风险+筹码拥挤</p>
+<p>⑤ <strong>PCB</strong> — 随算力大势，但弹性不如光模块直接</p>
+</div>
+
+<h3 id="t1-3">1.3 关键事件深度解读</h3>
+
+<h4>🔴 兆易创新 H1业绩：暴增1099%的背后</h4>
+<table>
+<tr><th>指标</th><th>H1 2026</th><th>2025全年</th><th>变化</th></tr>
+<tr><td>营业收入</td><td class="num">115亿</td><td class="num">73.5亿(H1 42亿)</td><td class="num"><span class="up">+174%</span></td></tr>
+<tr><td>归母净利润</td><td class="num">69亿</td><td class="num">10.2亿</td><td class="num"><span class="up">+1099%</span></td></tr>
+<tr><td>Q2单季净利润</td><td class="num">54.4亿</td><td class="num">—</td><td class="num"><span class="up">QoQ +272%</span></td></tr>
+<tr><td>Q2单季营收</td><td class="num">73.1亿</td><td class="num">—</td><td class="num"><span class="up">QoQ +74.6%</span></td></tr>
+<tr><td>驱动因素</td><td colspan="3">DRAM/NOR量价齐升+MCU出货高增+AI车规需求</td></tr>
+</table>
+
+<div class="card blue">
+<p><strong>AI研判</strong>：Q2单季54.4亿净利润，年化≈218亿。以当前市值4295亿计算，动态PE≈<span class="hl">19.7x</span>（而非表面的317x TTM）。<strong>这才是真相</strong>——存储周期的利润爆发已经被业绩验证，但静态PE因历史低基数而被严重扭曲。<strong>612元对应的估值并不贵，关键问题是Q3能否维持这个利润水平。</strong></p>
+</div>
+
+<h4>🟢 长鑫科技 IPO：7/16申购·存储板块最强催化剂</h4>
+<p>7月9日，长鑫科技披露科创板IPO招股意向书：</p>
+<ul>
+<li>证券代码 688825，7月16日申购</li>
+<li>拟公开发行66.88亿股，<strong>募资295亿元</strong>——2026年A股最大IPO</li>
+<li>H1预计净利润同比+2244%~2544%</li>
+<li>产业链覆盖A股<strong>逾30家上市公司</strong>，总市值超3万亿</li>
+</ul>
+
+<div class="card green">
+<p><strong>对兆易创新的影响</strong>：长鑫IPO→资金涌入存储板块→兆易创新作为A股存储芯片"第二股"直接受益。<strong>但注意</strong>：7/10兆易暴跌7.76%可能已经反映了"利好兑现"——长鑫IPO消息发布后，短期资金利用利好出货。真正的催化可能在18-24日区间（长鑫上市后资金溢出效应）。</p>
+</div>
+
+<h4>🟡 半导体板块反弹持续性分析</h4>
+<p><strong>7/9→7/10走势验证了一个残酷的事实</strong>：7/9科创50暴涨8.41%后，次日半导体全线暴跌。这不是"强势反弹"而是<strong>"一日游+次日暴跌=典型的熊市反弹模式"</strong>。</p>
+
+<div class="card">
+<p><strong>📈 反弹持续性评分：3/10（弱）</strong></p>
+<p>依据：① 7/9暴涨后7/10暴跌→<strong>资金没有持续性</strong>；② 3.39万亿放量下跌→恐慌盘涌出；③ 主力净流出398亿（半导体净流出近百亿）→机构在卖而非买；④ 军工/航天替代半导体成新热点→<strong>资金轮动信号明确</strong>。</p>
+<p>但≠说半导体完蛋——<strong>存储业绩摆在那里，价格跌下来就是价值。</strong></p>
+</div>
+
+<h3 id="t1-4">1.4 趋势研判：半导体板块处于什么阶段？</h3>
+
+<div class="verdict">
+<h3>🎯 明确判断：半导体板块处于"暴涨后的结构性回调"阶段，非趋势性下跌</h3>
+<p style="font-size:0.9em;opacity:0.9;margin-top:10px">科创50从年内高点回调了多少我们不知道（没查），但7/9→7/10的两日走势说明：<strong>半导体已经从"单边上涨"进入"高位宽幅震荡"。</strong>这不是2015年的泡沫崩盘（有业绩支撑），但也不是2025年底的"闭眼买"（估值在历史高分位）。<strong>核心矛盾：业绩在加速（兆易Q2 +272%），但股价在跌。这是PE压缩→PB回归的过程。</strong></p>
+<ul>
+<li><strong>近期走势判断</strong>：<span class="tag tag-y">高位宽幅震荡（涨1天跌1天的模式将持续）</span></li>
+<li><strong>最佳策略</strong>：<span class="tag tag-g">逢大跌买入、不追涨</span></li>
+<li><strong>最大风险</strong>：<span class="tag tag-r">连续暴跌触发止损盘→负反馈循环</span></li>
+</ul>
+</div>
+
+<h3 id="t1-5">1.5 操作建议（A股 60万资金）</h3>
+
+<h4>① 国瓷材料300285：继续持有·择机补仓</h4>
+<table>
+<tr><th>当前</th><th>数据</th></tr>
+<tr><td>持仓</td><td class="num">3000股@87.7（成本26.3万）</td></tr>
+<tr><td>现价</td><td class="num">74.1 <span class="down">-8.29%</span></td></tr>
+<tr><td>浮亏</td><td class="num"><span class="down">-15.5%（约-4.1万）</span></td></tr>
+<tr><td>PE</td><td class="num">120.7x（静态）/ 动态更低</td></tr>
+<tr><td>硬止损</td><td class="num">68元</td></tr>
+</table>
+
+<div class="card green">
+<p><strong>操作建议：持有不动。不急于补仓。</strong></p>
+<p>理由：① 距硬止损68还有8.2%空间→还没到砍仓位；② 7/10板块同跌→不是个股问题；③ MLCC Q2涨价+5-15%尚未反映到国瓷毛利率→等Q2财报（8月）验证涨价传导；④ 今天-8.29%的跌幅说明卖压在加大→在下跌趋势中接飞刀风险大。</p>
+<p><strong>补仓时机</strong>：① 如果跌到<strong>68-70</strong>→补1000股（约7万），均价可降至82-83→但前提是MLCC涨价逻辑未变；② 如果Q2财报（8月）毛利率明显回升→可以在75-78区间补仓。</p>
+</div>
+
+<h4>② 兆易创新603986：核心仓位·按兵不动</h4>
+<table>
+<tr><th>当前</th><th>数据</th></tr>
+<tr><td>持仓</td><td class="num">500股@681.2（成本34.1万）</td></tr>
+<tr><td>现价</td><td class="num">612 <span class="down">-7.76%</span></td></tr>
+<tr><td>浮亏</td><td class="num"><span class="down">-10.2%（约-3.5万）</span></td></tr>
+<tr><td>动态PE(年化Q2)</td><td class="num">~19.7x（被TTM扭曲）</td></tr>
+<tr><td>H1净利润</td><td class="num"><span class="up">69亿 +1099%</span></td></tr>
+</table>
+
+<div class="card green">
+<p><strong>操作建议：持有不动。这是你持仓逻辑最硬的标的。</strong></p>
+<p>Q2单季54.4亿净利的年化估值仅~20x PE——对于一家全球NOR Flash #2、DRAM快速崛起的公司来说，这个估值极有吸引力。<strong>今天暴跌的原因不是业绩不行，而是获利了结。</strong></p>
+<p>如果继续跌到<strong>580-600</strong>→可以考虑补100-200股（约6-12万），进一步拉低均价。</p>
+</div>
+
+<h4>③ 剩余60万资金的分批入场方案</h4>
+
+<div class="card blue">
+<p><strong>核心原则：不追高、不接飞刀、分4-5批入场</strong></p>
+<table>
+<tr><th>批次</th><th>时机</th><th>金额</th><th>方向</th><th>触发条件</th></tr>
+<tr><td>第1批</td><td>立即</td><td class="num">—</td><td>暂不行动</td><td>暴跌次日不急于补仓</td></tr>
+<tr><td>第2批</td><td>7/14-18周</td><td class="num">10-15万</td><td>国瓷68-72 / 兆易580-600</td><td>如果继续跌到目标区间</td></tr>
+<tr><td>第3批</td><td>7/21-25周</td><td class="num">10-15万</td><td>北华750-780</td><td>长鑫上市后设备股可能回调</td></tr>
+<tr><td>第4批</td><td>7/28-31周</td><td class="num">10-15万</td><td>雅克170-180</td><td>等海力士ADR后续影响消化</td></tr>
+<tr><td>第5批</td><td>8月中报季</td><td class="num">10-15万</td><td>根据Q2财报调整</td><td>业绩超预期的加仓·暴雷的砍</td></tr>
+<tr><td>保留</td><td>—</td><td class="num">10-20万</td><td>现金储备</td><td>黑天鹅/极端机会</td></tr>
+</table>
+</div>
+
+<h4>④ CPO/PCB：暂时不接回</h4>
+<div class="card">
+<p><span class="tag tag-r">不建议现在接回</span> 理由：① 中际旭创6/23-7/3累计跌19%，筹码结构已经破坏；② 康宁玻璃桥技术替代风险未消除；③ CPO板块估值仍在历史高位。<strong>等中际旭创跌到1000以下再考虑小仓位试仓。</strong></p>
+</div>
+
+<h4>⑤ 半导体设备：等回调到780以下</h4>
+<div class="card green">
+<p><span class="tag tag-g">回调即机会</span> 北华801(-8.81%)，PE 92.5x。国产替代逻辑最硬，但PE不便宜。<strong>推荐780以下第一笔3-4万，750以下第二笔5-6万。</strong>如果等不到回调→优先用兆易创新（存储+DRAM）的仓位替代设备逻辑。</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- TASK 2: HYNNIX 07709 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2 id="t2">二、海力士07709操作策略</h2>
+
+<div class="card">
+<p><strong>当前持仓</strong>：4300股@118.8HKD（成本51.1万HKD）· 富途可用23万HKD · 目标满仓70万HKD · 目标价220HKD</p>
+</div>
+
+<h3 id="t2-1">2.1 ADR上市：7月10日·历史性时刻</h3>
+
+<table>
+<tr><th>关键参数</th><th>数据</th></tr>
+<tr><td>ADR代码</td><td class="num">SKHY（纳斯达克）</td></tr>
+<tr><td>定价</td><td class="num"><strong>149美元/ADS</strong></td></tr>
+<tr><td>转换</td><td class="num">1 ADS = 1/10 普通股</td></tr>
+<tr><td>对应韩股</td><td class="num">1490美元 ≈ 242.5万韩元（7/3基准）</td></tr>
+<tr><td>募资规模</td><td class="num">约280亿美元（下调自290亿）</td></tr>
+<tr><td>挂牌日</td><td class="num"><strong>7月10日（今天！）</strong></td></tr>
+<tr><td>历史地位</td><td class="num">可能刷新美股最大外企上市纪录</td></tr>
+<tr><td>基石投资者</td><td class="num">锁定70亿美元·长线基金2亿美元起订</td></tr>
+</table>
+
+<div class="card blue">
+<p><strong>📊 历史可比案例</strong>：台积电ADR（TSM）1997年上市后，因美股流动性溢价，ADR长期较台股正股溢价5-15%。日月光ADR（ASX）上市首月涨约8%。<strong>但注意</strong>：这些都是成熟ADR，而SK海力士是<strong>新发ADR</strong>（IPO性质），更接近新股上市而非存量ADR转板。</p>
+<p><strong>核心区别</strong>：新发ADR在簿记期间产生的"对冲卖压"（承销商做空正股对冲ADR风险）会在挂牌日后<strong>解除</strong>→正股可能出现"减压反弹"。</p>
+</div>
+
+<h4>ADR上市后的情景分析</h4>
+<table>
+<tr><th>情景</th><th>概率</th><th>正股反应</th><th>07709反应</th><th>操作</th></tr>
+<tr>
+  <td><span class="tag tag-g">🟢 乐观</span></td>
+  <td class="num">35%</td>
+  <td>ADR首日涨10-15%</td>
+  <td>2x杠杆涨20-30%</td>
+  <td>减仓1000-1500股锁定利润</td>
+</tr>
+<tr>
+  <td><span class="tag tag-y">🟡 基准</span></td>
+  <td class="num">45%</td>
+  <td>ADR窄幅震荡±5%</td>
+  <td>±10%内波动</td>
+  <td>持有观察·不加不减</td>
+</tr>
+<tr>
+  <td><span class="tag tag-r">🔴 悲观</span></td>
+  <td class="num">20%</td>
+  <td>利好出尽·ADR跌10%+</td>
+  <td>杠杆跌20%+</td>
+  <td>硬止损70HKD·触发即砍</td>
+</tr>
+</table>
+
+<h3 id="t2-2">2.2 估值与基本面：全球最便宜的AI存储股</h3>
+
+<table>
+<tr><th>对标</th><th>PE(TTM)</th><th>市值</th><th>HBM份额</th><th>特色</th></tr>
+<tr>
+  <td><strong>SK海力士</strong></td>
+  <td class="num"><span class="tag tag-g">6.2x</span>（远期）</td>
+  <td>~1400亿美元</td>
+  <td class="num">58%</td>
+  <td>HBM绝对龙头</td>
+</tr>
+<tr>
+  <td>美光 MU</td>
+  <td class="num">~15x</td>
+  <td>~1200亿</td>
+  <td class="num">~10%</td>
+  <td>美国本土溢价</td>
+</tr>
+<tr>
+  <td>三星电子</td>
+  <td class="num">~10x</td>
+  <td>~3500亿</td>
+  <td class="num">~30%</td>
+  <td>综合电子巨头</td>
+</tr>
+</table>
+
+<div class="card green">
+<p><strong>🏆 海力士的"韩国折价"</strong>：全球HBM市场58%份额，AI存储定价权最强，<strong>但PE仅6.2x——比美光便宜60%。</strong>如果ADR上市后能将估值拉到美光水平（~15x），SK海力士正股有<strong>140%+上行空间</strong>。汇丰预计ADR挂牌后存20%上行空间，瑞银目标价320万韩元。</p>
+<p><strong>HBM前景</strong>：2026年HBM占DRAM营收15%→预计2030年占58%。AI算力需求驱动HBM需求以年均50%+速度增长。</p>
+</div>
+
+<h3 id="t2-3">2.3 被压价现象：ADR簿记的"隐形卖压"已解除</h3>
+
+<div class="card">
+<p><strong>🔍 被压价的原因</strong>：① 承销商（大摩/高盛）在簿记期间做空正股以对冲ADR风险——<strong>这是标准操作，不是基本面恶化</strong>；② 募资规模从290亿→280亿美元（基准价调整），市场解读为"下调=利空"；③ 韩国监管对杠杆ETF的政策风险叠加。</p>
+<p><strong>为什么ADR挂牌后可能修复</strong>：① <span class="hl">簿记对冲卖压将在挂牌后24-48小时内解除</span>；② 美国长线基金（主权基金/退休基金）认购→买入正股套利；③ ADR挂牌带来美股投资者增量需求→正股获得新买盘。</p>
+<p><strong>量化预期</strong>：假设ADR首周建立5%溢价→韩股正股跟涨约3-5%→07709（2x杠杆）潜在涨幅6-10%。<strong>这不是翻倍的行情，但可能是"ARK解除"后的确定性反弹。</strong></p>
+</div>
+
+<h3 id="t2-4">2.4 操作建议（07709·77万HKD）</h3>
+
+<h4>70万满仓部署方案</h4>
+<table>
+<tr><th>阶段</th><th>时间</th><th>仓位</th><th>累计</th><th>条件</th></tr>
+<tr>
+  <td>当前持有</td>
+  <td>—</td>
+  <td class="num">51.1万HKD</td>
+  <td class="num">51.1万</td>
+  <td>4300股@118.8</td>
+</tr>
+<tr>
+  <td>加仓1</td>
+  <td>ADR 7/11-14观察</td>
+  <td class="num">8-12万HKD</td>
+  <td class="num">~63万</td>
+  <td>ADR首周表现稳定·07709回踩80-85</td>
+</tr>
+<tr>
+  <td>加仓2</td>
+  <td>7/21-25周</td>
+  <td class="num">7-10万HKD</td>
+  <td class="num">~70万</td>
+  <td>海力士Q2财报（预计7月下旬）超预期</td>
+</tr>
+<tr>
+  <td>止盈1</td>
+  <td>07709涨至150-160</td>
+  <td class="num">减仓40%</td>
+  <td class="num">—</td>
+  <td>成本118.8·目标150=+26%</td>
+</tr>
+<tr>
+  <td>止盈2</td>
+  <td>07709涨至200-220</td>
+  <td class="num">清仓</td>
+  <td class="num">—</td>
+  <td>成本118.8·目标220=+85%</td>
+</tr>
+</table>
+
+<div class="verdict">
+<h3>🎯 220HKD可行性评估</h3>
+<p style="font-size:1.05em">从118.8涨到220 = +85%。如果SK海力士ADR推动估值从6.2x→12x（仍比美光低20%），正股涨约95%→07709（2x杠杆）理论上可涨190%。<strong>220HKD在估值重估情景下完全可达成，但需要时间（6-12个月）而非数周。</strong></p>
+</div>
+
+<h4>止损与退出策略</h4>
+<div class="card">
+<table>
+<tr><th>止损类型</th><th>触发价</th><th>说明</th></tr>
+<tr><td>硬止损</td><td class="num"><span class="tag tag-r">70 HKD</span></td><td>收盘跌破70→全砍·不犹豫</td></tr>
+<tr><td>软止损</td><td class="num"><span class="tag tag-y">80 HKD</span></td><td>连续3日低于80→减仓50%</td></tr>
+<tr><td>时间止损</td><td class="num"><span class="tag tag-y">8月底</span></td><td>如果到8/31仍在100以下→重新评估逻辑</td></tr>
+<tr><td>跟踪止盈</td><td class="num"><span class="tag tag-g">最高价-15%</span></td><td>涨至150+后启用·保护利润</td></tr>
+</table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- OPERATION TIMELINE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2 id="t3">三、综合操作时间线/决策树</h2>
+
+<h3>📅 操作时间线</h3>
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-date">7/10-11 · 今天-明天</div>
+    <div class="tl-text"><strong>观察ADR首日表现</strong>·不操作·让子弹飞·如果07709暴跌→检查是否触发80或70止损</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">7/14-18 · 下周</div>
+    <div class="tl-text">A股半导体如果继续跌→<strong>国瓷68-72补仓</strong>(10-15万)·兆易580-600补仓(6-12万)·07709如果回踩80-85稳定→加仓8-12万HKD</div>
+  </div>
+  <div class="tl-item b">
+    <div class="tl-date">7/16 · 周三</div>
+    <div class="tl-text"><strong>长鑫科技688825申购日</strong>→关注存储板块资金流向·兆易创新可能再次因利好兑现而短暂回调</div>
+  </div>
+  <div class="tl-item g">
+    <div class="tl-date">7/21-25 · 大下周</div>
+    <div class="tl-text">北华如果跌破780→第一笔3-4万·雅克如果跌到170-180→5万·07709加仓第2笔7-10万HKD</div>
+  </div>
+  <div class="tl-item b">
+    <div class="tl-date">7月下旬 · 待定</div>
+    <div class="tl-text"><strong>SK海力士Q2财报</strong>→如果超预期→07709可能出现跳涨→提前加仓至70万满仓</div>
+  </div>
+  <div class="tl-item g">
+    <div class="tl-date">8月中旬 · 中报季</div>
+    <div class="tl-text"><strong>国瓷·兆易Q2正式财报</strong>→业绩验证→超预期加仓·暴雷砍仓·根据结果调整最后一批配置</div>
+  </div>
+</div>
+
+<h3>🌳 决策树</h3>
+<div class="dec">
+  <div class="dec-node">
+    <strong>7/10 ADR首日</strong>
+    <p style="color:var(--green);margin-top:4px">ADR涨10%+</p>
+    <p>→ 07709减仓1000-1500股</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--accent);margin-top:4px">ADR跌10%+</p>
+    <p>→ 检查止损·不恐慌</p>
+  </div>
+  <div class="dec-node">
+    <strong>A股·下周</strong>
+    <p style="color:var(--green);margin-top:4px">继续大跌</p>
+    <p>→ 国瓷68-72+兆易580-600分批补</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--blue);margin-top:4px">企稳反弹</p>
+    <p>→ 不动·等下一轮回调</p>
+  </div>
+  <div class="dec-node">
+    <strong>北华·雅克</strong>
+    <p style="color:var(--green);margin-top:4px">北华<780</p>
+    <p>→ 第一笔3-4万</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--blue);margin-top:4px">北华>850</p>
+    <p>→ 不追·用兆易替代</p>
+  </div>
+  <div class="dec-node">
+    <strong>07709满仓70万</strong>
+    <p style="color:var(--green);margin-top:4px">Q2财报前</p>
+    <p>→ 分批加到70万</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--accent);margin-top:4px">Q2暴雷</p>
+    <p>→ 硬止损70立即执行</p>
+  </div>
+</div>
+
+<hr style="margin:28px 0 16px;border-color:var(--border)">
+
+<div class="verdict" style="background:linear-gradient(135deg,#1a1a2e,#0d1b2a)">
+<h3 style="color:#ffd700">📌 AI最终裁决</h3>
+<p style="font-size:0.92em;margin:8px 0">今天（7/10）是2026年最暴力的一天——半导体板块被"血洗"，但个股普涨说明不是系统性风险。<strong>这不是该恐慌的日子，而是该制定抄底计划的日子。</strong></p>
+<p style="font-size:0.92em;margin:8px 0"><strong>A股核心策略</strong>：国瓷+兆易持有不动。60万资金分5批入场，不追高不接飞刀。半导体设备等回调到关键价位。</p>
+<p style="font-size:0.92em;margin:8px 0"><strong>07709核心策略</strong>：ADR今天挂牌→观察首周表现→80-85回踩是加仓良机→70HKD是铁底。220翻倍目标在估值重估情景下完全可达成（6.2x→12x），但需要6-12个月而非数周。</p>
+<p style="font-size:0.92em;margin:8px 0"><strong>最大的风险</strong>：如果A股半导体连续暴跌触发"止损踩踏"→国瓷跌破68+07709跌破70→双杀。概率约15%，但后果严重。应对：严守止损纪律。</p>
+<p style="font-size:0.82em;opacity:0.7;margin-top:14px">⚡ 以上为AI独立研判，基于2026年7月10日收盘数据。不构成投资建议。所有操作决策由你自行判断。</p>
+</div>`
 };
 
 </script>
@@ -2596,7 +3035,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-10 17:14",
+  "date": "2026-07-10 17:19",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -2945,7 +3384,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-10 17:14"
+  "generated_at": "2026-07-10 17:19"
 };
 </script>
 <script>
@@ -3368,6 +3807,12 @@ var HIST_REGISTRY = {
     }
   ],
   "deepdive": [
+    {
+      "date": "2026-07-10_双任务研判",
+      "label": "2026-07-10 双任务研判",
+      "archived": false,
+      "subdir": "deep_dive"
+    },
     {
       "date": "2026-07-09_全持仓双任务",
       "label": "2026-07-09 全持仓双任务",

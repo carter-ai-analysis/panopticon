@@ -1213,6 +1213,91 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
   .brand-sub { font-size: 9px; }
 }
 
+/* ── 手机横屏通用 — 宽度569-932px·横屏（桌面级体验）── */
+@media (min-width: 569px) and (max-width: 932px) and (orientation: landscape) {
+  body { font-size: 14px; }
+  .wrap { padding: 18px 24px 48px; }
+
+  /* Banner wider, not cramped */
+  .banner {
+    padding: 20px 20px 16px;
+    gap: 10px;
+    border-radius: 0 0 14px 14px;
+  }
+  .brand { font-size: 26px; letter-spacing: 4px; }
+  .brand-sub { font-size: 10px; }
+
+  /* Topbar: tabs side by side, not wrapped */
+  .topbar { gap: 12px; margin: 14px 0 12px; }
+  .tn { width: auto; gap: 4px; overflow-x: visible; }
+  .tn a { padding: 10px 16px; font-size: 13px; min-width: auto; }
+  .tb-right { width: auto; order: 0; }
+  .tb-time { font-size: 11.5px; }
+
+  /* Market tabs: 4 or 5 columns instead of 2 */
+  .mt { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .mt-item { padding: 10px 8px 9px; }
+  .mt-item .s { font-size: 28px; }
+  .mt-item .l { font-size: 10.5px; }
+
+  /* Dashboard grid: 3 columns */
+  .dg { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .dc { padding: 16px 12px; }
+  .dc .v { font-size: 26px; }
+  .dc .l { font-size: 11px; }
+
+  /* Cards: more breathing room */
+  .card { padding: 18px 20px; margin-bottom: 14px; overflow-x: auto; }
+  .card h2 { font-size: 15px; }
+
+  /* Tables: bigger fonts, more padding */
+  table { font-size: 13px; }
+  th { padding: 8px 10px; font-size: 11px; }
+  td { padding: 8px 10px; }
+
+  /* Score row: horizontal instead of stacked */
+  .sc-row { flex-direction: row; gap: 20px; text-align: left; }
+  .sc { width: 80px; height: 80px; }
+  .sc .n { font-size: 32px; }
+
+  /* Dual columns: side by side */
+  .dual { flex-direction: row; gap: 14px; }
+
+  /* Operation cards: row */
+  .op-big { flex-direction: row; gap: 12px; }
+
+  /* Progress bars */
+  .brw { flex-wrap: nowrap; }
+  .br-n { width: 100px; }
+  .br-d { max-width: 320px; }
+
+  /* Market rows */
+  .mr { font-size: 13px; }
+  .mr-n { width: 90px; }
+
+  /* Modules */
+  .mod-hd { padding: 14px 20px; font-size: 15px; }
+  .mod-bd { padding: 20px 20px; }
+  .sec-ttl { font-size: 14px; }
+
+  /* History dropdown */
+  .hdd { min-width: 260px; left: auto; right: 0; transform: none; }
+
+  /* Hero panels */
+  .card-dark { padding: 20px 24px; }
+  .card-dark h2 { font-size: 17px; }
+
+  /* Verdict / AI / Note panels */
+  .ver { padding: 18px 20px; font-size: 13px; }
+  .ver h3 { font-size: 15px; }
+  .ai { padding: 14px 18px; font-size: 13px; }
+
+  /* Free content sections */
+  .dd-free-content, .fa-free-content { font-size: 14px; }
+  .dd-free-content .dec, .fa-free-content .dec { flex-direction: row; }
+  .dd-free-content .dec-node, .fa-free-content .dec-node { min-width: 120px; }
+}
+
 /* ════════════════════════════════════════════════════════════════ */
 /* 自由格式内容区 — AI自主决定样式·不与portal卡片系统冲突 */
 /* ════════════════════════════════════════════════════════════════ */
@@ -1405,7 +1490,7 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-10 17:21",
+  "generated_at": "2026-07-10 23:02",
   "scores": {
     "macro": {
       "score": 50,
@@ -2155,7 +2240,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-10 17:21",
+  "generated_at": "2026-07-10 23:02",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -3035,7 +3120,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-10 17:21",
+  "date": "2026-07-10 23:02",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -3384,7 +3469,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-10 17:21"
+  "generated_at": "2026-07-10 23:02"
 };
 </script>
 <script>

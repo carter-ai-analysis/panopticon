@@ -132,10 +132,10 @@ var dailyData = {
         "av": "4,872"
       },
       {
-        "name": "Nasdaq 100",
+        "name": "QQQ (纳指100ETF)",
         "val": "35",
         "desc": "收跌-1.8%·跌破50MA·芯片股领跌",
-        "av": "19,852"
+        "av": "$491.50"
       },
       {
         "name": "QQQ PE-TTM",

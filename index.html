@@ -1613,7 +1613,7 @@ a:focus-visible, button:focus-visible, .mt-item:focus-visible,
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:18",
+  "generated_at": "2026-07-11 01:28",
   "scores": {
     "macro": {
       "score": 50,
@@ -2389,7 +2389,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:18",
+  "generated_at": "2026-07-11 01:28",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -3269,7 +3269,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-11 01:18",
+  "date": "2026-07-11 01:28",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -3618,7 +3618,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-11 01:18"
+  "generated_at": "2026-07-11 01:28"
 };
 </script>
 <script>
@@ -4428,12 +4428,12 @@ function switchTab(type) {
       document.body.appendChild(prog);
     }
 
-    // 2. 给每个 card 添加 id、折叠按钮、cbody包装
+    // 2. 给每个 card 添加 id、折叠按钮
     var cards = p.querySelectorAll('.card');
     var snavItems = [];
     cards.forEach(function(card, i) {
       var h2 = card.querySelector('h2');
-      if (!h2) return;
+      if (!h2 || card.querySelector('.chev')) return; // 已有折叠按钮则跳过
       var id = 'sec-' + type + '-' + i;
       card.id = id;
 
@@ -4441,43 +4441,49 @@ function switchTab(type) {
       var title = h2.textContent.trim().substring(0, 12);
       snavItems.push('<a href="#' + id + '" data-sec="' + id + '">' + title + '</a>');
 
-      // 将卡片内容包装到 .cbody 中（折叠需要）
-      var children = Array.from(card.children);
-      var cbody = document.createElement('div');
-      cbody.className = 'cbody';
-      children.forEach(function(child) {
-        cbody.appendChild(child);
-      });
-      card.appendChild(cbody);
-
-      // 折叠按钮（直接操作 style.display，不依赖 CSS 类）
+      // 折叠按钮：直接遍历 card.children 隐藏
       var chev = document.createElement('span');
       chev.className = 'chev';
       chev.textContent = '▼';
       chev.addEventListener('click', function(e) {
         e.stopPropagation();
-        var isCollapsed = cbody.style.display === 'none';
-        cbody.style.display = isCollapsed ? '' : 'none';
-        chev.textContent = isCollapsed ? '▼' : '▶';
+        var isCollapsed = chev.textContent === '▼';
+        chev.textContent = isCollapsed ? '▶' : '▼';
+        var kids = card.children;
+        for (var j = 0; j < kids.length; j++) {
+          if (kids[j] !== chev) {
+            kids[j].style.display = isCollapsed ? 'none' : '';
+          }
+        }
       });
       card.appendChild(chev);
     });
 
-    // 3. 生成 Section 导航（sticky 在 topbar 下方）
-    var existingSnav = document.querySelector('.snav');
-    if (existingSnav) existingSnav.remove();
+    // 3. 只更新新增的 snav 项到导航栏
     if (snavItems.length > 0) {
-      var snav = document.createElement('div');
-      snav.className = 'snav';
-      snav.innerHTML = snavItems.join('');
-      // 插入到 topbar 之后
-      var topbar = document.querySelector('.topbar');
-      if (topbar && topbar.parentNode) {
-        topbar.parentNode.insertBefore(snav, topbar.nextSibling);
+      var snav = document.querySelector('.snav');
+      if (snav) {
+        // 追加新项（去重）
+        snavItems.forEach(function(item){
+          var href = item.match(/href="([^"]+)"/)[1];
+          if (!snav.querySelector('[data-sec="' + href + '"]')) {
+            var tmp = document.createElement('span');
+            tmp.innerHTML = item;
+            snav.appendChild(tmp.firstChild);
+          }
+        });
+      } else {
+        snav = document.createElement('div');
+        snav.className = 'snav';
+        snav.innerHTML = snavItems.join('');
+        var topbar = document.querySelector('.topbar');
+        if (topbar && topbar.parentNode) {
+          topbar.parentNode.insertBefore(snav, topbar.nextSibling);
+        }
       }
     }
 
-    // 4. 滚动进度条 + 高亮当前 section
+    // 4. 滚动：进度条 + 高亮（距离 120px 最近的 section）
     var lastScrollHandler = window._panopticon_scroll_handler;
     if (lastScrollHandler) window.removeEventListener('scroll', lastScrollHandler);
     function onScroll() {
@@ -4487,20 +4493,16 @@ function switchTab(type) {
       var prog = document.querySelector('.prog');
       if (prog) prog.style.width = Math.min(pct, 100) + '%';
 
-      // 如果是 click 导航触发的滚动，跳过 auto-highlight
-      if (window._panopticon_navigating) return;
-
-      // 高亮当前可见的 section
+      // 找距离视口顶部 120px 最近的 section
       var activeId = '';
-      var bestOffset = -Infinity;
+      var bestDist = Infinity;
       cards.forEach(function(card) {
         var rect = card.getBoundingClientRect();
-        if (rect.top <= 140 && rect.bottom >= 60) {
-          var offset = rect.top;
-          if (offset > bestOffset) {
-            bestOffset = offset;
-            activeId = card.id;
-          }
+        if (rect.bottom < 30) return; // 已滚出视口
+        var dist = Math.abs(rect.top - 120);
+        if (dist < bestDist) {
+          bestDist = dist;
+          activeId = card.id;
         }
       });
       var snavLinks = document.querySelectorAll('.snav a');
@@ -4510,31 +4512,16 @@ function switchTab(type) {
     }
     window._panopticon_scroll_handler = onScroll;
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // 初始运行
+    onScroll();
 
-    // 5. 点击导航：平滑滚动 + 高亮 + 防 scroll 覆盖
+    // 5. 点击导航：平滑滚动，高亮由 onScroll 自动接管
     document.querySelectorAll('.snav a').forEach(function(a) {
+      if (a.dataset.navBound) return;
+      a.dataset.navBound = '1';
       a.addEventListener('click', function(e) {
         e.preventDefault();
-        var targetId = this.getAttribute('href');
-        var target = document.querySelector(targetId);
-        if (!target) return;
-
-        // 设置标志，防止 scroll 事件覆盖高亮
-        window._panopticon_navigating = true;
-        // 手动高亮当前项
-        document.querySelectorAll('.snav a').forEach(function(l) { l.classList.remove('active'); });
-        this.classList.add('active');
-
-        // 平滑滚动
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // 滚动结束后清除标志（1.5秒后）
-        clearTimeout(window._panopticon_navigate_timer);
-        window._panopticon_navigate_timer = setTimeout(function() {
-          window._panopticon_navigating = false;
-          onScroll(); // 最后再运行一次高亮
-        }, 1500);
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   })();

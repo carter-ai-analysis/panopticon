@@ -1,78 +1,438 @@
 var deepDiveData = {
   "type": "deep_dive",
   "target": "PORTFOLIO",
-  "name": "全持仓双任务",
-  "emoji": "\u2694",
-  "title": "PANOPTICON 双任务深度研判 \u00b7 7/9收盘：科创50暴涨8.41%\u00b7海力士ADR明日决战\u00b7120万+30万HKD全配置方案",
-  "date": "2026-07-09 23:50",
-  "subtitle": "\u6570\u636e\u6e90\uff1aWebSearch\u5b9e\u65f6\u884c\u60c5+\u4ea7\u4e1a\u65b0\u95fb+\u8d44\u91d1\u6d41\u5411\u00b7\u65f6\u6548\uff1a7/9\u6536\u76d8\u00b7\u6309\u65b0\u89c4\u5219\u6807\u6ce8\u6570\u636e\u65f6\u6548",
-  "generated_at": "2026-07-09 23:50",
+  "name": "双任务研判7.10",
+  "emoji": "⚔",
+  "title": "PANOPTICON 双任务深度研判 · 7/10收盘：半导体血洗日·兆易-7.76%·国瓷-8.29%·海力士ADR挂牌首日",
+  "date": "2026-07-10 16:50",
+  "subtitle": "数据源: WebSearch(实时行情+产业新闻+财报)+TDX MCP(300285/603986/002371) · 数据时效: 7/10收盘",
+  "generated_at": "2026-07-10 16:50",
   "rating": 5,
   "max_rating": 5,
-  "sections": [
-    {
-      "id": "s1",
-      "title": "\u2601 \u4eca\u65e5\u5b8f\u89c2\u80cc\u666f\uff1a\u79d1\u521b50\u66b48.41%\u00b7\u534a\u5bfc\u4f53\u5168\u7ebf\u7206\u53d1\u00b7\u6210\u4ea42.93\u4e07\u4ebf",
-      "type": "highlight_green",
-      "content": "<b>7\u67089\u65e5\u662f\u4eca\u5e74A\u80a1\u6700\u5f3a\u7684\u4e00\u5929\u3002</b>\u79d1\u521b50\u66b48.41%\u521b\u53f2\u4e0a\u6700\u5927\u5355\u65e5\u6da8\u5e45\u4e4b\u4e00\uff0c\u4e0a\u8bc1\u6307\u6570\u6da81.65%\u7ad94036\u70b9\u3002\u5168\u5e02\u573a\u6210\u4ea42.93\u4e07\u4ebf\uff08\u653e\u91cf3500\u4ebf\uff09\u3002<br><br><b>\u6838\u5fc3\u50ac\u5316\uff1a</b><br>\u2022 <b>\u957f\u946b\u79d1\u6280IPO\uff1a</b>7\u67089\u65e5\u51cc\u6668\u516c\u5e03\u62db\u80a1\u610f\u5411\u4e66\uff0c7\u670816\u65e5\u7533\u8d2d\u65e5\u786e\u8ba4\u2014\u20142026\u5e74A\u80a1\u6700\u5927IPO\uff0c\u4ea7\u4e1a\u94fe\u8986\u76d630\u5bb6\u4e0a\u5e02\u516c\u53f8\uff0c\u603b\u5e02\u503c\u8d853\u4e07\u4ebf<br>\u2022 <b>\u592e\u884c\u653f\u7b56\uff1a</b>\u4e8c\u5b63\u5ea6\u8d27\u5e01\u653f\u7b56\u4f8b\u4f1a\u660e\u786e\u2014\u2014\u4fe1\u8d37\u8d44\u6e90\u4f18\u5148\u5411AI\u7b97\u529b/\u786c\u79d1\u6280\u503e\u659c<br>\u2022 <b>\u8d44\u91d1\u96c6\u4e2d\u8fdb\u5165\uff1a</b>\u7535\u5b50\u677f\u5757\u51c0\u6d41\u5165312\u4ebf\uff0c\u94b1\u4ece\u5149\u4f0f\u9502\u7535/\u7a00\u571f\u62bd\u79bb\u8f6c\u5411\u82af\u7247\u9f99\u5934<br>\u2022 <b>\u5146\u6613\u521b\u65b0\u6da8\u505c!</b>37\u4ebf\u5c01\u677f\uff0c\u957f\u7535\u79d1\u6280\u6da8\u505c\uff0c\u901a\u5bcc\u5fae\u7535\u6da8\u505c\uff0c\u4e2d\u82af\u56fd\u9645\u6da8\u8d8510%\u5e02\u503c\u8d85\u8d35\u5dde\u8305\u53f0"
-    },
-    {
-      "id": "s2",
-      "title": "\u4efb\u52a1\u4e00\uff1a07709\u6d77\u529b\u58ebADR\u6302\u724c\u540e\u64cd\u4f5c\u7b56\u7565 \u2014\u2014 44\u4e07HKD\u5df2\u5efa\u4ed3\u00b730\u4e07\u5f85\u8865\u00b7\u76ee\u6809250HKD",
-      "type": "text",
-      "content": "<b>\u4e00\u3001ADR\u57fa\u672c\u9762\u786c\u6570\u636e\uff087/9\u6700\u65b0\uff09\uff1a</b><br>\u2022 \u53d1\u884c\u4ef7166\u7f8e\u5143/ADS\uff0c1 ADS=0.1\u80a1\u97e9\u80a1\uff0c10 ADS=1\u80a1<br>\u2022 \u603b\u89c4\u6a21\uff1a280\u4ebf\u7f8e\u5143\uff0c\u8d85\u989d\u8ba4\u8d2d\u6570\u500d\uff0c\u627f\u9500\u5546\u63d0\u524d\u5173\u95ed\u7c3f\u8bb0<br>\u2022 \u57fa\u77f3\u6295\u8d44\u8005\u9501\u5b9a70\u4ebf\u7f8e\u5143\uff0c\u7f8e\u56fd\u957f\u7ebf\u57fa\u91d1\u8d77\u8ba22\u4ebf\u7f8e\u5143<br>\u2022 \u7eb3\u65af\u8fbe\u514b\u6302\u724c\u65f6\u95f4\uff1a7\u670810\u65e5\uff08\u660e\u5929\uff09\uff0c\u4ee3\u7801SKHY<br><br><b>\u4e8c\u3001\u5b9a\u4ef7\u903b\u8f91\u5206\u6790\uff1a</b><br>ADR\u4ef7\u683c\u5bf9\u5e94\u97e9\u80a1\u4ef7\u683c\uff1a166\u7f8e\u5143/ADS \u00d7 10 = 1660\u7f8e\u5143/\u80a1\u3002\u5f53\u524d\u97e9\u80a1\u7ea7\u522b\uff08\u57fa\u4e8e7\u6708\u521d242.5\u4e07\u97e9\u5143\uff09\u2192 \u7ea6\u8ba11750\u7f8e\u5143\u3002\u5373ADR\u5b9a\u4ef7\u76f8\u5bf9\u5f53\u524d\u6b63\u80a1\u7ea6\u67095%\u6298\u4ef7\u3002\u8fd9\u662f\u5178\u578b\u7684IPO\u6298\u4ef7\uff0c\u4f46\u9408\u8bb0\u538b\u4ef7\u6548\u5e94\u4eca\u5929\u7ed3\u675f\u3002<br><br><b>\u4e09\u3001\u77ed\u671f(1-2\u5468)\u4ef7\u683c\u533a\u95f4\u7814\u5224\uff1a</b><br><b>\u2502 \u60c5\u666f \u2502 \u6982\u7387 \u2502 07709\u4ef7\u683c\u533a\u95f4 \u2502 \u5173\u952e\u5047\u8bbe</b><br>\u2502 ADR\u9996\u65e5\u6ea2\u4ef710-20% \u2502 40% \u2502 100-125 \u2502 \u8d85\u989d\u8ba4\u8d2d\u60c5\u7eea\u4f20\u5bfc\u6b63\u80a1<br>\u2502 ADR\u5e73\u7a33\u6302\u724c\u6ea2\u4ef75-10% \u2502 35% \u2502 90-100 \u2502 \u201c\u4e70\u9884\u671f\u5356\u4e8b\u5b9e\u201d\u538b\u5236\u6ea2\u4ef7<br>\u2502 ADR\u7834\u53d1/\u5e02\u573a\u98ce\u9669\u56de\u907f \u2502 25% \u2502 65-80 \u2502 \u5168\u7403\u534a\u5bfc\u4f53\u6301\u7eed\u56de\u8c03<br><br><b>\u56db\u3001\u4e0a\u884c250 vs \u4e0b\u63a260-70\u7684\u6982\u7387\u8bc4\u4f30\uff1a</b><br>\u2022 <b>\u4e0a\u884c\u81f3250HKD\uff1a</b>\u6982\u7387\u7ea635-40%\u3002\u9700\u8981\u6ee1\u8db3\uff1aADR\u9996\u6ce2\u6ea2\u4ef7\u4f20\u5bfc\u6b63\u80a1 + HBM3E\u8ba2\u5355\u6301\u7eed\u589e\u957f + Q3\u8d22\u62a5\u8d85\u9884\u671f + \u5168\u7403\u534a\u5bfc\u4f53\u60c5\u7eea\u56de\u6696\u3002\u8def\u5f84\uff1a\u6302\u724c\u540e\u534a\u5e74\u5185\u5206\u4e24\u6ce2\u4e0a\u6da8\uff08\u5982\u679cQ2\u8d22\u62a5\u597d\u2014\u20144-5\u4e2a\u6708\u5185\u5230250\uff09<br>\u2022 <b>\u4e0b\u63a2\u81f360-70HKD\uff1a</b>\u6982\u7387\u7ea625%\u3002\u89e6\u53d1\u6761\u4ef6\uff1aADR\u7834\u53d1\u540e\u201c\u5229\u597d\u51fa\u5c3d\u201d + \u5168\u7403\u5b58\u50a8\u5468\u671f\u89c1\u9876\u4fe1\u53f7 + \u82f1\u4f1f\u8fbeRubin\u51cf\u5355\u3002\u5982\u679c60\u771f\u5230\u4e86\uff0c\u8bf4\u660e\u5e02\u573a\u5426\u51b3\u4e86\u5b58\u50a8\u5468\u671f\uff0c\u9700\u91cd\u65b0\u8bc4\u4f30\u3002<br><br><b>\u4e94\u300130\u4e07HKD\u8865\u4ed3\u7b56\u7565\uff1a</b><br>\u2022 <b>\u7b2c\u4e00\u6b65(7\u670810\u65e5\u00b7\u660e\u5929)\uff1a</b>ADR\u6302\u724c\u540e\uff0c\u5982\u679c07709\u56de\u8c03\u5230100-110\u533a\u95f4\uff0c\u8865\u4ed3<b>10\u4e07HKD</b>\uff08\u7570\u7ea426%-33%\u6bd4\u4f8b\uff09<br>\u2022 <b>\u7b2c\u4e8c\u6b65(1\u5468\u5185)\uff1a</b>\u5982\u679c\u4ef7\u683c\u7ee7\u7eed\u4e0a\u884c\u5230120-130\uff0c\u8865\u4ed3<b>10\u4e07HKD</b>\u3002\u5982\u679c\u4ef7\u683c\u56de\u8c03\u523080-90\uff0c\u8865\u4ed3<b>10\u4e07HKD</b><br>\u2022 <b>\u7b2c\u4e09\u6b65(2\u5468\u5185)\uff1a</b>\u5269\u4f5910\u4e07HKD\u89c2\u671b\u3002\u5982\u679c\u4ef7\u683c\u8dcc\u523070\u4ee5\u4e0b\u2192\u8865\u8db3\u5269\u4f59\u3002\u5982\u679c\u5df2\u7ecf160+\u2192\u4e0d\u8ffd\u3002<br><br><b>\u2601 AI\u7814\u5224\uff1a</b>30\u4e07HKD\u4e0d\u8981\u4e00\u6b21\u6027\u6253\u5b8c\u3002ADR\u9996\u65e5\u6ce2\u52a8\u5267\u70c8\uff0c\u5206\u6b65\u5efa\u4ed3\u53ef\u4ee5\u5728\u4e0d\u540c\u4ef7\u4f4d\u5206\u6563\u98ce\u9669\u3002\u76ee\u6809\u5206\u4e24\u6ce2\uff1a\u77ed\u671f\u7701170-190(\u6302\u724c\u540e\u53cd\u5f391-2\u5468)\uff0c\u4e2d\u671f\u7701250(\u9700\u8981Q2\u8d22\u62a5\u914d\u5408)\u3002\u786c\u6b62\u635f70 HKD\u4e0d\u53d8\u3002"
-    },
-    {
-      "id": "s3",
-      "title": "\u4efb\u52a1\u4e8c\uff1aA\u80a14\u6301\u4ed3+120\u4e07\u914d\u7f6e \u2014\u2014 \u79d1\u521b50\u66b48.41%\u4e4b\u540e\uff0c\u534a\u5bfc\u4f53\u662f\u53cd\u8f6c\u8fd8\u662f\u53cd\u5f39\uff1f",
-      "type": "text",
-      "content": "<b>\u4e00\u3001\u5f53\u524d4\u6301\u4ed3\u72b6\u6001\uff08\u6309\u4f60\u786e\u8ba4\u7684\u5b9e\u9645\u6301\u4ed3\uff09\uff1a</b><br>\u2502 \u6807\u7684 \u2502 \u6301\u80a1/\u80a1\u00b7\u6210\u672c \u2502 \u91d1\u989d/\u4e07 \u2502 7/9\u6536\u76d8\u201c\u6da8\u505c\u201d \u2502 \u6d6e\u76c8/\u4e07<br>\u2502 5146\u5146\u6613\u521b\u65b0 \u2502 300\u00b7710.80 \u2502 21.3 \u2502 \u201c\u6da8\u505c\u201d \u2502 \u201c+?%\u201d<br>\u2502 5146\u56fd\u74f7\u6750\u6599 \u2502 2000\u00b792.90 \u2502 18.6 \u2502 \u8ddf\u968f\u53cd\u5f39 \u2502 \u201c-?\u201d<br>\u2502 5146\u65b0\u6613\u76db \u2502 100\u00b7526.30 \u2502 5.3 \u2502 \u8ddf\u968f\u53cd\u5f39 \u2502 \u201c-?\u201d<br>\u2502 5146\u6df1\u79d1\u6280 \u2502 1000\u00b756.20 \u2502 5.6 \u2502 \u8ddf\u968f\u53cd\u5f39 \u2502 \u201c-?\u201d<br>\u201c\u5408\u8ba1\uff1a\u201d\u7ea750\u4e07(\u539f\u59cb\u6295\u5165) + \u8d26\u623710\u4e07 + 60\u4e07\u5230\u8d26 = 120\u4e07\u53ef\u914d\u7f6e<br><br><b>\u4e8c\u3001\u5173\u952e\u5224\u65ad\uff1a\u53cd\u8f6c\u8fd8\u662f\u53cd\u5f39\uff1f</b><br>\u201c\u7efc\u5408\u5224\u65ad\uff1a\u66f4\u50cf\u53cd\u8f6c\u800c\u975e\u7b80\u5355\u53cd\u5f39\u201d\u3002\u7406\u7531\uff1a<br>\u2022 \u201c\u91cf\u80fd\u914d\u5408\uff1a\u201d\u6210\u4ea4\u653e\u91cf\u52302.93\u4e07\u4ebf(\u653e\u91cf3500\u4ebf)\u2014\u2014\u8fd9\u4e0d\u662f\u6284\u5e95\u8d44\u91d1\uff0c\u662f\u673a\u6784\u8d44\u91d1\u7684\u96c6\u4e2d\u8fdb\u573a<br>\u2022 \u201c\u653f\u7b56\u914d\u5408\uff1a\u201d\u592e\u884c\u660e\u786e\u201c\u4fe1\u8d37\u4f18\u5148\u5411AI\u7b97\u529b/\u786c\u79d1\u6280\u503e\u659c\u201d + \u957f\u946bIPO\u50ac\u5316\u2014\u2014\u653f\u7b56+\u4ea7\u4e1a\u53cc\u91cd\u9a71\u52a8<br>\u2022 \u201c\u677f\u5757\u5206\u5316\uff1a\u201d\u79d1\u521b50\u66b48.41%\u540c\u65f6\u80fd\u6e90\u91d1\u5c5e\u7ee7\u7eed\u8dcc\u2014\u2014\u8d44\u91d1\u4ece\u201c\u65e7\u7ecf\u6d4e\u201d\u5411\u201cAI\u534a\u5bfc\u4f53\u201d\u7684\u8f6c\u79fb\u662f\u7ed3\u6784\u6027\u7684\uff0c\u4e0d\u662f\u77ed\u671f\u7684<br>\u2022 \u201c\u4e2d\u62a5\u884c\u60c5\u914d\u5408\uff1a\u201d\u5146\u6613\u521b\u65b0/\u957f\u7535\u79d1\u6280\u7b496\u5bb6\u5df2\u62ab\u9732\u4e2d\u62a5\u9884\u589e\u2014\u2014\u4e1a\u7ee9\u652f\u6491\u80a1\u4ef7<br>\u2022 \u201c\u8d44\u91d1\u6d41\u5411\u914d\u5408\uff1a\u201d\u7535\u5b50\u677f\u5757512\u4ebf\u51c0\u6d41\u5165\u2014\u2014\u673a\u6784\u5728\u7528\u771f\u91d1\u767d\u94f6\u6295\u7968(\u8fd1\u65e5\u6570\u636e\uff0c\u975eQ1\u9648\u65e7\u6570\u636e)<br><br><b>\u4e09\u3001120\u4e07\u5efa\u4ed3\u8282\u594f\u4e0e\u6807\u7684\u4f18\u5148\u7ea7\uff1a</b><br>\u201c\u2502 \u4f18\u5148\u7ea7 \u2502 \u6807\u7684 \u2502 \u7406\u7531 \u2502 \u5efa\u8bae\u4efd\u989d\u201d<br>\u2502 \u2605\u2605\u2605 \u2502 \u5146\u6613\u521b\u65b0603986 \u2502 \u5b58\u50a8\u9f99\u5934+\u4eca\u65e5\u6da8\u505c= \u201c\u201d\u5e02\u573a\u8ba4\u53ef\u201c\u201d\u00b7\u957f\u946bIPO\u76f4\u63a5\u50ac\u5316 \u2502 \u8865\u4ed330-40\u4e07<br>\u2502 \u2605\u2605\u2605 \u2502 \u56fd\u74f7\u6750\u6599300285 \u2502 \u8d85\u8dcc\u53cd\u5f39+\u6da8\u4ef7\u4f20\u5bfc\u8fdf\u540e= \u201c\u201d\u88ab\u4f4e\u4f30\u201c\u201d \u2502 \u8865\u4ed320-30\u4e07<br>\u2502 \u2605\u2605 \u2502 \u6df1\u79d1\u6280000021 \u2502 \u4e2d\u62a5\u9884\u589e76-88%+\u957f\u946b\u5c01\u6d4b= \u201c\u201d\u786c\u6570\u636e\u201c\u201d \u2502 \u52a0\u4ed35-10\u4e07<br>\u2502 \u2605\u2605 \u2502 \u65b0\u6613\u76db300502 \u2502146\u5149\u6a21\u5757#2\u00b7\u9ad8\u4f4d\u00b7\u5c0f\u4ed3\u4f4d\u53ef\u63a7 \u2502 \u4e0d\u8865\u4e0d\u8fdb<br>\u2502 \u2605 \u2502 \u5317\u65b9\u534e\u521b002371 \u2502 780\u4ee5\u4e0b\u7b2c\u4e00\u7b14\u00b7\u8bbe\u5907\u9f99\u5934 \u2502 3-5\u4e07(\u7b49\u56de\u8c03)<br>\u2502 \u2605 \u2502 \u96c5\u514b\u79d1\u6280002409 \u2502146\u8ddf\u968f\u53cd\u5f39\u00b7HBM\u524d\u9a71\u4f53\u00b7\u7b49180\u4ee5\u4e0b \u2502 3-5\u4e07(\u7b49\u56de\u8c03)<br>\u201c\u5408\u8ba1\u5efa\u8bae\u914d\u7f6e\uff1a\u201d61-90\u4e07/120\u4e07 = 51-75%\u4ed3\u4f4d<br><br><b>\u201c\u56db\u3001\u5177\u4f53\u5efa\u4ed3\u65f6\u95f4\u8868\uff1a\u201d</b><br>\u2022 \u201c\u660c\u59297\u670810\u65e5\uff1a\u201d\u5148\u752810-15\u4e07\u6253\u5e95\u4ed3\u3002\u4f18\u5148\u56fd\u74f7(\u8d85\u8dcc\u6700\u591a\u00b7\u6700\u9700\u8981\u4ed3\u4f4d)\u3002\u5982\u679c\u5146\u6613\u56de\u8c03\u5230\u6da8\u505c\u4ef7\u9644\u8fd1\u4e5f\u8fdb10\u4e07\u3002<br>\u2022 \u201c\u672c\u54687\u670813-15\u65e5\uff1a\u201d\u7b49\u957f\u946bIPO\u7533\u8d2d\u65e5(7/16)\u524d\u7684\u201c\u201d\u9884\u671f\u53d1\u9175\u201c\u201d\u6ce2\u6bb5\uff0c\u9010\u6b65\u52a0\u4ed3\u5146\u6613/\u6df166\u79d1\u6280<br>\u2022 \u201c\u672c\u54687\u670816\u65e5\uff1a\u201d\u957f\u946b\u7533\u8d2d\u65e5\u2014\u2014\u89c2\u5bdf\u5e02\u573a\u53cd\u5e94\u3002\u5982\u679c\u201c\u201d\u5229\u597d\u51fa\u5c3d\u201c\u201d\u56de\u8c03\uff0c\u6b63\u662f\u52a0\u4ed3\u65f6\u673a\u3002\u5982\u679c\u6301\u7eed\u4e0a\u6da8\uff0c\u7ee7\u7eed\u52a0\u4ed3\u3002<br>\u2022 \u201c\u4e0b\u54687\u670820-25\u65e5\uff1a\u201d\u8bc4\u4f30\u4ed3\u4f4d\uff0c\u4fdd\u2020—-30\u4e07\u5907\u7528\u3002"
-    },
-    {
-      "id": "s4",
-      "title": "\u2694 \u7edf\u4e00\u6267\u884c\u4e66\uff1a\u660e\u59297/10 \u2014\u2014 \u5168\u7403AI\u534a\u5bfc\u4f53\u201c\u53cc\u91cd\u50ac\u5316\u65e5\u201d",
-      "type": "op_plan",
-      "days": [
-        {
-          "day": "\u660e\u65e97/10 AM",
-          "detail": "\u201c\u67e5\u770bSK\u6d77\u529b\u58ebADR(SKHY)\u9996\u65e5\u5f00\u76d8\u4ef7\u201d\u3002\u5982\u679c\u9996\u65e5\u6ea2\u4ef710%+\u2192\u6b63\u80a1\u5fc5\u8ddf\u6da8\u2192 07709\u53ef\u80fd\u6da840-50%\u5728\u524d\u671f\u3002\u7b49\u4ef7\u683c\u7a33\u5b9a\u540e\u518d\u8854\u4ed3\uff0c\u4e0d\u8981\u5728\u524d15\u5206\u949f\u8ffd\u6da8\u3002"
-        },
-        {
-          "day": "\u660e\u65e97/10 \u5168\u5929",
-          "detail": "\u201c07709\u64cd\u4f5c\uff1a\u201d\u5982\u679c\u5728100-110\u533a\u95f4\u2192\u886510\u4e07HKD\u3002\u5982\u679c\u66b4\u6da8\u5230130+\u2192\u5248\u51cf\u4ed3\u201c\u201d1000-1500\u201c\u201d\u80a1\u9501\u5b9a\u90e8\u5206\u5229\u6da6\uff0c\u7b49\u56de\u8c03\u518d\u8865\u3002\u201cA\u80a1\u64cd\u4f5c\uff1a\u201d\u56fd\u74f7\u4f18\u5148\u8865\u4ed3\uff08\u8dcc\u523076-80\u8fdb10-15\u4e07\uff09\u3002\u5146\u6613\u5982\u679c\u6ca1\u6709\u56de\u8c03\u4e5f\u8fdb5\u4e07\u201c\u201d\u8e29\u5b9e\u201c\u201d\u3002"
-        },
-        {
-          "day": "\u672c\u5468 7/13-15",
-          "detail": "\u201c\u957f\u946bIPO\u7533\u8d2d\u65e5(7/16)\u524d\u7684\u9884\u671f\u53d1\u9175\u671f\u201d\u3002\u5982\u679c\u4ef7\u683c\u56de\u8c03\uff0c\u52a0\u4ed3\u5146\u6613+\u6df1\u79d1\u6280\u3002\u5982\u679c\u4ef7\u683c\u6301\u7eed\u4e0a\u6da8\uff0c\u63d0\u9ad8\u6b62\u635f\u4f4d\u4fdd\u62a4\u5df2\u6709\u5229\u6da6\u3002"
-        },
-        {
-          "day": "7/16 \u957f\u946b\u7533\u8d2d\u65e5",
-          "detail": "\u201c\u89c2\u5bdf\u5e02\u573a\u53cd\u5e94\u201d\u3002\u5982\u679c\u201c\u201d\u5229\u597d\u51fa\u5c3d\u201c\u201d\u56de\u8c03\uff0c\u6b63\u662f\u52a0\u4ed3\u65f6\u673a\u3002\u5982\u679c\u6301\u7eed\u4e0a\u6da8\uff0c\u7ee7\u7eed\u914d\u7f6e\u3002"
-        },
-        {
-          "day": "\u6301\u7eed\u76d1\u63a7",
-          "detail": "\u201c\u786c\u6b62\u635f\uff1a\u201d07709: 70HKD / \u56fd\u74f7: 68\u5143 / \u5146\u6613: 550\u5143 / \u6df1\u79d1\u6280: 48\u5143 / \u65b0\u6613\u76db: 480\u5143\u3002\u201c\u4fdd\u202020\u2014\u201430\u2014\u2014\u4e07RMB\u5907\u7528\uff1a\u201d\u4e0d\u6253\u5149\u3002\u201c\u76ee\u6807\u6536\u76ca80-100%\u201d\u5bf9\u5e94\u4e00\u5e74\u5185\u6301\u4ed3\u5e02\u503c\u7ffb\u500d\u3002"
-        }
-      ]
-    },
-    {
-      "id": "s5",
-      "title": "\u26a1 \u98ce\u9669\u77e9\u9635\u4e0e\u6982\u7387\u52a0\u6743",
-      "type": "table",
-      "headers": ["\u98ce\u9669", "\u6982\u7387", "\u5f71\u54cd\u7a0b\u5ea6", "\u5bf9\u51b2/\u7f13\u89e3", "\u4f18\u5148\u7ea7"],
-      "rows": [
-        ["ADR\u7834\u53d1/\u5229\u597d\u51fa\u5c3d", "25%", "\u9ad8\uff08-20%\uff09", "07709\u6b62\u635f70\u00b7A\u80a1\u53d7\u5f5310%\u56de\u8c03", "\u201c\u2605\u2605\u2605\u201d"],
-        ["A\u80a1\u534a\u5bfc\u4f53\u53cd\u5f39\u540e\u518d\u56de\u8c03", "30%", "\u4e2d\uff08-10%\uff09", "\u5206\u6279\u5efa\u4ed3\u800c\u975e\u4e00\u6b21\u6027\u6253\u6ee1\u00b7\u4fdd201-30\u4e07\u5907\u7528", "\u201c\u2605\u2605\u201d"],
-        ["\u82f1\u4f1f\u8fbeRubin\u51cf\u5355\u5b9e\u9524", "20%", "\u4e2d\uff08-15%\uff09", "HBM3E\u8ba2\u5355\u589e\u52a0\u5f25\u8865HBM4\u51cf\u5c11\u00b7\u6d77\u529b\u58eb\u4ecd\u662f\u552f\u4e00\u4f9b\u5e94\u5546", "\u201c\u2605\u2605\u2605\u201d"],
-        ["\u4e2d\u62a5\u4e0d\u53ca\u9884\u671f(\u56fd\u74f7\u00b7\u5146\u6613)", "15%", "\u4e2d\u4f4e\uff08-8%\uff09", "\u5146\u6613\u5b58\u50a8\u4ef7\u683c\u4e0a\u884c\u5df2\u786e\u8ba4\u00b7\u56fd\u74f7\u6da8\u4ef7\u4f20\u5bfc\u8fdf\u540e\u4e5f\u5df2\u8ba1\u5165", "\u201c\u2605\u2605\u201d"],
-        ["\u5168\u7403\u7ecf\u6d4e\u8870\u9000+A\u80a1\u7cfb\u7edf\u6027\u98ce\u9669", "10%", "\u9ad8\uff08-30%\uff09", "\u8fd9\u662f\u6781\u7aef\u60c5\u666f\u00b7\u4f46\u4e0d\u662f\u4e0d\u53ef\u80fd\u3002\u5230\u65f6\u5168\u7ebf\u6b62\u635f", "\u201c\u2605\u2605\u2605\u201d"]
-      ]
-    },
-    {
-      "id": "s6",
-      "title": "\ud83d\udccc AI\u6700\u7ec8\u88c1\u51b3",
-      "type": "verdict",
-      "content": "<b>\u201c\u6838\u5fc3\u5224\u65ad\uff1a\u660e\u59297/10\u662f\u5168\u7403AI\u534a\u5bfc\u4f53\u201c\u201d\u53cc\u91cd\u50ac\u5316\u65e5\u201c\u201d\u2014\u2014\u6d77\u529b\u58ebADR\u6302\u724c + A\u80a1\u79d1\u521b50\u66b48.41%\u53cd\u8f6c\u3002\u73b0\u5728\u4e0d\u662f\u6050\u614c\u7684\u65f6\u5019\uff0c\u662f\u6309\u8ba1\u5212\u6267\u884c\u7684\u65f6\u5019\u3002\u201d</b><br><br><b>\u201c\u6700\u91cd\u8981\u7684\u201d</b>\u5224\u65ad\uff1a<br>1\u3001\u201c\u201dA\u80a1\u534a\u5bfc\u4f53\u66f4\u50cf\u53cd\u8f6c\u800c\u975e\u53cd\u5f39\u201c\u201d\u2014\u2014\u91cf\u80fd2.93\u4e07\u4ebf+\u592e\u884c\u653f\u7b56+\u957f\u946bIPO\u50ac\u5316+\u4e2d\u62a5\u9884\u589e= 201\u201d\u56db\u91cd\u9a71\u52a8\u201c\u201d\u3002Q1\u9648\u65e7\u8d44\u91d1\u6d41\u6570\u636e\u4e0d\u7528\u3002<br>2\u3001\u201c\u201d\u6d77\u529b\u58ebADR 280\u4ebf\u8d85\u989d\u8ba4\u8d2d= \u201c\u201d\u201c\u201d\u5168\u7403\u9876\u7ea7\u673a\u6784\u7528\u771f\u91d1\u767d\u94f6\u786e\u8ba4\u5b58\u50a8AI\u4ef7\u502c\u201c\u201d\u201c\u201d\u201c\u201d\u3002\u7b3c\u8bb0\u5356\u538b\u4eca\u5929\u7ed3\u675f\uff0c\u660e\u5929\u6302\u724c= \u201c\u201d\u201c\u201d\u65b0\u7684\u5f00\u59cb\u201c\u201d\u201c\u201d\u3002<br>3\u3001\u201c\u201d120\u4e07\u5206\u6279\u5efa\u4ed3= \u201c\u201d\u201c\u201d\u4e0d\u8981\u4e00\u6b21\u6027\u6253\u5149\u201c\u201d\u201c\u201d\u3002\u660e\u5929\u5148\u8fdb10-15\u4e07\u6253\u5e95\u4ed3\uff0c\u672c\u5468\u5185\u914d\u5230\u7ea650\u4e07\uff0c\u5269\u4f5945\u2014\u201460\u4e07\u5728\u957f\u946bIPO\u7533\u8d2d\u65e5\u524d\u540e\u8fdb\u573a\u3002\u4fdd\u202020-30\u4e07\u5907\u7528\u3002<br>4\u3001\u201c\u201d\u76ee\u680780-100%\u662f1\u5e74\u76ee\u6807= \u201c\u201d\u201c\u201d\u4e0d\u662f\u4e00\u4e2a\u6708\u201c\u201d\u201c\u201d\u3002\u6301\u4ed3\u3001\u5206\u6279\u3001\u6b62\u635f\u3002\u4e09\u4e2a\u52a8\u4f5c\u505a\u597d\u4e86\uff0c\u76ee\u6807\u5c31\u53ef\u8fbe\u3002<br><br><b>\u201c\u201d\u6211\u6700\u6709\u4fe1\u5fc3\u7684\u5224\u65ad\uff1a\u201c\u201d</b>\u660e\u5929\u53cc\u91cd\u50ac\u5316\u540e\uff0c1-2\u5468\u5185A\u80a1\u534a\u5bfc\u4f53\u4f1a\u6709\u6301\u7eed\u6027\u8868\u73b0\u300207709\u5728ADR\u6302\u724c\u540e\u6700\u665a1\u4e2a\u6708\u5185\u56de\u5230100\u4ee5\u4e0a\u3002<br><br><b>\u201c\u201d\u6211\u6700\u4e0d\u786e\u5b9a\u7684\u5224\u65ad\uff1a\u201c\u201d</b>\u77ed\u671f\u4ef7\u683c\u8def\u5f84\u3002ADR\u9996\u65e5\u53ef\u80fd\u201c\u201d\u5229\u597d\u51fa\u5c3d\u201c\u201d\u77ed\u6682\u56de\u8c03\uff0c\u4e5f\u53ef\u80fd\u201c\u201d\u6ea2\u4ef7\u4f20\u5bfc\u201c\u201d\u52a0\u901f\u4e0a\u6da8\u3002\u8fd9\u53d6\u51b3\u4e8e\u627f\u9500\u5546\u5bf9\u51b2\u5934\u5bf8\u548c\u9996\u65e5\u6d41\u52a8\u6027\u3002\u4f46\u65e0\u8bba\u54ea\u79cd\u8def\u5f84\uff0c\u4e2d\u957f\u671f\u903b\u8f91\u4e0d\u53d8\u3002"
-    }
-  ]
+  "content": `<h2 id="t1">一、A股AI半导体板块操作策略</h2>
+
+<div class="card">
+<p><strong>⚡ 今日关键背景</strong>：7/10 A股放量大跌——沪指<span class="down">-1.0%</span>、深成指<span class="down">-2.29%</span>、创业板指<span class="down">-4.37%</span>。成交3.39万亿（放量4748亿）。主力资金净流出398亿。<strong>半导体全线暴跌</strong>：兆易创新<span class="down">-7.76%</span>、国瓷材料<span class="down">-8.29%</span>、北方华创<span class="down">-8.81%</span>。但大盘仍有3900+个股收红——<strong>半导体板块出现明显的获利了结+资金轮动</strong>。</p>
+</div>
+
+<h3 id="t1-1">1.1 市场环境：半导体"末日审判"日</h3>
+
+<table>
+<tr><th>指标</th><th>7/10数据</th><th>信号</th></tr>
+<tr><td>沪指</td><td class="num">~4027 <span class="down">-1.0%</span></td><td><span class="tag tag-y">均线支撑位</span></td></tr>
+<tr><td>创业板指</td><td class="num"><span class="down">-4.37%</span></td><td><span class="tag tag-r">领跌</span></td></tr>
+<tr><td>科创50</td><td class="num"><span class="down">-2%</span></td><td><span class="tag tag-y">从+8.41%高位回调</span></td></tr>
+<tr><td>两市成交</td><td class="num">3.39万亿</td><td><span class="tag tag-r">放量4748亿·恐慌出逃</span></td></tr>
+<tr><td>主力净流出</td><td class="num"><span class="down">-398亿</span></td><td><span class="tag tag-r">大幅流出</span></td></tr>
+<tr><td>涨跌比</td><td class="num">~3900涨/1000跌</td><td><span class="tag tag-g">个股普涨·板块分化</span></td></tr>
+<tr><td>半导体主力</td><td class="num"><span class="down">-94.99亿→净流出</span></td><td><span class="tag tag-r">昨天还在大幅流入</span></td></tr>
+<tr><td>资金轮动</td><td class="num">航天装备+军工</td><td><span class="tag tag-b">半导体→军工切换</span></td></tr>
+</table>
+
+<div class="card blue">
+<p><strong>📊 AI研判</strong>：这不是系统性崩盘——3900只个股收红说明市场整体并未恐慌。<strong>半导体板块的暴跌是获利了结+资金轮动，而非基本面恶化。</strong>昨天（7/9）科创50暴涨8.41%后，今天回调2%+，属于暴涨后的正常获利兑现。关键问题是：这次回调会走多远？</p>
+</div>
+
+<h3 id="t1-2">1.2 细分赛道全景对比</h3>
+
+<table>
+<tr><th>赛道</th><th>代表标的</th><th>7/10表现</th><th>PE(TTM)</th><th>景气度</th><th>资金信号</th><th>当前位置</th></tr>
+<tr>
+  <td><strong>存储芯片</strong></td>
+  <td>兆易创新</td>
+  <td class="down">-7.76%</td>
+  <td class="num">~317x</td>
+  <td><span class="tag tag-g">H1净利+1099%</span></td>
+  <td><span class="tag tag-r">净流出85亿</span></td>
+  <td>高位回调</td>
+</tr>
+<tr>
+  <td><strong>MLCC/材料</strong></td>
+  <td>国瓷材料</td>
+  <td class="down">-8.29%</td>
+  <td class="num">120.7x</td>
+  <td><span class="tag tag-y">Q2涨价5-15%</span></td>
+  <td><span class="tag tag-r">板块同跌</span></td>
+  <td>中低位</td>
+</tr>
+<tr>
+  <td><strong>半导体设备</strong></td>
+  <td>北方华创</td>
+  <td class="down">-8.81%</td>
+  <td class="num">92.5x</td>
+  <td><span class="tag tag-g">国产替代核心</span></td>
+  <td><span class="tag tag-r">净流出3.4亿</span></td>
+  <td>高位·接近前高</td>
+</tr>
+<tr>
+  <td><strong>CPO光模块</strong></td>
+  <td>中际旭创</td>
+  <td><span class="down">-19%</span>(6/23-7/3)</td>
+  <td class="num">极高</td>
+  <td><span class="tag tag-y">1.6T放量·技术替代风险</span></td>
+  <td><span class="tag tag-r">55亿撤离</span></td>
+  <td>中期调整</td>
+</tr>
+<tr>
+  <td><strong>PCB</strong></td>
+  <td>沪电/深南</td>
+  <td>板块同跌</td>
+  <td class="num">中高</td>
+  <td><span class="tag tag-y">算力需求支撑</span></td>
+  <td><span class="tag tag-r">主力撤离</span></td>
+  <td>中期调整</td>
+</tr>
+</table>
+
+<div class="card">
+<p><strong>🔑 赛道相对排序</strong>（从优到劣）：</p>
+<p>① <strong>存储芯片</strong> — 业绩最强（H1+1099%），但PE泡沫消化需要时间</p>
+<p>② <strong>半导体设备</strong> — 确定性最高（国产替代），但当前位置接近前高，回调即机会</p>
+<p>③ <strong>MLCC</strong> — 最被低估，涨价传导尚未充分反映到股价</p>
+<p>④ <strong>CPO</strong> — 估值极端+技术替代风险+筹码拥挤</p>
+<p>⑤ <strong>PCB</strong> — 随算力大势，但弹性不如光模块直接</p>
+</div>
+
+<h3 id="t1-3">1.3 关键事件深度解读</h3>
+
+<h4>🔴 兆易创新 H1业绩：暴增1099%的背后</h4>
+<table>
+<tr><th>指标</th><th>H1 2026</th><th>2025全年</th><th>变化</th></tr>
+<tr><td>营业收入</td><td class="num">115亿</td><td class="num">73.5亿(H1 42亿)</td><td class="num"><span class="up">+174%</span></td></tr>
+<tr><td>归母净利润</td><td class="num">69亿</td><td class="num">10.2亿</td><td class="num"><span class="up">+1099%</span></td></tr>
+<tr><td>Q2单季净利润</td><td class="num">54.4亿</td><td class="num">—</td><td class="num"><span class="up">QoQ +272%</span></td></tr>
+<tr><td>Q2单季营收</td><td class="num">73.1亿</td><td class="num">—</td><td class="num"><span class="up">QoQ +74.6%</span></td></tr>
+<tr><td>驱动因素</td><td colspan="3">DRAM/NOR量价齐升+MCU出货高增+AI车规需求</td></tr>
+</table>
+
+<div class="card blue">
+<p><strong>AI研判</strong>：Q2单季54.4亿净利润，年化≈218亿。以当前市值4295亿计算，动态PE≈<span class="hl">19.7x</span>（而非表面的317x TTM）。<strong>这才是真相</strong>——存储周期的利润爆发已经被业绩验证，但静态PE因历史低基数而被严重扭曲。<strong>612元对应的估值并不贵，关键问题是Q3能否维持这个利润水平。</strong></p>
+</div>
+
+<h4>🟢 长鑫科技 IPO：7/16申购·存储板块最强催化剂</h4>
+<p>7月9日，长鑫科技披露科创板IPO招股意向书：</p>
+<ul>
+<li>证券代码 688825，7月16日申购</li>
+<li>拟公开发行66.88亿股，<strong>募资295亿元</strong>——2026年A股最大IPO</li>
+<li>H1预计净利润同比+2244%~2544%</li>
+<li>产业链覆盖A股<strong>逾30家上市公司</strong>，总市值超3万亿</li>
+</ul>
+
+<div class="card green">
+<p><strong>对兆易创新的影响</strong>：长鑫IPO→资金涌入存储板块→兆易创新作为A股存储芯片"第二股"直接受益。<strong>但注意</strong>：7/10兆易暴跌7.76%可能已经反映了"利好兑现"——长鑫IPO消息发布后，短期资金利用利好出货。真正的催化可能在18-24日区间（长鑫上市后资金溢出效应）。</p>
+</div>
+
+<h4>🟡 半导体板块反弹持续性分析</h4>
+<p><strong>7/9→7/10走势验证了一个残酷的事实</strong>：7/9科创50暴涨8.41%后，次日半导体全线暴跌。这不是"强势反弹"而是<strong>"一日游+次日暴跌=典型的熊市反弹模式"</strong>。</p>
+
+<div class="card">
+<p><strong>📈 反弹持续性评分：3/10（弱）</strong></p>
+<p>依据：① 7/9暴涨后7/10暴跌→<strong>资金没有持续性</strong>；② 3.39万亿放量下跌→恐慌盘涌出；③ 主力净流出398亿（半导体净流出近百亿）→机构在卖而非买；④ 军工/航天替代半导体成新热点→<strong>资金轮动信号明确</strong>。</p>
+<p>但≠说半导体完蛋——<strong>存储业绩摆在那里，价格跌下来就是价值。</strong></p>
+</div>
+
+<h3 id="t1-4">1.4 趋势研判：半导体板块处于什么阶段？</h3>
+
+<div class="verdict">
+<h3>🎯 明确判断：半导体板块处于"暴涨后的结构性回调"阶段，非趋势性下跌</h3>
+<p style="font-size:0.9em;opacity:0.9;margin-top:10px">科创50从年内高点回调了多少我们不知道（没查），但7/9→7/10的两日走势说明：<strong>半导体已经从"单边上涨"进入"高位宽幅震荡"。</strong>这不是2015年的泡沫崩盘（有业绩支撑），但也不是2025年底的"闭眼买"（估值在历史高分位）。<strong>核心矛盾：业绩在加速（兆易Q2 +272%），但股价在跌。这是PE压缩→PB回归的过程。</strong></p>
+<ul>
+<li><strong>近期走势判断</strong>：<span class="tag tag-y">高位宽幅震荡（涨1天跌1天的模式将持续）</span></li>
+<li><strong>最佳策略</strong>：<span class="tag tag-g">逢大跌买入、不追涨</span></li>
+<li><strong>最大风险</strong>：<span class="tag tag-r">连续暴跌触发止损盘→负反馈循环</span></li>
+</ul>
+</div>
+
+<h3 id="t1-5">1.5 操作建议（A股 60万资金）</h3>
+
+<h4>① 国瓷材料300285：继续持有·择机补仓</h4>
+<table>
+<tr><th>当前</th><th>数据</th></tr>
+<tr><td>持仓</td><td class="num">3000股@87.7（成本26.3万）</td></tr>
+<tr><td>现价</td><td class="num">74.1 <span class="down">-8.29%</span></td></tr>
+<tr><td>浮亏</td><td class="num"><span class="down">-15.5%（约-4.1万）</span></td></tr>
+<tr><td>PE</td><td class="num">120.7x（静态）/ 动态更低</td></tr>
+<tr><td>硬止损</td><td class="num">68元</td></tr>
+</table>
+
+<div class="card green">
+<p><strong>操作建议：持有不动。不急于补仓。</strong></p>
+<p>理由：① 距硬止损68还有8.2%空间→还没到砍仓位；② 7/10板块同跌→不是个股问题；③ MLCC Q2涨价+5-15%尚未反映到国瓷毛利率→等Q2财报（8月）验证涨价传导；④ 今天-8.29%的跌幅说明卖压在加大→在下跌趋势中接飞刀风险大。</p>
+<p><strong>补仓时机</strong>：① 如果跌到<strong>68-70</strong>→补1000股（约7万），均价可降至82-83→但前提是MLCC涨价逻辑未变；② 如果Q2财报（8月）毛利率明显回升→可以在75-78区间补仓。</p>
+</div>
+
+<h4>② 兆易创新603986：核心仓位·按兵不动</h4>
+<table>
+<tr><th>当前</th><th>数据</th></tr>
+<tr><td>持仓</td><td class="num">500股@681.2（成本34.1万）</td></tr>
+<tr><td>现价</td><td class="num">612 <span class="down">-7.76%</span></td></tr>
+<tr><td>浮亏</td><td class="num"><span class="down">-10.2%（约-3.5万）</span></td></tr>
+<tr><td>动态PE(年化Q2)</td><td class="num">~19.7x（被TTM扭曲）</td></tr>
+<tr><td>H1净利润</td><td class="num"><span class="up">69亿 +1099%</span></td></tr>
+</table>
+
+<div class="card green">
+<p><strong>操作建议：持有不动。这是你持仓逻辑最硬的标的。</strong></p>
+<p>Q2单季54.4亿净利的年化估值仅~20x PE——对于一家全球NOR Flash #2、DRAM快速崛起的公司来说，这个估值极有吸引力。<strong>今天暴跌的原因不是业绩不行，而是获利了结。</strong></p>
+<p>如果继续跌到<strong>580-600</strong>→可以考虑补100-200股（约6-12万），进一步拉低均价。</p>
+</div>
+
+<h4>③ 剩余60万资金的分批入场方案</h4>
+
+<div class="card blue">
+<p><strong>核心原则：不追高、不接飞刀、分4-5批入场</strong></p>
+<table>
+<tr><th>批次</th><th>时机</th><th>金额</th><th>方向</th><th>触发条件</th></tr>
+<tr><td>第1批</td><td>立即</td><td class="num">—</td><td>暂不行动</td><td>暴跌次日不急于补仓</td></tr>
+<tr><td>第2批</td><td>7/14-18周</td><td class="num">10-15万</td><td>国瓷68-72 / 兆易580-600</td><td>如果继续跌到目标区间</td></tr>
+<tr><td>第3批</td><td>7/21-25周</td><td class="num">10-15万</td><td>北华750-780</td><td>长鑫上市后设备股可能回调</td></tr>
+<tr><td>第4批</td><td>7/28-31周</td><td class="num">10-15万</td><td>雅克170-180</td><td>等海力士ADR后续影响消化</td></tr>
+<tr><td>第5批</td><td>8月中报季</td><td class="num">10-15万</td><td>根据Q2财报调整</td><td>业绩超预期的加仓·暴雷的砍</td></tr>
+<tr><td>保留</td><td>—</td><td class="num">10-20万</td><td>现金储备</td><td>黑天鹅/极端机会</td></tr>
+</table>
+</div>
+
+<h4>④ CPO/PCB：暂时不接回</h4>
+<div class="card">
+<p><span class="tag tag-r">不建议现在接回</span> 理由：① 中际旭创6/23-7/3累计跌19%，筹码结构已经破坏；② 康宁玻璃桥技术替代风险未消除；③ CPO板块估值仍在历史高位。<strong>等中际旭创跌到1000以下再考虑小仓位试仓。</strong></p>
+</div>
+
+<h4>⑤ 半导体设备：等回调到780以下</h4>
+<div class="card green">
+<p><span class="tag tag-g">回调即机会</span> 北华801(-8.81%)，PE 92.5x。国产替代逻辑最硬，但PE不便宜。<strong>推荐780以下第一笔3-4万，750以下第二笔5-6万。</strong>如果等不到回调→优先用兆易创新（存储+DRAM）的仓位替代设备逻辑。</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- TASK 2: HYNNIX 07709 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2 id="t2">二、海力士07709操作策略</h2>
+
+<div class="card">
+<p><strong>当前持仓</strong>：4300股@118.8HKD（成本51.1万HKD）· 富途可用23万HKD · 目标满仓70万HKD · 目标价220HKD</p>
+</div>
+
+<h3 id="t2-1">2.1 ADR上市：7月10日·历史性时刻</h3>
+
+<table>
+<tr><th>关键参数</th><th>数据</th></tr>
+<tr><td>ADR代码</td><td class="num">SKHY（纳斯达克）</td></tr>
+<tr><td>定价</td><td class="num"><strong>149美元/ADS</strong></td></tr>
+<tr><td>转换</td><td class="num">1 ADS = 1/10 普通股</td></tr>
+<tr><td>对应韩股</td><td class="num">1490美元 ≈ 242.5万韩元（7/3基准）</td></tr>
+<tr><td>募资规模</td><td class="num">约280亿美元（下调自290亿）</td></tr>
+<tr><td>挂牌日</td><td class="num"><strong>7月10日（今天！）</strong></td></tr>
+<tr><td>历史地位</td><td class="num">可能刷新美股最大外企上市纪录</td></tr>
+<tr><td>基石投资者</td><td class="num">锁定70亿美元·长线基金2亿美元起订</td></tr>
+</table>
+
+<div class="card blue">
+<p><strong>📊 历史可比案例</strong>：台积电ADR（TSM）1997年上市后，因美股流动性溢价，ADR长期较台股正股溢价5-15%。日月光ADR（ASX）上市首月涨约8%。<strong>但注意</strong>：这些都是成熟ADR，而SK海力士是<strong>新发ADR</strong>（IPO性质），更接近新股上市而非存量ADR转板。</p>
+<p><strong>核心区别</strong>：新发ADR在簿记期间产生的"对冲卖压"（承销商做空正股对冲ADR风险）会在挂牌日后<strong>解除</strong>→正股可能出现"减压反弹"。</p>
+</div>
+
+<h4>ADR上市后的情景分析</h4>
+<table>
+<tr><th>情景</th><th>概率</th><th>正股反应</th><th>07709反应</th><th>操作</th></tr>
+<tr>
+  <td><span class="tag tag-g">🟢 乐观</span></td>
+  <td class="num">35%</td>
+  <td>ADR首日涨10-15%</td>
+  <td>2x杠杆涨20-30%</td>
+  <td>减仓1000-1500股锁定利润</td>
+</tr>
+<tr>
+  <td><span class="tag tag-y">🟡 基准</span></td>
+  <td class="num">45%</td>
+  <td>ADR窄幅震荡±5%</td>
+  <td>±10%内波动</td>
+  <td>持有观察·不加不减</td>
+</tr>
+<tr>
+  <td><span class="tag tag-r">🔴 悲观</span></td>
+  <td class="num">20%</td>
+  <td>利好出尽·ADR跌10%+</td>
+  <td>杠杆跌20%+</td>
+  <td>硬止损70HKD·触发即砍</td>
+</tr>
+</table>
+
+<h3 id="t2-2">2.2 估值与基本面：全球最便宜的AI存储股</h3>
+
+<table>
+<tr><th>对标</th><th>PE(TTM)</th><th>市值</th><th>HBM份额</th><th>特色</th></tr>
+<tr>
+  <td><strong>SK海力士</strong></td>
+  <td class="num"><span class="tag tag-g">6.2x</span>（远期）</td>
+  <td>~1400亿美元</td>
+  <td class="num">58%</td>
+  <td>HBM绝对龙头</td>
+</tr>
+<tr>
+  <td>美光 MU</td>
+  <td class="num">~15x</td>
+  <td>~1200亿</td>
+  <td class="num">~10%</td>
+  <td>美国本土溢价</td>
+</tr>
+<tr>
+  <td>三星电子</td>
+  <td class="num">~10x</td>
+  <td>~3500亿</td>
+  <td class="num">~30%</td>
+  <td>综合电子巨头</td>
+</tr>
+</table>
+
+<div class="card green">
+<p><strong>🏆 海力士的"韩国折价"</strong>：全球HBM市场58%份额，AI存储定价权最强，<strong>但PE仅6.2x——比美光便宜60%。</strong>如果ADR上市后能将估值拉到美光水平（~15x），SK海力士正股有<strong>140%+上行空间</strong>。汇丰预计ADR挂牌后存20%上行空间，瑞银目标价320万韩元。</p>
+<p><strong>HBM前景</strong>：2026年HBM占DRAM营收15%→预计2030年占58%。AI算力需求驱动HBM需求以年均50%+速度增长。</p>
+</div>
+
+<h3 id="t2-3">2.3 被压价现象：ADR簿记的"隐形卖压"已解除</h3>
+
+<div class="card">
+<p><strong>🔍 被压价的原因</strong>：① 承销商（大摩/高盛）在簿记期间做空正股以对冲ADR风险——<strong>这是标准操作，不是基本面恶化</strong>；② 募资规模从290亿→280亿美元（基准价调整），市场解读为"下调=利空"；③ 韩国监管对杠杆ETF的政策风险叠加。</p>
+<p><strong>为什么ADR挂牌后可能修复</strong>：① <span class="hl">簿记对冲卖压将在挂牌后24-48小时内解除</span>；② 美国长线基金（主权基金/退休基金）认购→买入正股套利；③ ADR挂牌带来美股投资者增量需求→正股获得新买盘。</p>
+<p><strong>量化预期</strong>：假设ADR首周建立5%溢价→韩股正股跟涨约3-5%→07709（2x杠杆）潜在涨幅6-10%。<strong>这不是翻倍的行情，但可能是"ARK解除"后的确定性反弹。</strong></p>
+</div>
+
+<h3 id="t2-4">2.4 操作建议（07709·77万HKD）</h3>
+
+<h4>70万满仓部署方案</h4>
+<table>
+<tr><th>阶段</th><th>时间</th><th>仓位</th><th>累计</th><th>条件</th></tr>
+<tr>
+  <td>当前持有</td>
+  <td>—</td>
+  <td class="num">51.1万HKD</td>
+  <td class="num">51.1万</td>
+  <td>4300股@118.8</td>
+</tr>
+<tr>
+  <td>加仓1</td>
+  <td>ADR 7/11-14观察</td>
+  <td class="num">8-12万HKD</td>
+  <td class="num">~63万</td>
+  <td>ADR首周表现稳定·07709回踩80-85</td>
+</tr>
+<tr>
+  <td>加仓2</td>
+  <td>7/21-25周</td>
+  <td class="num">7-10万HKD</td>
+  <td class="num">~70万</td>
+  <td>海力士Q2财报（预计7月下旬）超预期</td>
+</tr>
+<tr>
+  <td>止盈1</td>
+  <td>07709涨至150-160</td>
+  <td class="num">减仓40%</td>
+  <td class="num">—</td>
+  <td>成本118.8·目标150=+26%</td>
+</tr>
+<tr>
+  <td>止盈2</td>
+  <td>07709涨至200-220</td>
+  <td class="num">清仓</td>
+  <td class="num">—</td>
+  <td>成本118.8·目标220=+85%</td>
+</tr>
+</table>
+
+<div class="verdict">
+<h3>🎯 220HKD可行性评估</h3>
+<p style="font-size:1.05em">从118.8涨到220 = +85%。如果SK海力士ADR推动估值从6.2x→12x（仍比美光低20%），正股涨约95%→07709（2x杠杆）理论上可涨190%。<strong>220HKD在估值重估情景下完全可达成，但需要时间（6-12个月）而非数周。</strong></p>
+</div>
+
+<h4>止损与退出策略</h4>
+<div class="card">
+<table>
+<tr><th>止损类型</th><th>触发价</th><th>说明</th></tr>
+<tr><td>硬止损</td><td class="num"><span class="tag tag-r">70 HKD</span></td><td>收盘跌破70→全砍·不犹豫</td></tr>
+<tr><td>软止损</td><td class="num"><span class="tag tag-y">80 HKD</span></td><td>连续3日低于80→减仓50%</td></tr>
+<tr><td>时间止损</td><td class="num"><span class="tag tag-y">8月底</span></td><td>如果到8/31仍在100以下→重新评估逻辑</td></tr>
+<tr><td>跟踪止盈</td><td class="num"><span class="tag tag-g">最高价-15%</span></td><td>涨至150+后启用·保护利润</td></tr>
+</table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- OPERATION TIMELINE -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<h2 id="t3">三、综合操作时间线/决策树</h2>
+
+<h3>📅 操作时间线</h3>
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-date">7/10-11 · 今天-明天</div>
+    <div class="tl-text"><strong>观察ADR首日表现</strong>·不操作·让子弹飞·如果07709暴跌→检查是否触发80或70止损</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">7/14-18 · 下周</div>
+    <div class="tl-text">A股半导体如果继续跌→<strong>国瓷68-72补仓</strong>(10-15万)·兆易580-600补仓(6-12万)·07709如果回踩80-85稳定→加仓8-12万HKD</div>
+  </div>
+  <div class="tl-item b">
+    <div class="tl-date">7/16 · 周三</div>
+    <div class="tl-text"><strong>长鑫科技688825申购日</strong>→关注存储板块资金流向·兆易创新可能再次因利好兑现而短暂回调</div>
+  </div>
+  <div class="tl-item g">
+    <div class="tl-date">7/21-25 · 大下周</div>
+    <div class="tl-text">北华如果跌破780→第一笔3-4万·雅克如果跌到170-180→5万·07709加仓第2笔7-10万HKD</div>
+  </div>
+  <div class="tl-item b">
+    <div class="tl-date">7月下旬 · 待定</div>
+    <div class="tl-text"><strong>SK海力士Q2财报</strong>→如果超预期→07709可能出现跳涨→提前加仓至70万满仓</div>
+  </div>
+  <div class="tl-item g">
+    <div class="tl-date">8月中旬 · 中报季</div>
+    <div class="tl-text"><strong>国瓷·兆易Q2正式财报</strong>→业绩验证→超预期加仓·暴雷砍仓·根据结果调整最后一批配置</div>
+  </div>
+</div>
+
+<h3>🌳 决策树</h3>
+<div class="dec">
+  <div class="dec-node">
+    <strong>7/10 ADR首日</strong>
+    <p style="color:var(--green);margin-top:4px">ADR涨10%+</p>
+    <p>→ 07709减仓1000-1500股</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--accent);margin-top:4px">ADR跌10%+</p>
+    <p>→ 检查止损·不恐慌</p>
+  </div>
+  <div class="dec-node">
+    <strong>A股·下周</strong>
+    <p style="color:var(--green);margin-top:4px">继续大跌</p>
+    <p>→ 国瓷68-72+兆易580-600分批补</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--blue);margin-top:4px">企稳反弹</p>
+    <p>→ 不动·等下一轮回调</p>
+  </div>
+  <div class="dec-node">
+    <strong>北华·雅克</strong>
+    <p style="color:var(--green);margin-top:4px">北华<780</p>
+    <p>→ 第一笔3-4万</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--blue);margin-top:4px">北华>850</p>
+    <p>→ 不追·用兆易替代</p>
+  </div>
+  <div class="dec-node">
+    <strong>07709满仓70万</strong>
+    <p style="color:var(--green);margin-top:4px">Q2财报前</p>
+    <p>→ 分批加到70万</p>
+    <hr style="margin:4px 0;border-color:#ddd">
+    <p style="color:var(--accent);margin-top:4px">Q2暴雷</p>
+    <p>→ 硬止损70立即执行</p>
+  </div>
+</div>
+
+<hr style="margin:28px 0 16px;border-color:var(--border)">
+
+<div class="verdict" style="background:linear-gradient(135deg,#1a1a2e,#0d1b2a)">
+<h3 style="color:#ffd700">📌 AI最终裁决</h3>
+<p style="font-size:0.92em;margin:8px 0">今天（7/10）是2026年最暴力的一天——半导体板块被"血洗"，但个股普涨说明不是系统性风险。<strong>这不是该恐慌的日子，而是该制定抄底计划的日子。</strong></p>
+<p style="font-size:0.92em;margin:8px 0"><strong>A股核心策略</strong>：国瓷+兆易持有不动。60万资金分5批入场，不追高不接飞刀。半导体设备等回调到关键价位。</p>
+<p style="font-size:0.92em;margin:8px 0"><strong>07709核心策略</strong>：ADR今天挂牌→观察首周表现→80-85回踩是加仓良机→70HKD是铁底。220翻倍目标在估值重估情景下完全可达成（6.2x→12x），但需要6-12个月而非数周。</p>
+<p style="font-size:0.92em;margin:8px 0"><strong>最大的风险</strong>：如果A股半导体连续暴跌触发"止损踩踏"→国瓷跌破68+07709跌破70→双杀。概率约15%，但后果严重。应对：严守止损纪律。</p>
+<p style="font-size:0.82em;opacity:0.7;margin-top:14px">⚡ 以上为AI独立研判，基于2026年7月10日收盘数据。不构成投资建议。所有操作决策由你自行判断。</p>
+</div>`
 };

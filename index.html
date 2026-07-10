@@ -1514,6 +1514,89 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
   .dd-free-content td, .fa-free-content td { padding: 4px 6px; }
   .dd-free-content .dec, .fa-free-content .dec { flex-direction: column; }
 }
+
+/* ════════════════════════════════════════════════════════════════ */
+/* PANOPTICON ENH v1 — 导航栏·进度条·折叠·section锚点            */
+/* ════════════════════════════════════════════════════════════════ */
+
+/* 粘性导航栏容器 */
+.shelf { position: sticky; top: 0; z-index: 45; box-shadow: 0 1px 0 var(--line); }
+
+/* 进度条 */
+.prog {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: linear-gradient(90deg, var(--cyan), var(--gold), var(--purple));
+  z-index: 120; transition: width .12s linear;
+}
+
+/* Section 导航锚点 */
+.snav {
+  display: flex; gap: 6px; overflow-x: auto;
+  padding: 8px 14px; background: rgba(10,14,26,.9);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.snav::-webkit-scrollbar { display: none; }
+.snav a {
+  flex: 0 0 auto; font-size: 12.5px; line-height: 1;
+  color: var(--tx2); text-decoration: none;
+  padding: 7px 12px; border-radius: 999px;
+  border: 1px solid var(--line); white-space: nowrap;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.snav a:hover { color: var(--tx); border-color: var(--line-hover); }
+.snav a.active { color: #0a0e1a; background: var(--gold); border-color: var(--gold); font-weight: 600; }
+
+/* 卡片折叠 */
+.card { position: relative; }
+.card > h2, .card > .sc-row { padding-right: 42px; }
+.card > .chev {
+  position: absolute; top: 13px; right: 13px;
+  width: 24px; height: 24px;
+  display: grid; place-items: center;
+  border-radius: 7px; cursor: pointer;
+  color: var(--tx2); border: 1px solid var(--line);
+  background: var(--card);
+  transition: transform .2s ease, color .15s, background .15s;
+  font-size: 13px; z-index: 2;
+}
+.card > .chev:hover { color: var(--tx); background: var(--card-hi); }
+.card.collapsed > .chev { transform: rotate(-90deg); }
+.card.collapsed > .cbody { display: none; }
+
+/* Scroll margin for sticky nav */
+#pc .card, #pc .mt, #pc .dv { scroll-margin-top: 104px; }
+
+/* 表格横向滚动 */
+.twrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.twrap > table { min-width: 560px; }
+.twrap::-webkit-scrollbar { height: 6px; }
+.twrap::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+.twrap-hint { display: none; }
+@media (max-width: 680px) {
+  .twrap > table { min-width: 640px; }
+  .twrap-hint { display: block; text-align: center; font-size: 11px; color: var(--tx3); margin-top: 6px; }
+}
+
+/* 涨跌箭头 */
+span.up::before { content: "\25B2 "; font-size: .72em; }
+span.dn::before { content: "\25BC "; font-size: .72em; }
+
+/* 焦点可见 */
+a:focus-visible, button:focus-visible, .mt-item:focus-visible,
+.card > .chev:focus-visible, .snav a:focus-visible, .hbtn:focus-visible {
+  outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 6px;
+}
+
+/* 减少动画 */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .prog { transition: none !important; }
+}
+
+/* 桌面端性能优化 */
+@media (min-width: 768px) { #pc > .card { content-visibility: auto; contain-intrinsic-size: auto 420px; } }
 </style>
 </head>
 <body>
@@ -1521,7 +1604,7 @@ td span.dn, .mod-bd span.dn { color: var(--green); font-weight: 700; }
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 00:39",
+  "generated_at": "2026-07-11 00:49",
   "scores": {
     "macro": {
       "score": 50,
@@ -1568,46 +1651,55 @@ var dailyData = {
     {
       "n": "FOMC利率预期",
       "s": 40,
+      "av": "3.63%",
       "d": "联邦基金利率3.63%维持·加息预期未消"
     },
     {
       "n": "10Y美债收益率",
       "s": 45,
+      "av": "4.50%",
       "d": "4.48-4.50%·油价推升通胀→收益率上行压力"
     },
     {
       "n": "VIX恐慌指数",
       "s": 30,
+      "av": "28.3",
       "d": "SOX暴跌+中东冲突·恐慌指数升至28-30区间"
     },
     {
       "n": "南向资金(5日)",
       "s": 80,
+      "av": "+205亿",
       "d": "7/6净流入205亿港元·年内最强单日·险资入市"
     },
     {
       "n": "人民币CNH",
       "s": 65,
+      "av": "6.8015",
       "d": "6.8015·稳定·7/3当周CFETS指数102.65"
     },
     {
       "n": "恒指/恒生科技",
       "s": 45,
+      "av": "+0.42%",
       "d": "恒科高开+0.42%·但YTD-18.29%·仍在熊市区间"
     },
     {
       "n": "沪深300/北向",
       "s": 40,
+      "av": "--",
       "d": "A股全面回调·北向资金流出压力大"
     },
     {
       "n": "COMEX黄金",
       "s": 50,
+      "av": "4121",
       "d": "4121美元(-0.87%)·回调整理·避险属性减弱"
     },
     {
       "n": "CNN恐惧贪婪",
       "s": 70,
+      "av": "25-35",
       "d": "恐惧区间(25-35)·从反向指标看是买入信号"
     }
   ],
@@ -2271,7 +2363,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 00:39",
+  "generated_at": "2026-07-11 00:49",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -3151,7 +3243,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-11 00:39",
+  "date": "2026-07-11 00:49",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -3500,7 +3592,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-11 00:39"
+  "generated_at": "2026-07-11 00:49"
 };
 </script>
 <script>
@@ -4297,6 +4389,82 @@ function switchTab(type) {
   }
   /* 渲染完成后统一智能着色（红涨绿跌 + 价格金色）*/
   smartColorize(p);
+
+  // ═══ 导航栏增强：进度条 + section锚点 + 折叠按钮 ═══
+  (function enhanceNav() {
+    var wrap = document.querySelector('.wrap');
+    if (!wrap) return;
+
+    // 1. 进度条
+    var prog = document.createElement('div');
+    prog.className = 'prog';
+    document.body.appendChild(prog);
+
+    // 2. 给每个 card 添加 id 和折叠按钮
+    var cards = p.querySelectorAll('.card');
+    var snavItems = [];
+    cards.forEach(function(card, i) {
+      var h2 = card.querySelector('h2');
+      if (!h2) return;
+      var id = 'sec-' + type + '-' + i;
+      card.id = id;
+      card.setAttribute('data-sec', i);
+
+      // 折叠按钮
+      var chev = document.createElement('span');
+      chev.className = 'chev';
+      chev.innerHTML = '▼';
+      chev.onclick = function(e) {
+        e.stopPropagation();
+        card.classList.toggle('collapsed');
+      };
+      card.appendChild(chev);
+
+      // 收集 section 导航项
+      var title = h2.textContent.trim().substring(0, 12);
+      snavItems.push('<a href="#' + id + '" data-sec="' + id + '">' + title + '</a>');
+    });
+
+    // 3. Section 导航
+    if (snavItems.length > 0) {
+      var snav = document.createElement('div');
+      snav.className = 'snav';
+      snav.innerHTML = snavItems.join('');
+      wrap.insertBefore(snav, p);
+    }
+
+    // 4. 滚动进度条 + 高亮
+    function onScroll() {
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
+      prog.style.width = Math.min(pct, 100) + '%';
+
+      // 高亮当前 section
+      var activeId = '';
+      cards.forEach(function(card) {
+        var rect = card.getBoundingClientRect();
+        if (rect.top <= 120 && rect.bottom >= 120) {
+          activeId = card.id;
+        }
+      });
+      var snavLinks = document.querySelectorAll('.snav a');
+      snavLinks.forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('data-sec') === activeId);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // 初始运行
+
+    // 5. 平滑滚动到锚点
+    document.querySelectorAll('.snav a').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  })();
 
   // ═══ 统一页脚：数据源标注 + 触发规则 ═══
   var ds = getDataSourceInfo(type);

@@ -1613,7 +1613,7 @@ a:focus-visible, button:focus-visible, .mt-item:focus-visible,
 var dailyData = {
   "type": "daily_report",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:35",
+  "generated_at": "2026-07-11 01:43",
   "scores": {
     "macro": {
       "score": 50,
@@ -2389,7 +2389,7 @@ var researchData = {
   "type": "research",
   "title": "第7期 · 全产业链深度覆盖 · AI板块暴风雨中的冷静评估 · 2026年第28周",
   "date": "2026-07-08",
-  "generated_at": "2026-07-11 01:35",
+  "generated_at": "2026-07-11 01:43",
   "coverage": "全产业链覆盖（上游材料/设备→中游MLCC/HBM/光模块/封测→下游AI Agent/大模型）",
   "module1": {
     "rows": [
@@ -3269,7 +3269,7 @@ var freeAnalysisData = {
   "type": "free_analysis",
   "emoji": "📊",
   "title": "A股AI板块调整深度 + 60万RMB (7/10到账)入场策略",
-  "date": "2026-07-11 01:35",
+  "date": "2026-07-11 01:43",
   "subtitle": "通达信TDX MCP + WebSearch + 历史持仓数据库",
   "sections": [
     {
@@ -3618,7 +3618,7 @@ var freeAnalysisData = {
       "content": "<strong>最有信心的判断：</strong><br>1. 半导体设备(北方华创+中微公司)是当前A股AI板块中估值最合理、逻辑最确定的细分<br>2. 国瓷材料PE 128×是一个\"需要奇迹来消化\"的估值——不建议追加<br>3. 分批建仓策略是对的——当前调整不是底部确认信号，是\"开始\"而不是\"结束\"<br><br><strong>最不确定的判断：</strong><br>1. 调整会到多深？如果AI板块整体再跌20%，设备板块可能也跟跌15%——这不是坏事（给了更低的价格）<br>2. 光模块什么时候可以买？现在不知道——PE 70-120×区间，任何业绩不及预期都是灾难<br><br><strong>一句话：</strong>60万不要急着花出去。7月中旬是最好的观察+建仓窗口。北方华创800以下是黄金入场点，雅克科技185以下值得配，澜起科技236是合理估值线。<span style='color:var(--red);font-weight:700'>不碰国瓷、不追光模块、不分批All-in</span>——这三点会保护你的本金。"
     }
   ],
-  "generated_at": "2026-07-11 01:35"
+  "generated_at": "2026-07-11 01:43"
 };
 </script>
 <script>
@@ -4436,7 +4436,7 @@ function switchTab(type) {
   smartColorize(p);
 
   // ═══ 导航栏增强：进度条 + section锚点 ═══
-  var snavCards = []; // 全局引用，给 scroll handler 用
+  var snavCards = [];
   (function enhanceNav() {
     // 1. 进度条
     if (!document.querySelector('.prog')) {
@@ -4445,21 +4445,23 @@ function switchTab(type) {
       document.body.appendChild(prog);
     }
 
-    // 2. 给 card 加 id
-    var cards = p.querySelectorAll('.card');
+    // 2. 给所有 card/card-dark 加 id（覆盖日报/研报/深度挖掘/自由分析）
+    var cards = p.querySelectorAll('.card, .card-dark');
     snavCards = Array.prototype.slice.call(cards);
 
-    // 3. 建导航栏 HTML（用 onclick 内联，不用 addEventListener）
+    // 3. 建导航栏 HTML
     var items = [];
     snavCards.forEach(function(card, i) {
       var h2 = card.querySelector('h2');
       if (!h2) return;
       var id = 'sec-' + type + '-' + i;
       card.id = id;
-      var title = h2.textContent.trim().substring(0, 12).replace(/'/g,"\\'");
-      items.push('<a href="#'+id+'" onclick="event.preventDefault();panHighlight(this,\''+id+'\');document.getElementById(\''+id+'\').scrollIntoView({behavior:\'smooth\',block:\'start\'});return false;">'+title+'</a>');
+      var title = h2.textContent.trim().substring(0, 12).replace(/'/g,"\\'").replace(/"/g,'');
+      // ⚠️ onclick 先设 _pan_navigating 锁，防止 smooth scroll 覆盖高亮
+      items.push('<a href="#'+id+'" onclick="event.preventDefault();window._pnv=1;panHighlight(this,\''+id+'\');var t=document.getElementById(\''+id+'\');if(t)t.scrollIntoView({behavior:\'smooth\',block:\'start\'});setTimeout(function(){window._pnv=0;},600);return false;">'+title+'</a>');
     });
 
+    // 清除旧导航栏
     var existing = document.querySelector('.snav');
     if (existing) existing.remove();
 
@@ -4473,15 +4475,19 @@ function switchTab(type) {
       }
     }
 
-    // 4. 滚动 handler：进度条 + 高亮
+    // 4. 滚动 handler — 进度条始终更新，高亮仅在非导航时更新
     var prevHandler = window._panopticon_scroll_handler;
     if (prevHandler) window.removeEventListener('scroll', prevHandler);
 
     function onScroll() {
+      // 进度条（任何时候都更新）
       var d = document.documentElement, pct = 0;
       if (d.scrollHeight > d.clientHeight) pct = (d.scrollTop / (d.scrollHeight - d.clientHeight)) * 100;
       var pg = document.querySelector('.prog');
       if (pg) pg.style.width = Math.min(pct, 100) + '%';
+
+      // 如果正在导航（点击触发），跳过自动高亮
+      if (window._pnv) return;
 
       // 找第一个 top > 0 且在视口上半区的 card
       for (var j = 0; j < snavCards.length; j++) {

@@ -11,7 +11,7 @@ var deepDiveData = {
   "content": "<div style='font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:14px;line-height:1.8;color:#e8ecf4;max-width:100%'>"
 
   /* ═══ 第一部分：市场全景 ═══ */
-  + "<div style='background:linear-gradient(135deg,#1a1a2e,#0f172a);color:#fff;padding:24px 28px;border-radius:12px;margin-bottom:24px;border:1px solid #2a2d3a'>"
+  + "<div class='card' style='background:linear-gradient(135deg,#1a1a2e,#0f172a);color:#fff;border:1px solid #2a2d3a;margin-bottom:16px'>"
   + "<h2 style='margin:0 0 8px;font-size:18px;color:#fff'>📊 7/13 黑色星期一 · 四标全景</h2>"
   + "<table style='width:100%;border-collapse:collapse;margin-top:16px;font-size:13px;color:#fff'>"
   + "<tr style='border-bottom:1px solid rgba(255,255,255,.15)'>"
@@ -390,7 +390,7 @@ var deepDiveData = {
 
   /* ═══ 最终裁决 ═══ */
   + "<h3 style='font-size:15px;color:#e8ecf4;margin:24px 0 12px'>⚖ AI最终裁决</h3>"
-  + "<div style='background:linear-gradient(135deg,#1a1a2e,#2d2d44);color:#fff;padding:20px 24px;border-radius:10px;margin-bottom:16px'>"
+  + "<div class='card' style='background:linear-gradient(135deg,#1a1a2e,#2d2d44);color:#fff;margin-bottom:16px'>"
   + "<div style='font-size:18px;font-weight:700;margin-bottom:12px'>今天的暴跌是恐慌驱动，不是基本面驱动。</div>"
   + "<div style='font-size:13px;line-height:1.9;color:#d1d5db'>"
   + "<b>最有信心的判断：</b>SK海力士正股有中期修复空间（KIS维持+105%目标价），韩国央行否认周期见顶。AI存储需求不是'泡沫'——HBM收入同比+264%是真金白银。当前暴跌的核心矛盾是去杠杆踩踏，而非需求崩塌。<br><br>"

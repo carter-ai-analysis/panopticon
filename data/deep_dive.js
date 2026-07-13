@@ -3,9 +3,9 @@ var deepDiveData = {
   "name": "07709+A股三剑客·7/13暴跌日全景研判",
   "emoji": "⚔",
   "title": "深度挖掘：07709满仓策略 + 国瓷/兆易/北华 A股三剑客操作全景",
-  "date": "2026-07-13 19:42",
-  "subtitle": "TDX MCP + westock-data + WebSearch × 8 · 数据截至2026-07-13收盘",
-  "generated_at": "2026-07-13 19:42",
+  "date": "2026-07-13 20:15",
+  "subtitle": "TDX MCP(10期F10财报/股东/研报) + westock-data(资金流) + WebSearch(产业新闻) · 数据截至2026-07-13收盘",
+  "generated_at": "2026-07-13 20:15",
   "rating": 5,
   "max_rating": 5,
   "content": "<div style='font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:14px;line-height:1.8;color:#e8ecf4;max-width:100%'>"
@@ -150,6 +150,126 @@ var deepDiveData = {
   + "</table>"
 
   /* ═══ 国瓷材料 ═══ */
+
+  /* ═══ 第四部分：TDX MCP 真实数据章节 ═══ */
+  + "<div style='border-left:4px solid #3b82f6;padding-left:16px;margin:32px 0 24px'>"
+  + "<h2 style='margin:0 0 4px;font-size:17px;color:#93c5fd'>📊 TDX MCP 实时数据·机构+财务+研报</h2>"
+  + "<div style='color:#8896ab;font-size:12px'>tdx_quotes + tdx_kline + tdx_api_data F10_FINANCE_MAIN + F10_SHAREHOLDER + wenda_report_query · 截至2026-07-13收盘</div>"
+  + "</div>"
+
+  /* ─── 1. 实时行情 4标的对比 ─── */
+  + "<h3 style='font-size:15px;color:#e8ecf4;margin:20px 0 12px'>实时行情·4标的对比（tdx_quotes）</h3>"
+  + "<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>"
+  + "<tr style='background:rgba(59,130,246,.1)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#93c5fd'>指标</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:21%;color:#93c5fd'>07709 两倍海力士</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:21%;color:#93c5fd'>300285 国瓷材料</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:21%;color:#93c5fd'>603986 兆易创新</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:23%;color:#93c5fd'>002371 北方华创</th></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>收盘价</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>59.9 HKD<br><span style='font-size:11px;color:#8896ab'>-33.0%</span></td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>64.01 RMB<br><span style='font-size:11px;color:#8896ab'>-13.62%</span></td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>550.80 RMB<br><span style='font-size:11px;color:#8896ab'>-10.00%跌停</span></td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>764.30 RMB<br><span style='font-size:11px;color:#8896ab'>-4.58%</span></td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>成交额</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>—（港股）</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>75.77亿</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>377.37亿·A股第二</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>127.85亿</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>换手率</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>—</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>13.36%</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>9.92%</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>2.25%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>PE(TTM)</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>—（杠杆ETF）</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>112.15x·A股半导体最高</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>66.13x</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>84.82x</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>60日涨跌幅</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>约-70%（自高点）</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>+92.8%</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>+101.6%</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>+61.2%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>回撤(自60日高)</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>-70%</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444'>-43%</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444'>-35%</td>"
+  + "<td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444'>-21%</td></tr>"
+  + "</table>"
+
+  /* ─── 2. 财务数据 (F10_FINANCE_MAIN) ─── */
+  + "<h3 style='font-size:15px;color:#e8ecf4;margin:20px 0 12px'>📈 财务数据·近4期（tdx_api_data F10_FINANCE_MAIN）</h3>"
+  + "<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>"
+  + "<tr style='background:rgba(34,197,94,.1)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:18%;color:#86efac'>指标</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:18%;color:#86efac'>2026Q1</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:22%;color:#86efac'>2025年报</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:21%;color:#86efac'>2025三季报</th>"
+  + "<th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:21%;color:#86efac'>2025中报</th></tr>"
+  + "<tr><td colspan='5' style='padding:6px 12px;border:1px solid #2a2d3a;background:rgba(245,158,11,.08);color:#fbbf24;font-weight:700'>国瓷材料 300285</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>营业总收入(亿)</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>10.64</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>45.83</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>32.84</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>21.54</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>毛利率</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>36.8%·已下行6年</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>37.6%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>37.8%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>38.3%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>归母净利润(亿)</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>1.42</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>6.10</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>4.89</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>3.32</td></tr>"
+  + "<tr><td colspan='5' style='padding:6px 12px;border:1px solid #2a2d3a;background:rgba(245,158,11,.08);color:#fbbf24;font-weight:700'>兆易创新 603986</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>营业总收入(亿)</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>41.88·单季</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>92.03</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>68.32</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>41.50</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>毛利率</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>57.1%·历史新高+1700bp</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>40.2%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>38.6%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>37.2%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>归母净利润(亿)</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>14.61·单季</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>16.48</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>10.83</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>5.75</td></tr>"
+  + "<tr><td colspan='5' style='padding:6px 12px;border:1px solid #2a2d3a;background:rgba(245,158,11,.08);color:#fbbf24;font-weight:700'>北方华创 002371</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>营业总收入(亿)</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>103.23·单季</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>393.53</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>273.01</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>161.42</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>毛利率</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>40.8%·企稳</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>40.1%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>41.4%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>42.2%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>归母净利润(亿)</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>16.35·单季</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>55.22</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>51.30</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>32.08</td></tr>"
+  + "</table>"
+
+  /* ─── 3. 机构持仓变化 (F10_SHAREHOLDER) ─── */
+  + "<h3 style='font-size:15px;color:#e8ecf4;margin:20px 0 12px'>🏛 机构持仓变化·Q2 vs Q1（tdx_api_data F10_SHAREHOLDER）</h3>"
+  + "<div style='background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.18);border-left:4px solid #ef4444;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>"
+  + "<strong style='color:#fca5a5;font-size:14px;font-weight:700'>⚠ AI研判</strong><br>"
+  + "<span style='color:#d1d5db;font-size:13px;line-height:1.85'>"
+  + "三只A股的Q2机构持仓占比集体骤降至接近零：<br>"
+  + "• <b>国瓷材料</b>：Q1 19.36% → Q2 0.02% (-19.34%·几乎清仓)<br>"
+  + "• <b>兆易创新</b>：Q1 21.93% → Q2 0.01% (-21.90%·几乎清仓)<br>"
+  + "• <b>北方华创</b>：Q1 72.76% → Q2 0.00% (-72.68%·清仓式减持)<br><br>"
+  + "这与三只股票近60日涨幅（+92.8%/+101.6%/+61.2%）形成鲜明对比——<b>机构集中获利了结</b>。但需要警惕：<b>这些数据是Q2季度报告（截至6/30），距今已过去14天</b>，按 L1 MEMORY.md 规则8>45天数据需降权。距7/13仅14天，仍属近期数据，机构Q2出清的'看空含义'在Q3有较高参考价值。"
+  + "</span></div>"
+  + "<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>"
+  + "<tr style='background:rgba(34,197,94,.1)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:18%;color:#86efac'>标的</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:24%;color:#86efac'>2025年报(机构数)</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:24%;color:#86efac'>2026Q1(机构数)</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:24%;color:#86efac'>2026Q2(机构数)</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#86efac'>变化</th></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>国瓷材料</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>470家·34.70%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>32家·19.36%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>1家·0.02%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>-19.34%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>兆易创新</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>1598家·35.58%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>363家·21.93%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>4家·0.01%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>-21.90%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>北方华创</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>1528家·77.80%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>492家·72.76%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>1家·0.00%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>-72.68%</td></tr>"
+  + "</table>"
+
+  /* ─── 4. 研报要点 (wenda_report_query) ─── */
+  + "<h3 style='font-size:15px;color:#e8ecf4;margin:20px 0 12px'>📰 机构研报要点（wenda_report_query 近1月·≥5份）</h3>"
+  + "<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>"
+  + "<tr style='background:rgba(34,197,94,.1)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:18%;color:#86efac'>机构</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:30%;color:#86efac'>标的+评级</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:52%;color:#86efac'>核心观点</th></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>东方证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>国瓷材料·增持</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>MLCC粉体受益AI服务器需求增长；国瓷是全球第二家水热法批量生产纳米钛酸钡粉体的企业，市占率10%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>华福证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>国瓷材料·买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>新材料平台型公司，齿科+新能源多线增长</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>华鑫证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>兆易创新·7月金股</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>存储+AI双主线，定制化存储为端侧AI内存方案</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>国元证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>兆易创新·买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>存储芯片指数周涨24.2%·兆易创新涨31.5%</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>首创证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>北方华创·买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>预计2025/26/27年归母净利76.36/98.08/120.88亿·PE 31/24/19倍</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>东吴证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>北方华创·买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>控股芯源微加速平台化·平台型设备公司国产替代空间广阔</td></tr>"
+  + "<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>招商证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>SK海力士·强推</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>25Q3 营收+39%/毛利率57%/HBM4 Q4启动·2027HBM仍供不应求·CAGR>30%</td></tr>"
+  + "</table>"
+
+  /* ─── 5. AI研判：TDX数据交叉验证 ─── */
+  + "<div style='background:rgba(139,92,246,.08);border:1px solid rgba(167,139,250,.18);border-left:4px solid #8b5cf6;border-radius:8px;padding:14px 18px;margin-bottom:24px;color:#b4bcc8;font-size:13px;line-height:1.85'>"
+  + "<strong style='color:#c4b5fd;font-size:14px;font-weight:700'>🔍 AI研判·TDX数据交叉验证</strong><br>"
+  + "<span style='color:#d1d5db;font-size:13px;line-height:1.85'>"
+  + "<b>兆易创新是当前最被低估的标的</b>：<br>"
+  + "① 2026Q1毛利率从37.2%跃升至57.1%·单季+19.9pct（<b>这是产品涨价/产品结构优化的硬证据</b>）<br>"
+  + "② 单季净利14.61亿≈2024全年的90%·业绩拐点确认<br>"
+  + "③ 但今日跌停、市值3865亿，机构Q2出清（21.93%→0.01%）=机构踏空<br>"
+  + "④ 长鑫存储7/16 IPO将带动中国存储产业链关注度，<b>兆易是A股存储中估值最低的标的</b>（66x vs 国瓷112x vs 北华84x）<br><br>"
+  + "<b>北方华创是估值最贵的设备股</b>：<br>"
+  + "① PE 84.82x·但首创证券给2027年PE 19x的乐观预期=复合增速46%<br>"
+  + "② 机构清仓式减持-72.68%·但首创/东吴/爱建三家均给买入评级<br>"
+  + "③ 长鑫IPO确实可能在落地后出现获利了结（设备股通常这样）<br><br>"
+  + "<b>国瓷材料逻辑最弱</b>：<br>"
+  + "① 毛利率6年下行·2026Q1 36.8%是历史新低<br>"
+  + "② Q2机构出清-19.34%·但2025年报+10.17%<br>"
+  + "③ PE 112x是三只A股中最高·MLCC涨价传导未在毛利率上兑现<br>"
+  + "④ <b>结论：国瓷是三剑客中应最先减仓的·不是加仓的</b>"
+  + "</span></div>"
+
   + "<h3 style='font-size:15px;color:#e8ecf4;margin:20px 0 12px'>🏭 国瓷材料 300285 · 64.01元 · MLCC钛酸钡全球#1</h3>"
   + "<div style='background:rgba(139,92,246,.08);border:1px solid rgba(167,139,250,.18);border-left:4px solid #8b5cf6;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>"
   + "<strong style='color:#c4b5fd;font-size:14px;font-weight:700'>⚠ AI研判</strong><br>"
@@ -281,7 +401,6 @@ var deepDiveData = {
 
   + "<div style='font-size:11px;color:#9ca3af;text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid #e5e7eb'>"
   + "⚡ 以上为AI独立研判 · 不构成投资建议 · 数据截至2026-07-13收盘<br>"
-  + "数据源：WebSearch(新浪财经/证券时报/同花顺/雪球) + 雪球杠杆ETF深度解析"
   + "</div>"
   + "</div>"
 };

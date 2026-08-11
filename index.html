@@ -1613,87 +1613,363 @@ a:focus-visible, button:focus-visible, .mt-item:focus-visible,
 var dailyData = {
   "type": "daily_report",
   "date": "2026-08-11",
-  "generated_at": "13:00",
+  "generated_at": "2026-08-11 12:59",
   "scores": {
-    "macro": {"score": 52, "trend": "neutral", "note": "美债4.70%+油价+5%抵消非农宽松利好", "desc": "数据截至8/11 12:00", "summary": "宏观中性偏紧·CPI前观望"},
-    "us_stocks": {"score": 54, "trend": "down", "note": "SOX-2.94%·光通信Coherent-14%血洗", "desc": "8/10美股收盘", "summary": "AI硬件分化·光通信暴跌·芯片承压"},
-    "hk_stocks": {"score": 53, "trend": "down", "note": "恒科-1.27%·腾讯Q2财报前-2.17%", "desc": "8/11盘中", "summary": "港股回落·明日期待腾讯Q2财报"},
-    "korea": {"score": 48, "trend": "down", "note": "KOSPI-0.70%·SK海力士-2.5%·三星HBM4良率80%", "desc": "8/11盘中", "summary": "韩股续跌·HBM4黄金良率抵不住外资流出"},
-    "a_stocks": {"score": 61, "trend": "up", "note": "创业板+1.41%·MLCC追价抢料·算力/AIDC领涨", "desc": "8/11午盘", "summary": "A股结构牛·MLCC+算力主线·资金从CPO切换"}
+    "macro": {
+      "score": 52,
+      "trend": "neutral",
+      "note": "美债4.70%+油价+5%抵消非农宽松利好",
+      "desc": "数据截至8/11 12:00",
+      "summary": "宏观中性偏紧·CPI前观望"
+    },
+    "us_stocks": {
+      "score": 54,
+      "trend": "down",
+      "note": "SOX-2.94%·光通信Coherent-14%血洗",
+      "desc": "8/10美股收盘",
+      "summary": "AI硬件分化·光通信暴跌·芯片承压"
+    },
+    "hk_stocks": {
+      "score": 53,
+      "trend": "down",
+      "note": "恒科-1.27%·腾讯Q2财报前-2.17%",
+      "desc": "8/11盘中",
+      "summary": "港股回落·明日期待腾讯Q2财报"
+    },
+    "korea": {
+      "score": 48,
+      "trend": "down",
+      "note": "KOSPI-0.70%·SK海力士-2.5%·三星HBM4良率80%",
+      "desc": "8/11盘中",
+      "summary": "韩股续跌·HBM4黄金良率抵不住外资流出"
+    },
+    "a_stocks": {
+      "score": 61,
+      "trend": "up",
+      "note": "创业板+1.41%·MLCC追价抢料·算力/AIDC领涨",
+      "desc": "8/11午盘",
+      "summary": "A股结构牛·MLCC+算力主线·资金从CPO切换"
+    }
   },
   "macro_indicators": [
-    {"n": "10Y美债", "av": "4.703%", "s": 25, "d": "+5.7bp至20月高位·压制成长股估值"},
-    {"n": "VIX恐慌", "av": "15.46", "s": 65, "d": "低位回升3.8%·绝对水平正常·无恐慌信号"},
-    {"n": "南向资金", "av": "+20.2亿", "s": 55, "d": "8/10单日净买入·港股低吸动能存在"},
-    {"n": "人民币CNH", "av": "6.7451", "s": 70, "d": "创42个月新高·汇率环境对A股友好"},
-    {"n": "COMEX黄金", "av": "$4,448.6", "s": 75, "d": "+1.11%·弱美元+央行购金·避险资产走强"},
-    {"n": "FOMC加息概率", "av": "~44%", "s": 40, "d": "哈马克放鹰「需要一定次数加息」·9月仍悬"},
-    {"n": "WTI原油", "av": "$82.13", "s": 30, "d": "暴涨+5.05%·霍尔木兹谈判受阻·通胀预期升温"},
-    {"n": "DXY美元指数", "av": "99.81", "s": 60, "d": "+0.21%·弱美元支撑人民币但美债利率上行对冲"},
-    {"n": "SOX费城半导体", "av": "-2.94%", "s": 35, "d": "Coherent-14%·英特尔增发150亿拖累"}
+    {
+      "n": "10Y美债",
+      "av": "4.703%",
+      "s": 25,
+      "d": "+5.7bp至20月高位·压制成长股估值"
+    },
+    {
+      "n": "VIX恐慌",
+      "av": "15.46",
+      "s": 65,
+      "d": "低位回升3.8%·绝对水平正常·无恐慌信号"
+    },
+    {
+      "n": "南向资金",
+      "av": "+20.2亿",
+      "s": 55,
+      "d": "8/10单日净买入·港股低吸动能存在"
+    },
+    {
+      "n": "人民币CNH",
+      "av": "6.7451",
+      "s": 70,
+      "d": "创42个月新高·汇率环境对A股友好"
+    },
+    {
+      "n": "COMEX黄金",
+      "av": "$4,448.6",
+      "s": 75,
+      "d": "+1.11%·弱美元+央行购金·避险资产走强"
+    },
+    {
+      "n": "FOMC加息概率",
+      "av": "~44%",
+      "s": 40,
+      "d": "哈马克放鹰「需要一定次数加息」·9月仍悬"
+    },
+    {
+      "n": "WTI原油",
+      "av": "$82.13",
+      "s": 30,
+      "d": "暴涨+5.05%·霍尔木兹谈判受阻·通胀预期升温"
+    },
+    {
+      "n": "DXY美元指数",
+      "av": "99.81",
+      "s": 60,
+      "d": "+0.21%·弱美元支撑人民币但美债利率上行对冲"
+    },
+    {
+      "n": "SOX费城半导体",
+      "av": "-2.94%",
+      "s": 35,
+      "d": "Coherent-14%·英特尔增发150亿拖累"
+    }
   ],
   "macro_events": [
-    {"cat": "nc-macro", "tag": "宏观", "title": "美债10Y升至4.703%创20月新高·油价+5%双重压制", "body": "美债收益率全线走高:2Y 4.235%(+4bp)·10Y 4.703%(+5.7bp)。霍尔木兹海峡美伊谈判受阻→布油升至$87.72(+5%)·SPR降至2.987亿桶(1983年来最低)。哈马克称"可能需要一定次数加息才能压通胀回2%"。明天CPI(预期3.4%整体/2.5%核心)是检验通胀路径的关键", "cls": "em"},
-    {"cat": "nc-macro", "tag": "宏观", "title": "人民币CNH升至6.7451·创42个月新高", "body": "在岸人民币盘中最高6.7429(2023/2以来新高)。非农爆冷→美联储加息预期降温→美元承压。人民币升值环境利好A股外资流入·但对出口型半导体企业(中际旭创等)收入端有轻微负面", "cls": ""},
-    {"cat": "nc-macro", "tag": "宏观", "title": "非农后首个完整交易日·市场重新定价", "body": "7月非农-2.3万(预期+8万)为今年最差。CME FedWatch 9月加息概率从上周67%降至~44%。市场在CPI前处于"坏数据好政策"逻辑与油价通胀双重叙事之间摇摆", "cls": ""}
+    {
+      "cat": "nc-macro",
+      "tag": "宏观",
+      "title": "美债10Y升至4.703%创20月新高·油价+5%双重压制",
+      "body": "美债收益率全线走高:2Y 4.235%(+4bp)·10Y 4.703%(+5.7bp)。霍尔木兹海峡美伊谈判受阻→布油升至$87.72(+5%)·SPR降至2.987亿桶(1983年来最低)。哈马克称「可能需要一定次数加息才能压通胀回2%」。明天CPI(预期3.4%整体/2.5%核心)是检验通胀路径的关键",
+      "cls": "em"
+    },
+    {
+      "cat": "nc-macro",
+      "tag": "宏观",
+      "title": "人民币CNH升至6.7451·创42个月新高",
+      "body": "在岸人民币盘中最高6.7429(2023/2以来新高)。非农爆冷→美联储加息预期降温→美元承压。人民币升值环境利好A股外资流入·但对出口型半导体企业(中际旭创等)收入端有轻微负面",
+      "cls": ""
+    },
+    {
+      "cat": "nc-macro",
+      "tag": "宏观",
+      "title": "非农后首个完整交易日·市场重新定价",
+      "body": "7月非农-2.3万(预期+8万)为今年最差。CME FedWatch 9月加息概率从上周67%降至~44%。市场在CPI前处于「坏数据好政策」逻辑与油价通胀双重叙事之间摇摆",
+      "cls": ""
+    }
   ],
   "market_indicators": {
     "us_stocks": [
-      {"name": "SOX费城半导体", "av": "-2.94%", "val": "35", "desc": "Coherent-14%/Lumentum-8%光通信血洗·英特尔-4%增发拖累"},
-      {"name": "QQQ (纳指100ETF)", "av": "29622(-0.34%)", "val": "45", "desc": "小幅收跌但软着陆预期·苹果-1.6%/英伟达-2.9%拖累"},
-      {"name": "QQQ PE-TTM", "av": "31.36x", "val": "55", "desc": "估值偏高但未极端·AI硬件修正消化部分溢价"},
-      {"name": "SOXX PE-TTM", "av": "21.7x", "val": "60", "desc": "费半估值回调充分·低于近3年中位数24x·有安全边际"}
+      {
+        "name": "SOX费城半导体",
+        "av": "-2.94%",
+        "val": "35",
+        "desc": "Coherent-14%/Lumentum-8%光通信血洗·英特尔-4%增发拖累"
+      },
+      {
+        "name": "QQQ (纳指100ETF)",
+        "av": "29622(-0.34%)",
+        "val": "45",
+        "desc": "小幅收跌但软着陆预期·苹果-1.6%/英伟达-2.9%拖累"
+      },
+      {
+        "name": "QQQ PE-TTM",
+        "av": "31.36x",
+        "val": "55",
+        "desc": "估值偏高但未极端·AI硬件修正消化部分溢价"
+      },
+      {
+        "name": "SOXX PE-TTM",
+        "av": "21.7x",
+        "val": "60",
+        "desc": "费半估值回调充分·低于近3年中位数24x·有安全边际"
+      }
     ],
     "hk_stocks": [
-      {"name": "恒生科技指数", "av": "4857(-1.27%)", "val": "45", "desc": "恒科回落至4857·腾讯-2.17%拖累·南向+20亿低吸"},
-      {"name": "南向资金(5日)", "av": "8/10 +20.2亿", "val": "55", "desc": "港股低吸动能存在·但5日累计净流向待确认"},
-      {"name": "AH溢价指数", "av": "~145", "val": "60", "desc": "A股较H股溢价·H股估值优势明显·利好南向"},
-      {"name": "恒生科技PE", "av": "23.4x", "val": "65", "desc": "历史低位36%分位·中概回暖+AI变现预期提供支撑"}
+      {
+        "name": "恒生科技指数",
+        "av": "4857(-1.27%)",
+        "val": "45",
+        "desc": "恒科回落至4857·腾讯-2.17%拖累·南向+20亿低吸"
+      },
+      {
+        "name": "南向资金(5日)",
+        "av": "8/10 +20.2亿",
+        "val": "55",
+        "desc": "港股低吸动能存在·但5日累计净流向待确认"
+      },
+      {
+        "name": "AH溢价指数",
+        "av": "~145",
+        "val": "60",
+        "desc": "A股较H股溢价·H股估值优势明显·利好南向"
+      },
+      {
+        "name": "恒生科技PE",
+        "av": "23.4x",
+        "val": "65",
+        "desc": "历史低位36%分位·中概回暖+AI变现预期提供支撑"
+      }
     ],
     "korea": [
-      {"name": "KOSPI指数", "av": "6255(-0.70%)", "val": "40", "desc": "开6240·外资净买入1038亿韩元但指数受芯片股拖累"},
-      {"name": "韩元/USD汇率", "av": "~1390", "val": "50", "desc": "汇率稳定区间·外资净买入迹象积极·但芯片股承压"},
-      {"name": "韩国存储出口", "av": "+47% YoY", "val": "65", "desc": "存储出口强劲但股价脱钩·KOSPI较高点-33%·EPS预期+184%背离"},
-      {"name": "KOSDAQ科技", "av": "~850(-0.3%)", "val": "45", "desc": "昨日暴涨+7%后正常回吐·中小科技股消化获利盘"}
+      {
+        "name": "KOSPI指数",
+        "av": "6255(-0.70%)",
+        "val": "40",
+        "desc": "开6240·外资净买入1038亿韩元但指数受芯片股拖累"
+      },
+      {
+        "name": "韩元/USD汇率",
+        "av": "~1390",
+        "val": "50",
+        "desc": "汇率稳定区间·外资净买入迹象积极·但芯片股承压"
+      },
+      {
+        "name": "韩国存储出口",
+        "av": "+47% YoY",
+        "val": "65",
+        "desc": "存储出口强劲但股价脱钩·KOSPI较高点-33%·EPS预期+184%背离"
+      },
+      {
+        "name": "KOSDAQ科技",
+        "av": "~850(-0.3%)",
+        "val": "45",
+        "desc": "昨日暴涨+7%后正常回吐·中小科技股消化获利盘"
+      }
     ],
     "a_stocks": [
-      {"name": "沪深300", "av": "3965(-0.05%)", "val": "55", "desc": "窄幅震荡·资源+医药承接·科技内部分化"},
-      {"name": "科创50", "av": "1741(+0.16%)", "val": "58", "desc": "小幅收红·半导体设备支撑·CPO光模块拖累"},
-      {"name": "北向资金(5日)", "av": "待确认", "val": "50", "desc": "昨日成交2.52万亿缩量·等今日北向数据"},
-      {"name": "申万半导体", "av": "+0.43%", "val": "60", "desc": "AI算力/AIDC主力净流入+81.65亿·MLCC追价抢料催化"}
+      {
+        "name": "沪深300",
+        "av": "3965(-0.05%)",
+        "val": "55",
+        "desc": "窄幅震荡·资源+医药承接·科技内部分化"
+      },
+      {
+        "name": "科创50",
+        "av": "1741(+0.16%)",
+        "val": "58",
+        "desc": "小幅收红·半导体设备支撑·CPO光模块拖累"
+      },
+      {
+        "name": "北向资金(5日)",
+        "av": "待确认",
+        "val": "50",
+        "desc": "昨日成交2.52万亿缩量·等今日北向数据"
+      },
+      {
+        "name": "申万半导体",
+        "av": "+0.43%",
+        "val": "60",
+        "desc": "AI算力/AIDC主力净流入+81.65亿·MLCC追价抢料催化"
+      }
     ]
   },
   "market_events": {
     "us_stocks": [
-      {"cat": "nc-intl", "tag": "国际", "title": "光通信板块血洗·Coherent-14% Lumentum-8%", "body": "8/10美股光通信高开低走·Coherent暴跌超14%·Lumentum跌超8%。费城半导体指数-2.94%。微软宣布秋季发布自研AI芯片Maia 300·将与台积电合作2027年交付30万枚·自研芯片叙事对光模块/交换机形成长期替代压力", "cls": "em"},
-      {"cat": "nc-intl", "tag": "国际", "title": "英特尔150亿美元增发·AI数据中心投资加码", "body": "英特尔宣布发行150亿美元普通股(上市来最大)·用于先进封装+专用芯片+物理AI。承销商额外22.5亿美元超额配售权。英伟达与华尔街巨头拟达成5000亿美元AI融资协议·AI基础设施军备竞赛继续烧钱", "cls": ""},
-      {"cat": "nc-intl", "tag": "国际", "title": "CoreWeave/SMCI/Lumentum今晚财报·验证AI需求", "body": "今晚盘后:CoreWeave(CRWV·GPU云·验证AI基础设施需求)·SMCI(AI服务器订单转化率)·Lumentum(LITE·800G/1.6T光模块需求)。明天Cisco(CSCO·AI网络)·周四Applied Materials(AMAT·设备支出)。本周财报密集验证AI产业链健康度", "cls": ""}
+      {
+        "cat": "nc-intl",
+        "tag": "国际",
+        "title": "光通信板块血洗·Coherent-14% Lumentum-8%",
+        "body": "8/10美股光通信高开低走·Coherent暴跌超14%·Lumentum跌超8%。费城半导体指数-2.94%。微软宣布秋季发布自研AI芯片Maia 300·将与台积电合作2027年交付30万枚·自研芯片叙事对光模块/交换机形成长期替代压力",
+        "cls": "em"
+      },
+      {
+        "cat": "nc-intl",
+        "tag": "国际",
+        "title": "英特尔150亿美元增发·AI数据中心投资加码",
+        "body": "英特尔宣布发行150亿美元普通股(上市来最大)·用于先进封装+专用芯片+物理AI。承销商额外22.5亿美元超额配售权。英伟达与华尔街巨头拟达成5000亿美元AI融资协议·AI基础设施军备竞赛继续烧钱",
+        "cls": ""
+      },
+      {
+        "cat": "nc-intl",
+        "tag": "国际",
+        "title": "CoreWeave/SMCI/Lumentum今晚财报·验证AI需求",
+        "body": "今晚盘后:CoreWeave(CRWV·GPU云·验证AI基础设施需求)·SMCI(AI服务器订单转化率)·Lumentum(LITE·800G/1.6T光模块需求)。明天Cisco(CSCO·AI网络)·周四Applied Materials(AMAT·设备支出)。本周财报密集验证AI产业链健康度",
+        "cls": ""
+      }
     ],
     "hk_stocks": [
-      {"cat": "nc-hk", "tag": "港股", "title": "腾讯8/13 Q2财报·AI云变现为最大看点", "body": "腾讯控股将于8/13(周三)公布Q2业绩。高盛研报指出中概Q2四大主线:AI云业务加速变现·广告精准投放·即时零售利润承压·经营现金流与资本开支指引。腾讯Q2预期:游戏+广告稳健·AI混元商业化初期", "cls": ""},
-      {"cat": "nc-hk", "tag": "港股", "title": "07709两倍海力士-0.07%至28.68·规模大缩水", "body": "今开27.54·高29.04·低27.10·成交2.87亿HKD。较6/25高点193.65跌去85%。ETF规模从1300亿缩至280亿HKD(蒸发千亿)。SK海力士正股-2.54%·三星HBM4良率80%提升但市场情绪仍谨慎", "cls": "em"}
+      {
+        "cat": "nc-hk",
+        "tag": "港股",
+        "title": "腾讯8/13 Q2财报·AI云变现为最大看点",
+        "body": "腾讯控股将于8/13(周三)公布Q2业绩。高盛研报指出中概Q2四大主线:AI云业务加速变现·广告精准投放·即时零售利润承压·经营现金流与资本开支指引。腾讯Q2预期:游戏+广告稳健·AI混元商业化初期",
+        "cls": ""
+      },
+      {
+        "cat": "nc-hk",
+        "tag": "港股",
+        "title": "07709两倍海力士-0.07%至28.68·规模大缩水",
+        "body": "今开27.54·高29.04·低27.10·成交2.87亿HKD。较6/25高点193.65跌去85%。ETF规模从1300亿缩至280亿HKD(蒸发千亿)。SK海力士正股-2.54%·三星HBM4良率80%提升但市场情绪仍谨慎",
+        "cls": "em"
+      }
     ],
     "korea": [
-      {"cat": "nc-kr", "tag": "韩国", "title": "三星HBM4良率突破80%·提前4个月达成年底目标", "body": "三星电子第六代HBM4量产良率从不足60%大幅攀升至80%"黄金良率"。Q3 HBM4销售额目标环比提升三倍以上·下半年HBM4占整体HBM销售额60%+。1c DRAM基础芯片良率提升+TC-NCF工艺改进是突破关键", "cls": ""},
-      {"cat": "nc-kr", "tag": "韩国", "title": "SK海力士54万亿韩元扩产·龙仁/清州新建晶圆厂", "body": "SK海力士敲定扩产方案:龙仁Y2厂区+清州M17厂区总投资54万亿韩元(384亿美元)。承接AI催生的存储芯片增量需求。韩国政府设5万亿韩元半导体材料基金·年底前制定特别法支持三大超级项目", "cls": ""}
+      {
+        "cat": "nc-kr",
+        "tag": "韩国",
+        "title": "三星HBM4良率突破80%·提前4个月达成年底目标",
+        "body": "三星电子第六代HBM4量产良率从不足60%大幅攀升至80%「黄金良率」。Q3 HBM4销售额目标环比提升三倍以上·下半年HBM4占整体HBM销售额60%+。1c DRAM基础芯片良率提升+TC-NCF工艺改进是突破关键",
+        "cls": ""
+      },
+      {
+        "cat": "nc-kr",
+        "tag": "韩国",
+        "title": "SK海力士54万亿韩元扩产·龙仁/清州新建晶圆厂",
+        "body": "SK海力士敲定扩产方案:龙仁Y2厂区+清州M17厂区总投资54万亿韩元(384亿美元)。承接AI催生的存储芯片增量需求。韩国政府设5万亿韩元半导体材料基金·年底前制定特别法支持三大超级项目",
+        "cls": ""
+      }
     ],
     "a_stocks": [
-      {"cat": "nc-cn", "tag": "A股", "title": "MLCC追价抢料潮·客户以原价2-3倍争夺货源", "body": "AI需求持续升温引发全球被动元件供应紧张。MLCC出现追价抢料潮·部分客户不惜以原价2-3倍争夺。2027年高容MLCC供需缺口或扩大。双星新材/洁美科技/国风新材涨停·昀冢科技+10%·风华高科+5.8%·国瓷材料+14.47%", "cls": ""},
-      {"cat": "nc-cn", "tag": "A股", "title": "阿里云AIDC交付100天·算力基建加速", "body": "阿里云基于全模块化设计架构·将大型AIDC交付工期从传统6-12月压缩至100天·建设成本降低10%+。今年全球产能提升两倍以上。算力租赁概念异动拉升·杭钢/鸿博直线封板·数据中心板块主力净流入+81.65亿", "cls": ""},
-      {"cat": "nc-cn", "tag": "A股", "title": "光模块映射承压·Coherent/Lumentum暴跌传导", "body": "隔夜Coherent-14%/Lumentum-8%暴跌对A股CPO/光模块形成映射压力。但CPO板块主力净流入仍+46.68亿·中际旭创高开1.8%后回落。光模块内部分化:国产替代(FCC禁令催化)vs 美企映射压力", "cls": "em"}
+      {
+        "cat": "nc-cn",
+        "tag": "A股",
+        "title": "MLCC追价抢料潮·客户以原价2-3倍争夺货源",
+        "body": "AI需求持续升温引发全球被动元件供应紧张。MLCC出现追价抢料潮·部分客户不惜以原价2-3倍争夺。2027年高容MLCC供需缺口或扩大。双星新材/洁美科技/国风新材涨停·昀冢科技+10%·风华高科+5.8%·国瓷材料+14.47%",
+        "cls": ""
+      },
+      {
+        "cat": "nc-cn",
+        "tag": "A股",
+        "title": "阿里云AIDC交付100天·算力基建加速",
+        "body": "阿里云基于全模块化设计架构·将大型AIDC交付工期从传统6-12月压缩至100天·建设成本降低10%+。今年全球产能提升两倍以上。算力租赁概念异动拉升·杭钢/鸿博直线封板·数据中心板块主力净流入+81.65亿",
+        "cls": ""
+      },
+      {
+        "cat": "nc-cn",
+        "tag": "A股",
+        "title": "光模块映射承压·Coherent/Lumentum暴跌传导",
+        "body": "隔夜Coherent-14%/Lumentum-8%暴跌对A股CPO/光模块形成映射压力。但CPO板块主力净流入仍+46.68亿·中际旭创高开1.8%后回落。光模块内部分化:国产替代(FCC禁令催化)vs 美企映射压力",
+        "cls": "em"
+      }
     ]
   },
   "holdings": {
     "a_stocks": [
-      {"code": "603986", "name": "兆易创新", "shares": 800, "cost": 592.0, "current": 409.59, "pnl_pct": -30.8, "currency": "RMB"}
+      {
+        "code": "603986",
+        "name": "兆易创新",
+        "shares": 800,
+        "cost": 592.0,
+        "current": 409.59,
+        "pnl_pct": -30.8,
+        "currency": "RMB"
+      }
     ],
     "hk_stocks": [
-      {"code": "07709", "name": "两倍做多SK海力士", "shares": 8500, "cost": 87.0, "current": 28.68, "pnl_pct": -67.0, "currency": "HKD"}
+      {
+        "code": "07709",
+        "name": "两倍做多SK海力士",
+        "shares": 8500,
+        "cost": 87.0,
+        "current": 28.68,
+        "pnl_pct": -67.0,
+        "currency": "HKD"
+      }
     ],
     "funds": [
-      {"code": "100055", "name": "富国全球科技互联网(QDII)A", "shares": "¥1,000/日", "cost": "--", "current": "净值5.19(8/7)", "pnl_pct": -8.82, "currency": "RMB", "isFund": true},
-      {"code": "005698", "name": "华夏全球科技先锋(QDII)A", "shares": "¥1,000/日", "cost": "--", "current": "净值2.73(8/7)", "pnl_pct": -18.74, "currency": "RMB", "isFund": true},
-      {"code": "020900", "name": "天弘中证全指通信设备指数C", "shares": "¥1,000/周", "cost": "--", "current": "净值3.35(8/10)", "pnl_pct": -14.8, "currency": "RMB", "isFund": true}
+      {
+        "code": "100055",
+        "name": "富国全球科技互联网(QDII)A",
+        "shares": "¥1,000/日",
+        "cost": "--",
+        "current": "净值5.19(8/7)",
+        "pnl_pct": -8.82,
+        "currency": "RMB",
+        "isFund": true
+      },
+      {
+        "code": "005698",
+        "name": "华夏全球科技先锋(QDII)A",
+        "shares": "¥1,000/日",
+        "cost": "--",
+        "current": "净值2.73(8/7)",
+        "pnl_pct": -18.74,
+        "currency": "RMB",
+        "isFund": true
+      },
+      {
+        "code": "020900",
+        "name": "天弘中证全指通信设备指数C",
+        "shares": "¥1,000/周",
+        "cost": "--",
+        "current": "净值3.35(8/10)",
+        "pnl_pct": -14.8,
+        "currency": "RMB",
+        "isFund": true
+      }
     ]
   },
   "holdings_summary": "A股持仓1只:兆易创新800股@592.0(浮亏-30.8%)。港股07709·8500股@87HKD(浮亏-67.0%)。国瓷材料8/10已清仓5000股@74.5·回收37.25万。A股现金~73.4万。富途满仓无现金。富兰克林科技30万HKD(港卡)。支付宝定投3只基金正常执行。CPI前策略:持仓不动·等方向",
@@ -1724,79 +2000,274 @@ var dailyData = {
     }
   ],
   "triggers": [
-    {"code": "002371", "name": "北方华创", "condition": "≤770(第1批2万)", "current": 762.01, "distance_pct": -1.0, "distance_label": "已触发·等回踩740-750", "note": "连续6日上涨·追高风险·等回踩确认", "action": "等回踩740-750建仓2万(原4万减半)"},
-    {"code": "002371", "name": "北方华创", "condition": "≤730(第2批2万)", "current": 762.01, "distance_pct": 4.2, "distance_label": "距触发4.2%", "note": "当前762高于730·等大盘回调", "action": "等大盘回调至730附近第2批2万"},
-    {"code": "603986", "name": "兆易创新", "condition": "430-450减仓100-200股", "current": 409.59, "distance_pct": 5.0, "distance_label": "距430差5.0%", "note": "Q2财报8/19·弹性验证后减仓降成本", "action": "反弹至430可减100-200股"},
-    {"code": "07709", "name": "两倍做多SK海力士", "condition": "反弹55-65减仓2000-3000股", "current": 28.68, "distance_pct": 91.8, "distance_label": "距55需+92%·短期不可及", "note": "先观察40-45反弹质量", "action": "持有不动·不追加不割肉"},
-    {"code": "002409", "name": "雅克科技", "condition": "≤190(暂停执行)", "current": 153.6, "distance_pct": -19.2, "distance_label": "暂停执行", "note": "SK海力士客户风险未解除·暂停建仓", "action": "暂停·等韩国危机企稳后重评"}
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "condition": "≤770(第1批2万)",
+      "current": 762.01,
+      "distance_pct": -1.0,
+      "distance_label": "已触发·等回踩740-750",
+      "note": "连续6日上涨·追高风险·等回踩确认",
+      "action": "等回踩740-750建仓2万(原4万减半)"
+    },
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "condition": "≤730(第2批2万)",
+      "current": 762.01,
+      "distance_pct": 4.2,
+      "distance_label": "距触发4.2%",
+      "note": "当前762高于730·等大盘回调",
+      "action": "等大盘回调至730附近第2批2万"
+    },
+    {
+      "code": "603986",
+      "name": "兆易创新",
+      "condition": "430-450减仓100-200股",
+      "current": 409.59,
+      "distance_pct": 5.0,
+      "distance_label": "距430差5.0%",
+      "note": "Q2财报8/19·弹性验证后减仓降成本",
+      "action": "反弹至430可减100-200股"
+    },
+    {
+      "code": "07709",
+      "name": "两倍做多SK海力士",
+      "condition": "反弹55-65减仓2000-3000股",
+      "current": 28.68,
+      "distance_pct": 91.8,
+      "distance_label": "距55需+92%·短期不可及",
+      "note": "先观察40-45反弹质量",
+      "action": "持有不动·不追加不割肉"
+    },
+    {
+      "code": "002409",
+      "name": "雅克科技",
+      "condition": "≤190(暂停执行)",
+      "current": 153.6,
+      "distance_pct": -19.2,
+      "distance_label": "暂停执行",
+      "note": "SK海力士客户风险未解除·暂停建仓",
+      "action": "暂停·等韩国危机企稳后重评"
+    }
   ],
   "trigger_alert": "⚠️ 北方华创三档全触发(762>770/750/760)·但连续6日上涨追高风险·等回踩740-750建仓2万(原方案4万减半)。07709反弹目标55-65短期不可及(需+92%)·先观察40-45。兆易430减仓差5%·等Q2财报。明日CPI后重评全部阈值",
   "stock_analysis": {
     "core": [
-      {"code": "603986", "name": "兆易创新", "price": "409.59(+1.63%)", "position": "800股@592.0·浮亏-30.8%", "trigger": "430-450减仓100-200·Q2财报8/19", "logic": "Q1营收+119%/净利+523%成长确认。8/7减仓@397.67回收3.98万。10-20亿回购+增持10亿提供底部支撑。今日主力净流入+4318万·北向成交25.26亿沪股通前三。存储涨价周期+AI数据中心需求是正面催化·但大宗减持11.82%仍是悬剑"},
-      {"code": "07709", "name": "两倍做多SK海力士", "price": "28.68HKD(-0.07%)", "position": "8500股@87HKD·浮亏-67.0%·满仓", "trigger": "反弹55-65减2000-3000·短期不可及", "logic": "SK海力士54万亿扩产+三星HBM4良率80%=产业长期逻辑确认。但2x杠杆ETF规模缩水90%+正股-2.54%→价格与基本面严重背离。持有当HBM期权·不追加不割肉·先看40-45反弹质量"}
+      {
+        "code": "603986",
+        "name": "兆易创新",
+        "price": "409.59(+1.63%)",
+        "position": "800股@592.0·浮亏-30.8%",
+        "trigger": "430-450减仓100-200·Q2财报8/19",
+        "logic": "Q1营收+119%/净利+523%成长确认。8/7减仓@397.67回收3.98万。10-20亿回购+增持10亿提供底部支撑。今日主力净流入+4318万·北向成交25.26亿沪股通前三。存储涨价周期+AI数据中心需求是正面催化·但大宗减持11.82%仍是悬剑"
+      },
+      {
+        "code": "07709",
+        "name": "两倍做多SK海力士",
+        "price": "28.68HKD(-0.07%)",
+        "position": "8500股@87HKD·浮亏-67.0%·满仓",
+        "trigger": "反弹55-65减2000-3000·短期不可及",
+        "logic": "SK海力士54万亿扩产+三星HBM4良率80%=产业长期逻辑确认。但2x杠杆ETF规模缩水90%+正股-2.54%→价格与基本面严重背离。持有当HBM期权·不追加不割肉·先看40-45反弹质量"
+      }
     ],
     "monitor_layers": [
       {
         "name": "上游1·材料（MLCC/前驱体）",
         "color": "linear-gradient(90deg,#7c3aed,#a78bfa)",
         "stocks": [
-          {"code": "300285", "name": "国瓷材料", "sub": "钛酸钡", "price": "81.30(+14.47%)", "entry": "已清仓·等60-65回补", "logic": "8/10全仓止盈5000股@74.5·盈利约1600·MLCC追价抢料逻辑验证(H1+9.36%低于预期)。等回调60-65重新建仓"},
-          {"code": "605376", "name": "博迁新材", "sub": "80nm镍粉", "price": "--", "entry": "与国瓷逻辑重叠", "logic": "MLCC镍粉·与国瓷钛酸钡逻辑重叠·镍粉涨价独立时考虑"},
-          {"code": "002409", "name": "雅克科技", "sub": "HBM前驱体", "price": "153.60(+6.06%)", "entry": "≤190·暂停执行", "logic": "SK海力士核心供应商·单一客户风险未解除·暂停建仓"}
+          {
+            "code": "300285",
+            "name": "国瓷材料",
+            "sub": "钛酸钡",
+            "price": "81.30(+14.47%)",
+            "entry": "已清仓·等60-65回补",
+            "logic": "8/10全仓止盈5000股@74.5·盈利约1600·MLCC追价抢料逻辑验证(H1+9.36%低于预期)。等回调60-65重新建仓"
+          },
+          {
+            "code": "605376",
+            "name": "博迁新材",
+            "sub": "80nm镍粉",
+            "price": "--",
+            "entry": "与国瓷逻辑重叠",
+            "logic": "MLCC镍粉·与国瓷钛酸钡逻辑重叠·镍粉涨价独立时考虑"
+          },
+          {
+            "code": "002409",
+            "name": "雅克科技",
+            "sub": "HBM前驱体",
+            "price": "153.60(+6.06%)",
+            "entry": "≤190·暂停执行",
+            "logic": "SK海力士核心供应商·单一客户风险未解除·暂停建仓"
+          }
         ]
       },
       {
         "name": "上游2·设备（国产替代核心）",
         "color": "linear-gradient(90deg,#2563eb,#60a5fa)",
         "stocks": [
-          {"code": "002371", "name": "北方华创", "sub": "综合设备龙头", "price": "762.01(+0.26%)", "entry": "≤770/2万+≤730/2万", "logic": "三档全触发·连涨6日(8/3至今+16.8%)·追高风险。等740-750回踩建仓2万。中国半导体设备国产替代核心·长期逻辑最硬"},
-          {"code": "688012", "name": "中微公司", "sub": "刻蚀设备", "price": "已清仓", "entry": "8/6平本清仓@361", "logic": "已清仓·回收7.22万。AI推荐错误·用户纠正"}
+          {
+            "code": "002371",
+            "name": "北方华创",
+            "sub": "综合设备龙头",
+            "price": "762.01(+0.26%)",
+            "entry": "≤770/2万+≤730/2万",
+            "logic": "三档全触发·连涨6日(8/3至今+16.8%)·追高风险。等740-750回踩建仓2万。中国半导体设备国产替代核心·长期逻辑最硬"
+          },
+          {
+            "code": "688012",
+            "name": "中微公司",
+            "sub": "刻蚀设备",
+            "price": "已清仓",
+            "entry": "8/6平本清仓@361",
+            "logic": "已清仓·回收7.22万。AI推荐错误·用户纠正"
+          }
         ]
       },
       {
         "name": "中游3·元器件/存储",
         "color": "linear-gradient(90deg,#ea580c,#fdba74)",
         "stocks": [
-          {"code": "300408", "name": "三环集团", "sub": "MLCC制造", "price": "--", "entry": "PE 35x·≤130考虑", "logic": "MLCC涨价受益·但不如上游材料弹性大"},
-          {"code": "000636", "name": "风华高科", "sub": "MLCC#2", "price": "+5.8%", "entry": "军工+车规·MLCC涨价最大受益", "logic": "MLCC追价抢料最大受益标的·军工品质+车规认证·第11期研报策略盲区标的"},
-          {"code": "002463", "name": "沪电股份", "sub": "AI PCB", "price": "--", "entry": "≤120", "logic": "AI服务器PCB核心供应商"},
-          {"code": "300308", "name": "中际旭创", "sub": "光模块#1", "price": "高开1.8%回落", "entry": "等40%+回调", "logic": "光模块龙头·1.6T放量预期但Coherent/Lumentum映射压力·FCC禁令提供国产替代催化"}
+          {
+            "code": "300408",
+            "name": "三环集团",
+            "sub": "MLCC制造",
+            "price": "--",
+            "entry": "PE 35x·≤130考虑",
+            "logic": "MLCC涨价受益·但不如上游材料弹性大"
+          },
+          {
+            "code": "000636",
+            "name": "风华高科",
+            "sub": "MLCC#2",
+            "price": "+5.8%",
+            "entry": "军工+车规·MLCC涨价最大受益",
+            "logic": "MLCC追价抢料最大受益标的·军工品质+车规认证·第11期研报策略盲区标的"
+          },
+          {
+            "code": "002463",
+            "name": "沪电股份",
+            "sub": "AI PCB",
+            "price": "--",
+            "entry": "≤120",
+            "logic": "AI服务器PCB核心供应商"
+          },
+          {
+            "code": "300308",
+            "name": "中际旭创",
+            "sub": "光模块#1",
+            "price": "高开1.8%回落",
+            "entry": "等40%+回调",
+            "logic": "光模块龙头·1.6T放量预期但Coherent/Lumentum映射压力·FCC禁令提供国产替代催化"
+          }
         ]
       },
       {
         "name": "中游4·AI基础设施",
         "color": "linear-gradient(90deg,#16a34a,#86efac)",
         "stocks": [
-          {"code": "600584", "name": "长电科技", "sub": "先进封装", "price": "--", "entry": "国内封测龙头", "logic": "AI芯片封装需求暴增·国产替代受益"},
-          {"code": "600460", "name": "士兰微", "sub": "功率半导体", "price": "--", "entry": "PE 72x太贵·≤35考虑", "logic": "功率半导体龙头·估值过高暂不关注"}
+          {
+            "code": "600584",
+            "name": "长电科技",
+            "sub": "先进封装",
+            "price": "--",
+            "entry": "国内封测龙头",
+            "logic": "AI芯片封装需求暴增·国产替代受益"
+          },
+          {
+            "code": "600460",
+            "name": "士兰微",
+            "sub": "功率半导体",
+            "price": "--",
+            "entry": "PE 72x太贵·≤35考虑",
+            "logic": "功率半导体龙头·估值过高暂不关注"
+          }
         ]
       }
     ]
   },
   "execution_plan": {
     "phases": [
-      {"cls": "phase-a", "name": "Phase A·腾讯清仓", "status": "✅ 已完成", "desc": "腾讯00700全部售出·回收约125万RMB·亏损-6.6%"},
-      {"cls": "phase-b", "name": "Phase B·A股建仓(进行中)", "status": "⚡ 70%完成", "desc": "国瓷清仓@74.5·兆易800股@592·北华等740-750建仓·现金73.4万等CPI后配置"},
-      {"cls": "phase-c", "name": "Phase C·基金DCA", "status": "✅ 正常执行", "desc": "100055/005698每日¥1,000·020900每周¥1,000·富兰克林30万HKD持有"}
+      {
+        "cls": "phase-a",
+        "name": "Phase A·腾讯清仓",
+        "status": "✅ 已完成",
+        "desc": "腾讯00700全部售出·回收约125万RMB·亏损-6.6%"
+      },
+      {
+        "cls": "phase-b",
+        "name": "Phase B·A股建仓(进行中)",
+        "status": "⚡ 70%完成",
+        "desc": "国瓷清仓@74.5·兆易800股@592·北华等740-750建仓·现金73.4万等CPI后配置"
+      },
+      {
+        "cls": "phase-c",
+        "name": "Phase C·基金DCA",
+        "status": "✅ 正常执行",
+        "desc": "100055/005698每日¥1,000·020900每周¥1,000·富兰克林30万HKD持有"
+      }
     ],
     "firepower": "<strong>A股可用73.4万RMB</strong>·富途0HKD(满仓07709)·港卡富兰克林30万HKD。CPI前策略:全部持仓不动·等8/12 CPI方向确认。北华740-750建仓2万(待触发)·国瓷60-65考虑回补3-5万",
     "panels": [
-      {"cls": "a", "title": "🔥 持仓操作建议", "title_color": "#991b1b", "content": "<strong>今日策略:持仓不动·等明天CPI</strong><br>①兆易创新603986:800股@592·现价409.59(+1.63%)·持有等8/19 Q2财报·不加减。反弹至430-450可减100-200股降成本·距430差5.0%<br>②07709两倍海力士:8500股@87·现价28.68(-0.07%)·持有不动不追加不割肉·浮亏-67.0%。SK海力士54万亿扩产+三星HBM4良率80%=产业逻辑确认·但价格与基本面严重背离·等40-45反弹后重评<br>③基金DCA:100055/005698每日¥1,000·020900每周¥1,000·正常执行不暂停<br>④国瓷已清仓:*今日MLCC涨停潮最受益标的我们已不在车上*·等60-65回调回补·不追高"},
-      {"cls": "b", "title": "📊 北华建仓方案(CPI后执行)", "title_color": "#2563eb", "content": "<strong>方案:总4万RMB分两批</strong><br>第1批:≤770/2万(已触发762·但等740-750回踩确认·距-1.6%)<br>第2批:≤730/2万(距离+4.2%·需等大盘回调)<br><br><strong>调整原因(第11期研报重算):</strong><br>1. 原方案10万分三批(780/750/760)→现4万分两批(770/730)·金额减半·触发价下调<br>2. FOMC已落地+日本出口管制8/1生效+科创50从1553反弹至1741(+12.1%)→宏观环境显著变化<br>3. 当前762较8/3低点652已涨+16.8%·追高风险不可忽视<br>4. 如果继续等待660-680可能彻底错过建仓窗口→选择在740-750颈线位主动建仓"},
-      {"cls": "c", "title": "💰 资金分配总览", "title_color": "#16a34a", "content": "<strong>A股可用73.4万RMB</strong><br>├─ 兆易创新603986:已持仓47.4万(800股@592)·Q2财报前不加仓<br>├─ 北方华创002371:预留4万·等740-750建仓·CPI后执行<br>├─ 国瓷材料300285:预留15万·等60-65回补5000股<br>├─ 其他计划:预留10万·待CPI方向确认后评估<br>└─ 剩余现金:~44万·持币等CPI后方向·不急于配置<br><br><strong>港股:</strong>07709满仓无现金·富兰克林30万HKD(港卡)<br><strong>支付宝:</strong>100055+005698每日¥2,000·020900每周¥1,000"},
-      {"cls": "d", "title": "⚠️ 风险警示", "title_color": "#dc2626", "content": "<strong>三大风险·CPI前夜:</strong><br>①<strong>CPI高于预期</strong>:核心CPI反弹至2.6%+→9月加息概率反弹→美债可能突破4.80%→全球成长股再跌5-10%→07709可能再创新低·兆易回调至380以下<br>②<strong>光通信传导风险</strong>:Coherent-14%+Lumentum-8%(今晚财报可能进一步恶化)→A股CPO/光模块板块明日承压→020900天弘通信净值再受冲击<br>③<strong>三星HBM4供给增加</strong>:良率80%→产能释放→可能缓解HBM紧缺→对SK海力士定价权形成压力→07709反弹逻辑减弱<br><br><strong>防线:</strong>兆易10-20亿回购提供底部支撑(380-400区间)·SK海力士2027产能售罄提供产业底部·CPI若低于预期→全球风险资产全面反弹·当前持仓在极值位不宜过度减仓"}
+      {
+        "cls": "a",
+        "title": "🔥 持仓操作建议",
+        "title_color": "#991b1b",
+        "content": "<strong>今日策略:持仓不动·等明天CPI</strong><br>①兆易创新603986:800股@592·现价409.59(+1.63%)·持有等8/19 Q2财报·不加减。反弹至430-450可减100-200股降成本·距430差5.0%<br>②07709两倍海力士:8500股@87·现价28.68(-0.07%)·持有不动不追加不割肉·浮亏-67.0%。SK海力士54万亿扩产+三星HBM4良率80%=产业逻辑确认·但价格与基本面严重背离·等40-45反弹后重评<br>③基金DCA:100055/005698每日¥1,000·020900每周¥1,000·正常执行不暂停<br>④国瓷已清仓:*今日MLCC涨停潮最受益标的我们已不在车上*·等60-65回调回补·不追高"
+      },
+      {
+        "cls": "b",
+        "title": "📊 北华建仓方案(CPI后执行)",
+        "title_color": "#2563eb",
+        "content": "<strong>方案:总4万RMB分两批</strong><br>第1批:≤770/2万(已触发762·但等740-750回踩确认·距-1.6%)<br>第2批:≤730/2万(距离+4.2%·需等大盘回调)<br><br><strong>调整原因(第11期研报重算):</strong><br>1. 原方案10万分三批(780/750/760)→现4万分两批(770/730)·金额减半·触发价下调<br>2. FOMC已落地+日本出口管制8/1生效+科创50从1553反弹至1741(+12.1%)→宏观环境显著变化<br>3. 当前762较8/3低点652已涨+16.8%·追高风险不可忽视<br>4. 如果继续等待660-680可能彻底错过建仓窗口→选择在740-750颈线位主动建仓"
+      },
+      {
+        "cls": "c",
+        "title": "💰 资金分配总览",
+        "title_color": "#16a34a",
+        "content": "<strong>A股可用73.4万RMB</strong><br>├─ 兆易创新603986:已持仓47.4万(800股@592)·Q2财报前不加仓<br>├─ 北方华创002371:预留4万·等740-750建仓·CPI后执行<br>├─ 国瓷材料300285:预留15万·等60-65回补5000股<br>├─ 其他计划:预留10万·待CPI方向确认后评估<br>└─ 剩余现金:~44万·持币等CPI后方向·不急于配置<br><br><strong>港股:</strong>07709满仓无现金·富兰克林30万HKD(港卡)<br><strong>支付宝:</strong>100055+005698每日¥2,000·020900每周¥1,000"
+      },
+      {
+        "cls": "d",
+        "title": "⚠️ 风险警示",
+        "title_color": "#dc2626",
+        "content": "<strong>三大风险·CPI前夜:</strong><br>①<strong>CPI高于预期</strong>:核心CPI反弹至2.6%+→9月加息概率反弹→美债可能突破4.80%→全球成长股再跌5-10%→07709可能再创新低·兆易回调至380以下<br>②<strong>光通信传导风险</strong>:Coherent-14%+Lumentum-8%(今晚财报可能进一步恶化)→A股CPO/光模块板块明日承压→020900天弘通信净值再受冲击<br>③<strong>三星HBM4供给增加</strong>:良率80%→产能释放→可能缓解HBM紧缺→对SK海力士定价权形成压力→07709反弹逻辑减弱<br><br><strong>防线:</strong>兆易10-20亿回购提供底部支撑(380-400区间)·SK海力士2027产能售罄提供产业底部·CPI若低于预期→全球风险资产全面反弹·当前持仓在极值位不宜过度减仓"
+      }
     ]
   },
   "next_events": [
-    {"date": "8/11 今晚", "event": "CoreWeave(CRWV)·SMCI·Lumentum(LITE)盘后财报→验证AI基础设施需求"},
-    {"date": "8/12 周三 20:30", "event": "⭐ 美国7月CPI(预期整体3.4%/核心2.5%)·本周决定性变量"},
-    {"date": "8/12 周三", "event": "Cisco(CSCO)盘后财报→验证AI网络设备需求"},
-    {"date": "8/13 周四", "event": "⭐ 腾讯控股00700 Q2财报·AI云变现+资本开支指引"},
-    {"date": "8/13 周四", "event": "闪迪(SanDisk)投资者日→NAND供需/资本开支/HBF路线图"},
-    {"date": "8/13 周四", "event": "Applied Materials(AMAT)盘后财报·设备支出指引"},
-    {"date": "8/14 周五", "event": "美国7月PPI·零售销售·8月密歇根消费者信心·Q2 13F持仓披露截止"},
-    {"date": "8/19 周二", "event": "⭐ 兆易创新603986 Q2财报·全年最重要验证点"}
+    {
+      "date": "8/11 今晚",
+      "event": "CoreWeave(CRWV)·SMCI·Lumentum(LITE)盘后财报→验证AI基础设施需求"
+    },
+    {
+      "date": "8/12 周三 20:30",
+      "event": "⭐ 美国7月CPI(预期整体3.4%/核心2.5%)·本周决定性变量"
+    },
+    {
+      "date": "8/12 周三",
+      "event": "Cisco(CSCO)盘后财报→验证AI网络设备需求"
+    },
+    {
+      "date": "8/13 周四",
+      "event": "⭐ 腾讯控股00700 Q2财报·AI云变现+资本开支指引"
+    },
+    {
+      "date": "8/13 周四",
+      "event": "闪迪(SanDisk)投资者日→NAND供需/资本开支/HBF路线图"
+    },
+    {
+      "date": "8/13 周四",
+      "event": "Applied Materials(AMAT)盘后财报·设备支出指引"
+    },
+    {
+      "date": "8/14 周五",
+      "event": "美国7月PPI·零售销售·8月密歇根消费者信心·Q2 13F持仓披露截止"
+    },
+    {
+      "date": "8/19 周二",
+      "event": "⭐ 兆易创新603986 Q2财报·全年最重要验证点"
+    }
   ]
 };
 </script>
@@ -1805,7 +2276,7 @@ var researchData = {
   "type": "research",
   "title": "产业烈火烹油与价格冰火两重天：AI产业链第11期深度研报",
   "date": "2026-08-08",
-  "generated_at": "2026-08-11 12:58",
+  "generated_at": "2026-08-11 12:59",
   "coverage": "全产业链上游→下游全覆盖·8/3-8/8周度扫描·数据来源: neodata+WebSearch(neodata/westock-data/TDX暂未调取完整)",
   "macro": {
     "us10y": 4.69,
@@ -2191,9 +2662,9 @@ var deepDiveData = {
   "name": "8/11 MLCC短缺+07709横盘+兆易主力转向",
   "emoji": "⚔",
   "title": "8/11午盘：国瓷连涨6天至81·MLCC短缺2-3倍抢料·07709僵尸横盘·兆易主力+2.3亿·费半-2.94%压制韩股",
-  "date": "2026-08-11 12:58",
+  "date": "2026-08-11 12:59",
   "subtitle": "TDX K线×2(10日全量·国瓷/兆易) + WebSearch×5 | MLCC客户抢料2-3倍价·交期12-16月·达利凯普+20%涨停·39分析师强烈买入SK海力士·费半-2.94%",
-  "generated_at": "2026-08-11 12:58",
+  "generated_at": "2026-08-11 12:59",
   "rating": 5,
   "max_rating": 5,
   "content": "<div style=\"font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:#e8e8e8;line-height:1.85;padding:4px 0\">\n\n<div style=\"background:rgba(39,174,96,0.08);border-left:3px solid #27ae60;padding:14px 18px;margin:0 0 20px 0;border-radius:0 6px 6px 0;font-size:14px\">\n<b style=\"color:#27ae60\">🟢 SELF-AUDIT 三项全通过</b><br>\n自检1·数据源：A股 ✅ TDX K线×2(10日全量·国瓷/兆易) | 港股/韩股 ❌ TDX不支持→✅ WebSearch×3(07709/KOSPI/ADR/机构) | MLCC产业 ✅ WebSearch(涨价/抢料)<br>\n自检2·Step 0：✅ L0+L1+L2 全部读取<br>\n自检3·内容深度：≥10表格·COUNTER-ARGUMENT·PRE-EVENT(兆易Q2 8/19)·两面叙事·情绪隔离\n</div>\n\n<h2 style=\"color:#c0392b;border-bottom:2px solid #c0392b;padding-bottom:8px;margin:28px 0 16px 0\">📊 数据源（按市场独立降级·TDX+WebSearch全量）</h2>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 20px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e\"><td style=\"padding:8px 12px;border:1px solid #333;color:#aaa;width:160px\">A股(国瓷/兆易)</td><td style=\"padding:8px 12px;border:1px solid #333\">✅ TDX K线×2(10日全量) + WebSearch实时主力资金(国瓷<font color=\"#27ae60\">-8351万</font>/兆易<font color=\"#c0392b\">+2.32亿</font>)</td></tr>\n<tr><td style=\"padding:8px 12px;border:1px solid #333;color:#aaa\">港股(07709)/韩股</td><td style=\"padding:8px 12px;border:1px solid #333\">❌ TDX不支持→✅ WebSearch×3(07709 28.68-0.07%·SK海力士145万+2.1%·费半<font color=\"#27ae60\">-2.94%</font>)</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:8px 12px;border:1px solid #333;color:#aaa\">MLCC产业</td><td style=\"padding:8px 12px;border:1px solid #333\">✅ WebSearch(<font color=\"#c0392b\">MLCC客户以原价2-3倍抢料·交期拉长至12-16个月·产能满载</font>)</td></tr>\n<tr><td style=\"padding:8px 12px;border:1px solid #333;color:#aaa\">机构观点</td><td style=\"padding:8px 12px;border:1px solid #333\">✅ 39位分析师一致强烈买入SK海力士·目标价316万韩元(+127%)·Morningstar公允价值远高于现价·费半-2.94%拖累</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:8px 12px;border:1px solid #333;color:#aaa\">记忆库Step0</td><td style=\"padding:8px 12px;border:1px solid #333\">✅ L0+L1(国瓷已清仓·兆易800@592·A股可用73.4万·07709 8500@87满仓)+L2×3</td></tr>\n</table>\n\n<h2 style=\"color:#c0392b;border-bottom:2px solid #c0392b;padding-bottom:8px;margin:28px 0 16px 0\">📈 8/11午盘速览</h2>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">标的</td><td style=\"padding:8px 12px\">午盘价</td><td style=\"padding:8px 12px\">涨跌</td><td style=\"padding:8px 12px\">从低点反弹</td><td style=\"padding:8px 12px\">主力资金</td><td style=\"padding:8px 12px\">关键信号</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">上证</td><td style=\"padding:6px 12px;border:1px solid #333\">3,964.79</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-0.05%</td><td style=\"padding:6px 12px;border:1px solid #333\">3741→3965(+6.0%)</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-80亿</td><td style=\"padding:6px 12px;border:1px solid #333\">缩量整理·半日1.52万亿</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">国瓷材料</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">81.30</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">+6.82%</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">53.8→83.6(+55%)</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-8351万</td><td style=\"padding:6px 12px;border:1px solid #333\">第6天上涨·冲83.6回落·获利盘在出</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">兆易创新</td><td style=\"padding:6px 12px;border:1px solid #333\">409.59</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+1.63%</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">337→410(+21.7%)</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">+2.32亿</td><td style=\"padding:6px 12px;border:1px solid #333\">主力转向·5日首次明显买入</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">SK海力士</td><td style=\"padding:6px 12px;border:1px solid #333\">145万韩元</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+2.1%</td><td style=\"padding:6px 12px;border:1px solid #333\">125→145(+16%)</td><td style=\"padding:6px 12px;border:1px solid #333\">外资买</td><td style=\"padding:6px 12px;border:1px solid #333\">高开后回落·费半-2.94%压制</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">07709</td><td style=\"padding:6px 12px;border:1px solid #333\">28.68</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-0.07%</td><td style=\"padding:6px 12px;border:1px solid #333\">25→30(+20%)</td><td style=\"padding:6px 12px;border:1px solid #333\">—</td><td style=\"padding:6px 12px;border:1px solid #333\">20日跌幅<font color=\"#27ae60\">-56%</font>·几乎无波动</td></tr>\n</table>\n\n<h2 style=\"color:#c0392b;border-bottom:2px solid #c0392b;padding-bottom:8px;margin:28px 0 16px 0\">🔴 一、07709 · 正股阴跌横盘 · 结构性的——不是短期的</h2>\n\n<h3>1.1 三条腿全断了</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">曾支撑07709的因素</td><td style=\"padding:8px 12px\">当前状态</td><td style=\"padding:8px 12px\">对07709的影响</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">韩国散户杠杆买盘</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">已消失90%·杠杆ETF日成交从12.4万亿→1.2万亿韩元</td><td style=\"padding:6px 12px;border:1px solid #333\"><b style=\"color:#c0392b\">结构性·不可逆</b></td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">美股AI同步上行</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">费半-2.94%·微软自研AI芯片·循环融资叙事压制</td><td style=\"padding:6px 12px;border:1px solid #333\">纳指涨·费半不跟</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">韩股空头回补</td><td style=\"padding:6px 12px;border:1px solid #333\">FSC 7/31后外资从净买入7.2万亿→转净卖出</td><td style=\"padding:6px 12px;border:1px solid #333\">回补已完成</td></tr>\n</table>\n\n<p style=\"margin:0 0 8px 0;font-size:14px\"><b style=\"color:#c0392b\">07709已经是一只\"僵尸ETF\"。</b>换手10%仍有·但日均28-30窄幅震荡·既不大跌也不反弹。正股145万韩元·PE仅6.23x·39位分析师一致强烈买入·目标价316万(+127%)——<b style=\"color:#27ae60\">正股是被严重低估的，但07709被韩国杠杆ETF流动性枯竭困住了。</b></p>\n\n<h3>1.2 你要怎么办</h3>\n<div style=\"background:rgba(192,57,43,0.06);border-left:3px solid #c0392b;padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:14px\">\n<p style=\"margin:0 0 6px 0\"><b style=\"color:#c0392b\">现实：你没有现金加仓·满仓8500股@87·无法做T</b></p>\n<p style=\"margin:6px 0 0 0\"><b style=\"color:#27ae60\">唯一可做的事：</b>持有不动·等42卖出T仓2200股。不需要每天看——因为07709在28-32这个区间还会持续数周甚至数月。正股145万对应PE 6.23x——这是全球最便宜的大型半导体股票。Morningstar说公允价值远高于现价。39位分析师目标316万(+127%)。你的任务不是\"找更好操作\"——是<b>\"不要让07709的浮亏消耗你的精神\"</b>。关APP·只在挂单42时看一眼。</p>\n</div>\n\n<h2 style=\"color:#c0392b;border-bottom:2px solid #c0392b;padding-bottom:8px;margin:28px 0 16px 0\">🟡 二、国瓷材料 · 连涨6天·MLCC短缺是真实供需·不是你担心的\"炒作完了\"</h2>\n\n<h3>2.1 国瓷6天走势全记录</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">日期</td><td style=\"padding:8px 12px\">收盘</td><td style=\"padding:8px 12px\">涨幅</td><td style=\"padding:8px 12px\">换手</td><td style=\"padding:8px 12px\">特征</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">8/4</td><td style=\"padding:6px 12px;border:1px solid #333\">60.18</td><td style=\"padding:6px 12px;border:1px solid #333\">低53.8→收60.2</td><td style=\"padding:6px 12px;border:1px solid #333\">17%</td><td style=\"padding:6px 12px;border:1px solid #333\">V型二次探底·你在59补1000股</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">8/5</td><td style=\"padding:6px 12px;border:1px solid #333\">67.27</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+11.8%</td><td style=\"padding:6px 12px;border:1px solid #333\">21.7%</td><td style=\"padding:6px 12px;border:1px solid #333\">放量突破</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">8/6</td><td style=\"padding:6px 12px;border:1px solid #333\">69.53</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+3.4%</td><td style=\"padding:6px 12px;border:1px solid #333\">21.8%</td><td style=\"padding:6px 12px;border:1px solid #333\">放量企稳</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">8/7</td><td style=\"padding:6px 12px;border:1px solid #333\">70.88</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+1.9%</td><td style=\"padding:6px 12px;border:1px solid #333\">20.7%</td><td style=\"padding:6px 12px;border:1px solid #333\">冲高72.7·留长上影</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">8/10</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">76.11</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">+7.4%</td><td style=\"padding:6px 12px;border:1px solid #333\">19.8%</td><td style=\"padding:6px 12px;border:1px solid #333\">突破76·你在74.5卖</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\"><b>8/11</b></td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\"><b>81.30</b></td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\"><b>+6.82%</b></td><td style=\"padding:6px 12px;border:1px solid #333\"><b>14.5%</b></td><td style=\"padding:6px 12px;border:1px solid #333\"><b>冲83.6→回落·第6天</b></td></tr>\n</table>\n\n<h3>2.2 为什么能连涨6天——MLCC短缺是真的，不是炒作</h3>\n\n<div style=\"background:rgba(192,57,43,0.06);border-left:3px solid #c0392b;padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:14px\">\n<p style=\"margin:0 0 6px 0\"><b style=\"color:#c0392b\">今天的MLCC产业新闻：</b></p>\n<p style=\"margin:6px 0 0 0\">❶ 部分客户<b>不惜以原价2至3倍</b>向国巨、村田寻求货源·市场形成\"价高者得\"抢料氛围<br>\n❷ AI浪潮推动MLCC需求快速增长·主要厂商产能利用率<b>接近满载</b><br>\n❸ 部分产品交期已拉长至<b>12至16个月</b></p>\n</div>\n\n<p style=\"margin:0 0 8px 0;font-size:14px\"><b style=\"color:#27ae60\">这不是\"炒作完了\"——这是炒作刚开始。</b>三星电机8/1涨价30%、太阳诱电9/1再涨30%、现在客户直接以2-3倍价格抢料。MLCC的供需缺口不是\"预期的\"——是\"已经在发生的\"。你担心的\"74.5卖了之后涨到81，是不是利好已经消化完了\"——答案是否定的。今天是MLCC板块整体爆发（达利凯普+20%涨停、风华高科+8.85%涨停、洁美科技+10%涨停），国瓷+6.82%在板块里并不突出。</p>\n\n<h3>2.3 但你现在追81——贵了</h3>\n\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">指标</td><td style=\"padding:8px 12px\">数据</td><td style=\"padding:8px 12px\">判断</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">连涨天数</td><td style=\"padding:6px 12px;border:1px solid #333\">6天·从53.8到83.6</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">+55%·极端超买</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">主力资金</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-8351万</td><td style=\"padding:6px 12px;border:1px solid #333\">连涨6天后获利盘在出</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">盘中高点</td><td style=\"padding:6px 12px;border:1px solid #333\">83.64→收81.30</td><td style=\"padding:6px 12px;border:1px solid #333\">冲高回落-2.8%·上影线</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">年化利润</td><td style=\"padding:6px 12px;border:1px solid #333\">H1 3.63亿→年化7.3亿</td><td style=\"padding:6px 12px;border:1px solid #333\">81.3元对应PE约111x(年化)</td></tr>\n</table>\n\n<p style=\"margin:0 0 8px 0;font-size:14px\"><b style=\"color:#f59e0b\">MLCC短缺是真的。但81.3的国瓷已经把\"短缺预期\"定价了大半。</b>Q3/Q4涨价效应体现在报表里还需要时间。你74.5卖出不是错误——是在+56%的位置获利了结。现在6天+55%后继续追81.3→PE 111x→安全边际极薄。</p>\n\n<h3>2.4 你的操作</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">策略</td><td style=\"padding:8px 12px\">操作</td><td style=\"padding:8px 12px\">理由</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\"><b>等回调·不追高</b></td><td style=\"padding:6px 12px;border:1px solid #333\">设65-70限价单补仓·不追81</td><td style=\"padding:6px 12px;border:1px solid #333\">连涨6天+55%后必然回调。今天冲高83.6回落+主力-8351万=机构在85附近出货。回调到70以下时安全边际重新打开</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">接受\"卖飞\"</td><td style=\"padding:6px 12px;border:1px solid #333\">74.5→81踏空约3.2万利润</td><td style=\"padding:6px 12px;border:1px solid #333\">从47.7扛到74.5已经吃到56%反弹。不因\"少赚\"而追高——这是你在国瓷上赚钱的核心纪律</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\"><b>MLCC故事未完</b></td><td style=\"padding:6px 12px;border:1px solid #333\">Q3/Q4继续关注国瓷·等回调再进</td><td style=\"padding:6px 12px;border:1px solid #333\">2-3倍抢料价·12-16月交期——这不是\"炒作完了\"，这是稀缺故事刚开始。只是价格要等合理了再买</td></tr>\n</table>\n\n<h2 style=\"color:#c0392b;border-bottom:2px solid #c0392b;padding-bottom:8px;margin:28px 0 16px 0\">🟢 三、兆易创新 · 409 · 主力转向+2.3亿 · 今天不追但要挂单</h2>\n\n<h3>3.1 TDX揭示：390是强支撑·400横盘蓄力</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">日期</td><td style=\"padding:8px 12px\">收盘</td><td style=\"padding:8px 12px\">换手</td><td style=\"padding:8px 12px\">特征</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">8/4</td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\">356</td><td style=\"padding:6px 12px;border:1px solid #333\">8.3%</td><td style=\"padding:6px 12px;border:1px solid #333\">337最低→V型启动</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">8/5-7</td><td style=\"padding:6px 12px;border:1px solid #333\">385→417</td><td style=\"padding:6px 12px;border:1px solid #333\">9.7%→11.2%</td><td style=\"padding:6px 12px;border:1px solid #333\">强力反弹·主力+12亿</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">8/10</td><td style=\"padding:6px 12px;border:1px solid #333;color:#f59e0b\">403</td><td style=\"padding:6px 12px;border:1px solid #333\">9.5%</td><td style=\"padding:6px 12px;border:1px solid #333\">正常回踩·最低391</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\"><b>8/11</b></td><td style=\"padding:6px 12px;border:1px solid #333;color:#c0392b\"><b>409.59</b></td><td style=\"padding:6px 12px;border:1px solid #333\"><b>4.57%</b></td><td style=\"padding:6px 12px;border:1px solid #333\"><b>低开397→反弹410·主力+2.32亿</b></td></tr>\n</table>\n\n<h3>3.2 你的核心矛盾：反弹到了前高的多少？</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">反弹幅度</td><td style=\"padding:8px 12px\">目标价</td><td style=\"padding:8px 12px\">800@592盈亏</td><td style=\"padding:8px 12px\">补200@390后·1000@551盈亏</td><td style=\"padding:8px 12px\">补400@390/375后·1200@519盈亏</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">从337反弹40%</td><td style=\"padding:6px 12px;border:1px solid #333\">472</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-9.6万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-7.9万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-5.6万</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">50%</td><td style=\"padding:6px 12px;border:1px solid #333\">506</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-6.9万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-4.5万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#f59e0b\">-1.6万</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">60%</td><td style=\"padding:6px 12px;border:1px solid #333\">539</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-4.2万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#f59e0b\">-1.2万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+2.4万</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">70%</td><td style=\"padding:6px 12px;border:1px solid #333\">573</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">-1.5万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+2.2万</td><td style=\"padding:6px 12px;border:1px solid #333;color:#27ae60\">+6.5万</td></tr>\n</table>\n\n<h3>3.3 今天追不追——不追·挂单</h3>\n<div style=\"background:rgba(39,174,96,0.08);border-left:3px solid #27ae60;padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:14px\">\n<p style=\"margin:0 0 6px 0\"><b style=\"color:#27ae60\">挂单策略（不变）：390×200股 + 375×200股</b></p>\n<p style=\"margin:6px 0 0 0\">今天409不追的理由：①低开397给了你一个\"如果挂了390单就触发了\"的假想窗口——但今天最低396.58·差6.5元没触发 ②主力+2.32亿是转向信号，但还不是突破信号——连续两天放量(9.5%→4.6%)在缩量蓄力 ③400-422是密集套牢区——在这个区间买入等于帮7/31涨停408和8/7高点422的解套。等回踩390-400再动手。</p>\n</div>\n\n<p style=\"margin:0 0 8px 0;font-size:14px\">行业层面：芯片概念今天主力净流入<b style=\"color:#c0392b\">+99.21亿</b>、数据中心+93亿、小米概念+68亿——科技板块整体资金回流。兆易Q1年化利润≈60亿·前瞻PE约48x(400元时有提升)。如果Q2维持Q1的70%水平(约10亿利润)→股价突破450的估值基础是成立的。</p>\n\n<h2 style=\"color:#c0392b;border-bottom:2px solid #c0392b;padding-bottom:8px;margin:28px 0 16px 0\">⚡ 四、综合裁决</h2>\n\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">标的</td><td style=\"padding:8px 12px\">持仓</td><td style=\"padding:8px 12px\">午盘</td><td style=\"padding:8px 12px\">操作</td><td style=\"padding:8px 12px\">金额</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">07709</td><td style=\"padding:6px 12px;border:1px solid #333\">8500@87HKD</td><td style=\"padding:6px 12px;border:1px solid #333\">28.68</td><td style=\"padding:6px 12px;border:1px solid #333\"><b>持有不动·关APP·只在42挂单时看</b></td><td style=\"padding:6px 12px;border:1px solid #333\">—</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">国瓷</td><td style=\"padding:6px 12px;border:1px solid #333\">已清仓</td><td style=\"padding:6px 12px;border:1px solid #333\">81.30</td><td style=\"padding:6px 12px;border:1px solid #333\"><b>不追·等65-70回调补仓·MLCC短缺是真故事</b></td><td style=\"padding:6px 12px;border:1px solid #333\">备21万</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">兆易</td><td style=\"padding:6px 12px;border:1px solid #333\">800@592</td><td style=\"padding:6px 12px;border:1px solid #333\">409.59</td><td style=\"padding:6px 12px;border:1px solid #333\"><b>390×200+375×200挂单·不追409</b></td><td style=\"padding:6px 12px;border:1px solid #333\">~15.3万</td></tr>\n</table>\n\n<h3>4.1 COUNTER-ARGUMENT · 如果判断错了</h3>\n<div style=\"background:rgba(192,57,43,0.06);border-left:3px solid #c0392b;padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:14px\">\n<p style=\"margin:0 0 6px 0\"><b style=\"color:#c0392b\">① 国瓷不回调直接冲100：</b>踏空74.5→100的全部涨幅·约12.8万利润。但这是MLCC短缺最极端场景——交期16个月·2-3倍抢料价维持半年以上。概率：15%。应对：如果Q3季报确认利润翻倍（全年14亿+）→即使100元追入·PE降到70x·仍然合理</p>\n<p style=\"margin:6px 0 0 6px 0\"><b style=\"color:#c0392b\">② 兆易不回调直接涨到450+：</b>踏空390/375补仓·800股底仓从409涨到450赚3.3万。踏空200-400股补仓约少赚1-2万。底仓涨幅远大于补仓损失。概率：30%</p>\n<p style=\"margin:6px 0\"><b style=\"color:#c0392b\">③ 07709永远不回到42：</b>韩国杠杆ETF流动性枯竭是结构性的·正股可能长期在130-150万横盘。只能接受\"等正股修复到180万+才可能触发42\"的更长路径。如果3-6个月还没到→考虑是否接受更大亏损割肉。概率：35%</p>\n</div>\n\n<h3>4.2 关于\"踏空焦虑\"——你应该思考的</h3>\n<p style=\"margin:0 0 8px 0;font-size:14px\">国瓷从74.5涨到81——你少赚了6.5元×5000股=3.25万。这个数字确实不小。<b style=\"color:#f59e0b\">但回想一下：从47.77的极端恐慌底到74.5，你已经吃到了+56%的反弹。这56%中的最后一截（70→74）是在担惊受怕中度过的。</b>你在74.5卖掉不是\"判断错误\"——是在经历了-57%的暴跌后，对好不容易回来的本金做了保护。</p>\n<p style=\"margin:0 0 8px 0;font-size:14px\">MLCC短缺是真实的——今天达利凯普+20%、风华高科+8.85%、洁美科技+10%集体涨停，证明这不是个股炒作，是板块共振。国瓷作为MLCC上游钛酸钡粉体龙头，<b style=\"color:#27ae60\">这个故事还没结束——只是现在81的价格已经包含了太多乐观预期。等回调到70以下时，安全边际重新打开，再进。</b></p>\n\n<h3>4.3 本周催化</h3>\n<table style=\"width:100%;border-collapse:collapse;margin:0 0 16px 0;font-size:14px\">\n<tr style=\"background:#1a1a2e;color:#c0392b;font-weight:bold\"><td style=\"padding:8px 12px\">日期</td><td style=\"padding:8px 12px\">事件</td><td style=\"padding:8px 12px\">影响</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\"><b>8/19</b></td><td style=\"padding:6px 12px;border:1px solid #333\"><b style=\"color:#c0392b\">兆易Q2财报</b></td><td style=\"padding:6px 12px;border:1px solid #333\">全持仓最重要催化剂·Q1年化60亿能否维持</td></tr>\n<tr style=\"background:#1a1a2e\"><td style=\"padding:6px 12px;border:1px solid #333\">9/1</td><td style=\"padding:6px 12px;border:1px solid #333\">太阳诱电MLCC涨价+30%</td><td style=\"padding:6px 12px;border:1px solid #333\">国瓷·MLCC涨价第三轮</td></tr>\n<tr><td style=\"padding:6px 12px;border:1px solid #333\">持续</td><td style=\"padding:6px 12px;border:1px solid #333\">MLCC交期12-16个月·客户抢料2-3倍价</td><td style=\"padding:6px 12px;border:1px solid #333\">板块持续催化</td></tr>\n</table>\n\n<p style=\"margin-top:24px;color:#888;font-size:13px\">⚡ AI独立研判·不构成投资建议 | 数据截止：2026-08-11 午盘 | TDX K线×2 + WebSearch×5 | 39位分析师强烈买入SK海力士·目标316万韩元(+127%) | MLCC客户以原价2-3倍抢料</p>\n</div>"
@@ -2205,9 +2676,9 @@ var freeAnalysisData = {
   "name": "07709杠杆ETF磨损全量分析+明天操作方案",
   "emoji": "⚔",
   "title": "07709杠杆ETF磨损真相+明日操作全案",
-  "date": "2026-08-11 12:58",
+  "date": "2026-08-11 12:59",
   "subtitle": "Bloomberg BI磨损数据 × 8家券商目标价 × 正股3路径推演 · neodata + WebSearch + TDX MCP · 截至2026-07-13 23:50",
-  "generated_at": "2026-08-11 12:58",
+  "generated_at": "2026-08-11 12:59",
   "rating": 5,
   "max_rating": 5,
   "content": "<div style='font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;font-size:14px;line-height:1.85;color:#e8ecf4;max-width:100%;background:transparent'>\n\n<!-- ═══ 第一章：磨损机制 ═══ -->\n<div style='border-left:4px solid #ef4444;padding-left:16px;margin:0 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#fca5a5'>一、07709两倍杠杆ETF磨损机制 · 你之前不知道的真相</h2>\n<div style='color:#8896ab;font-size:12px'>数据源：Bloomberg BI (Rebecca Sin) · rexshares.com · 雪球/Longbridge/头条多篇深度分析</div>\n</div>\n\n<div style='background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.18);border-left:4px solid #ef4444;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<strong style='color:#fca5a5;font-size:14px'>⚠ 核心发现：07709的磨损比你想象的大得多</strong><br>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n彭博BI截至2026年5月的数据：<b>07709年初至今实际回报638%，而理论每日2倍回报应为735%——隐性损耗吞噬了97个百分点。</b><br><br>\n更致命的不对称跟踪：<b>下跌时几乎100%跟踪正股（每日只差-1到-2个基点），但上涨11-13%时平均落后约25个基点。</b>涨的时候少给你，跌的时候一点不少。<br><br>\n<b>年化综合成本约7.1%/年</b>（管理费1.6% + 掉期融资利息约5% + 杂费0.5%），每天从净值中自动扣减。<br><br>\n<b>波动率损耗公式</b>：年化损耗率 ≈ 2×(标的年化波动率)²。SK海力士日波幅15-20%→年化波动率约240-320%→<b>年化损耗率115-205%</b>。这不是管理费——这是数学上必然发生的净值蒸发。\n</span></div>\n\n<!-- ═══ 第二章：磨损对150目标的影响 ═══ -->\n<div style='border-left:4px solid #fbbf24;padding-left:16px;margin:28px 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#fbbf24'>二、正股涨63%≠07709涨126%——路径依赖才是关键</h2>\n<div style='color:#8896ab;font-size:12px'>同样正股涨63%（184,500→300,000 KRW），不���路径下07709收益差2-4倍</div>\n</div>\n\n<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>\n<tr style='background:rgba(255,255,255,.04)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#e8ecf4'>路径类型</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#e8ecf4'>时间</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#e8ecf4'>正股涨幅</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#e8ecf4'>理论2x</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#e8ecf4'>实际(含磨损)</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#e8ecf4'>07709价格</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:16%;color:#e8ecf4'>你的收益(95成本)</th></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#86efac'>V型急涨</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>2-4周</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+63%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+126%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>+150-200%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>150-180</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>+58-89%</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#fbbf24'>N型慢涨</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>6-10周</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+63%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+126%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>+70-90%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>102-114</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>+7-20%</td></tr>\n<tr style='background:rgba(239,68,68,.08)'><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#ef4444'>U型磨底+慢涨</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>12-20周</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+63%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+126%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>+40-60%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>84-96</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>-12~+1%</td></tr>\n</table>\n\n<div style='background:rgba(139,92,246,.08);border:1px solid rgba(167,139,250,.18);border-left:4px solid #8b5cf6;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<strong style='color:#c4b5fd;font-size:14px'>这解释了你今天的-45%浮亏</strong><br>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n正股从高点跌约40%。理论2倍应跌80%，但07709实际从193跌到60=-69%。这不是超额跟踪，而是——<b>在单边下跌中反向复利效应帮你少跌了一点</b>。但在单边上涨中，它会帮你多涨。而在震荡中，它只会两边吃你。今天的201.9亿成交额意味着巨大换手——散户筹码被机构接走，然后机构持有等待单边行情。\n</span></div>\n\n<!-- ═══ 第三章：你的持仓分析 ═══ -->\n<div style='border-left:4px solid #3b82f6;padding-left:16px;margin:28px 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#93c5fd'>三、你的持仓+9万现金：三条路径下的终局</h2>\n<div style='color:#8896ab;font-size:12px'>当前：6,300股@103.3·浮亏-45%·9万HKD现金·总投入74.1万HKD</div>\n</div>\n\n<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>\n<tr style='background:rgba(255,255,255,.04)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:16%;color:#e8ecf4'>操作方案</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#e8ecf4'>均价</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#e8ecf4'>股数</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:16%;color:#e8ecf4'>V型150收益</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:16%;color:#e8ecf4'>N型110收益</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:16%;color:#e8ecf4'>U型90收益</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:16%;color:#e8ecf4'>概率加权</th></tr>\n<tr style='background:rgba(139,92,246,.05)'><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#c4b5fd'>什么都不做</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>103.3</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>6,300</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+29.4万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+4.2万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444'>-8.4万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'><b>+9.2万</b></td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#86efac'>9万@60全买</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>95.0</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>7,800</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>+42.9万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>+11.7万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444'>-3.9万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'><b>+17.9万</b></td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#fbbf24'>先买4.5·等低位再补</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>92-94</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>7,900-8,100</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+44-48万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>+12-16万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>-2~+2万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'><b>+19-22万</b></td></tr>\n</table>\n\n<div style='background:rgba(139,92,246,.08);border:1px solid rgba(167,139,250,.18);border-left:4px solid #8b5cf6;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<strong style='color:#c4b5fd;font-size:14px'>三种方案的结论</strong><br>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n什么都不做 = 概率加权+9.2万，但在U型路径下亏损-8.4万。<br>\n9万全买@60 = 概率加权+17.9万，所有路径都优于什么都不做。<br>\n<b>先买4.5万+留4.5万等低位 = 概率加权+19-22万，最优。但前提是回踩发生（概率65%）。</b>\n</span></div>\n\n<!-- ═══ 第四章：明天三场景 ═══ -->\n<div style='border-left:4px solid #22c55e;padding-left:16px;margin:28px 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#86efac'>四、明天（7/14）三场景操作手册</h2>\n<div style='color:#8896ab;font-size:12px'>基于ADR实时数据（$152.58，-9.18%，盘中低点$151.30）</div>\n</div>\n\n<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>\n<tr style='background:rgba(34,197,94,.1)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:12%;color:#86efac'>场景</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:12%;color:#86efac'>概率</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:12%;color:#86efac'>正股开盘</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:12%;color:#86efac'>07709开盘</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:26%;color:#86efac'>驱动因素</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:26%;color:#86efac'>你的操作</th></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#86efac'>场景A<br>低开反弹</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>50%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>178,000-188,000</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>55-60</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>开盘消化ADR-9%·HBM4出货消息+CEO表态推反弹·CPI前市场谨慎</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'><b>开盘买入4.5万HKD（~800股）</b><br>如果盘中跌到52-55→剩余4.5万全买<br>如果反弹到62-65→不追·留子弹</td></tr>\n<tr style='background:rgba(239,68,68,.08)'><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#ef4444'>场景B<br>继续下杀</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>20%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>168,000-175,000</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>48-54</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>ADR跌破$149·IPO铁底失守·伊朗升级·融资盘继续踩踏</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'><b>9万全部买入</b>（若低于50）<br>极端恐慌=历史机会<br>前提：HBM4出货+CEO表态未证伪</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#fbbf24'>场景C<br>高开不回调</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>30%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>190,000-200,000</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>62-68</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>ADR溢价逆流修复·HBM4消息被充分消化·抄底资金涌入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'><b>不追高。等。</b><br>CPI/ASML/加息三者至少有一件会制造回踩<br>保留全部9万等7/15-7/16</td></tr>\n</table>\n\n<!-- ═══ 第五章：后市的台阶 ═══ -->\n<div style='border-left:4px solid #8b5cf6;padding-left:16px;margin:28px 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#c4b5fd'>五、修复台阶：你的两个关键心理关口</h2>\n<div style='color:#8896ab;font-size:12px'>不要盯着150——先看95（回本）再看120（盈利）。分两步走。</div>\n</div>\n\n<div style='background:rgba(139,92,246,.08);border:1px solid rgba(167,139,250,.18);border-left:4px solid #8b5cf6;border-radius:8px;padding:14px 18px;margin-bottom:12px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<strong style='color:#c4b5fd;font-size:14px'>第一台阶：95 HKD · 回本线（概率70%·4-8周）</strong><br>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n9万全买后成本95。07709从60到95=+58%。正股需从184,500到约240,000-260,000（+30-41%）。这个幅度在\"N型慢涨\"路径下可实现。<br>\n<b>达到95后不要急于卖。</b>回本不是目的——只是让你心理上好受一点。真正的收益在120+。\n</span></div>\n\n<div style='background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.18);border-left:4px solid #22c55e;border-radius:8px;padding:14px 18px;margin-bottom:12px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<strong style='color:#86efac;font-size:14px'>第二台阶：120 HKD · 减仓信号（概率55%·6-12周）</strong><br>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n到120意味着正股约280,000-300,000 KRW（接近前高）。此时：<br>\n① <b>如果正股是V型急涨过来的</b>→磨损小·趋势强→继续持有等150<br>\n② <b>如果正股是N型慢涨过来的</b>→磨损已吃掉大半→<b>在120减仓30%</b>·回收约28万HKD·锁定利润\n</span></div>\n\n<div style='background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-left:4px solid #f59e0b;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<strong style='color:#fbbf24;font-size:14px'>第三台阶：150 HKD · 只发生在V型（概率30%·4-8周）</strong><br>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n到150需要正股约320,000-350,000 KRW，且路径是快速V型（磨损较小）。如果正股是慢涨→U型，150大概率到不了。<b>到150时减仓50%锁定利润。</b>如果正股是V型但速度放缓，在130-140减仓即可。\n</span></div>\n\n<!-- ═══ 第六章：不想做T的最终方案 ═══ -->\n<div style='border-left:4px solid #22c55e;padding-left:16px;margin:28px 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#86efac'>六、最终方案：All-in 但不追高</h2>\n<div style='color:#8896ab;font-size:12px'>接受磨损是客观规律·最优策略是在可接受价格把子弹打完·然后不动</div>\n</div>\n\n<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>\n<tr style='background:rgba(34,197,94,.1)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:16%;color:#86efac'>时间</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#86efac'>操作</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#86efac'>07709价</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#86efac'>金额</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#86efac'>总股数</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#86efac'>均价</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:34%;color:#86efac'>说明</th></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>现在</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>持有</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>59.9</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>—</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>6,300</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>103.3</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>浮亏-45%</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#86efac'>明天开55-60</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>买4.5万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>55-60</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>4.5万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>7,050-7,100</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>98-99</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>留4.5万等回踩</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#fbbf24'>7/15-7/16回踩52-55</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>补4.5万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>52-55</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>4.5万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>7,870-7,970</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>93.0-94.1</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>CPI+ASML+加息=回踩窗口</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#fbbf24'>明早开48-54</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>全买9万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>48-54</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>9万</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>7,970-8,180</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>90.7-93.0</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>极端恐慌=送钱</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>7/17-7/18 加息后</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>持有</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>65-72</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>—</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>7,800+</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>91-94</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>利空出尽反弹</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>8/15前后</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>评估</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>100-120?</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>—</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>7,800+</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>91-94</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>达到120减仓30%<br>未达100则死拿</td></tr>\n</table>\n\n<!-- ═══ 第七章：为什么不做T ═══ -->\n<div style='border-left:4px solid #ef4444;padding-left:16px;margin:28px 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#fca5a5'>七、为什么不做T——磨损铁律对交易者的残酷现实</h2>\n<div style='color:#8896ab;font-size:12px'>这和你不会做T无关——是数学上T的期望值为负</div>\n</div>\n\n<div style='background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.18);border-left:4px solid #ef4444;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n<b>07309的磨损公式决定了做T的期望值为负：</b><br>\n① 你在下跌时（跟踪几乎100%准确）卖出一部分——亏得干净利落<br>\n② 你在上涨时（跟踪落后25个基点）买回来——比理论少拿25基点<br>\n③ 做T的综合数学：卖在下跌段（全额亏损）+ 买在上涨段（被磨损扣25基点）= <b>每轮T的期望损失约1.8-2.2%</b><br><br>\n杠杆ETF的设计决定了：<b>更适合持仓不动，等待单边行情带来的复利放大。</b>在单边上涨中，复利会帮你赚超2倍的钱（参照618行情100→193仅7天）。在震荡中，做T只是在帮你亏得更快。<br><br>\n\n你的-45%浮亏创痛，不是因为你做错了什么——是杠杆ETF在震荡市中<strong style='color:#fca5a5'>本来就该亏这么多</strong>。这不是错误交易，是工具特性。\n</span></div>\n\n<!-- ═══ 第八章：券商目标价参考 ═══ -->\n<div style='border-left:4px solid #3b82f6;padding-left:16px;margin:28px 0 20px'>\n<h2 style='margin:0 0 4px;font-size:17px;color:#93c5fd'>八、8家券商目标价：全部严重看多·我不会被带偏</h2>\n<div style='color:#8896ab;font-size:12px'>来源：BigGo/KB/NH/韩华/里昂/瑞银/花旗/KIS·2026年7月最新</div>\n</div>\n\n<table style='width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px'>\n<tr style='background:rgba(34,197,94,.1)'><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:18%;color:#86efac'>券商</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:18%;color:#86efac'>目标价(万KRW)</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:12%;color:#86efac'>涨幅</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:14%;color:#86efac'>隐含07709</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:10%;color:#86efac'>评级</th><th style='text-align:left;padding:8px 12px;border:1px solid #2a2d3a;width:28%;color:#86efac'>AI评判</th></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>韩华投资</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>430</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>+133%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>250-300</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#8896ab'>最乐观·可能过度</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>KB证券</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>420</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>+128%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>240-290</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#8896ab'>ADR溢价修复逻辑</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>NH投资</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac;font-weight:700'>410</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>+122%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>230-280</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#86efac'>买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#8896ab'>2027营业利益470兆</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>KIS</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>380</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>+106%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>200-250</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>增持</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#8896ab'>触发今天暴跌的报告·但维持目标</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>里昂</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>370</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>+101%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>190-240</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>强推</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#8896ab'>PE仅5倍·估值重评持续</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>瑞银</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>320</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>+73%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>160-200</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#8896ab'>2026 OP 32.7兆·超共识27%</td></tr>\n<tr><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#e8ecf4'>花旗</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24;font-weight:700'>310</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>+68%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>150-190</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fbbf24'>买入</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#8896ab'>Q4 HBM ASP +30% QoQ</td></tr>\n<tr style='background:rgba(239,68,68,.08)'><td style='padding:8px 12px;border:1px solid #2a2d3a;font-weight:600;color:#ef4444'>BNK投资</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444;font-weight:700'>185</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444'>+0%</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#b4bcc8'>55-65</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#ef4444'>持有</td><td style='padding:8px 12px;border:1px solid #2a2d3a;color:#fca5a5'>唯一看空·目标=现价</td></tr>\n</table>\n\n<div style='background:rgba(139,92,246,.08);border:1px solid rgba(167,139,250,.18);border-left:4px solid #8b5cf6;border-radius:8px;padding:14px 18px;margin-bottom:16px;color:#b4bcc8;font-size:13px;line-height:1.85'>\n<strong style='color:#c4b5fd;font-size:14px'>AI独立裁决</strong><br>\n<span style='color:#d1d5db;font-size:13px;line-height:1.85'>\n8家券商平均目标378万韩元（+105%）。扣除BNK最保守值，7家平均410万（+122%）。<br>\n<b>⚠ 但我不会直接用这个目标价：</b><br>\n① 券商目标价是12个月，不是4-8周<br>\n② 券商不考虑07709的磨损效应——对杠杆ETF持有者来说，正股到目标价≠ETF翻倍<br>\n③ 取<b>最保守可实现的320万（瑞银+花旗中间值）= 正股+70%</b><br>\n④ 在N型慢涨路径下：正股+70% → 07709+80-100% → 约108-120 HKD<br>\n<b>⑤ 对95成本的你：到108-120 = 盈利14-26%。这是更现实的目标。</b>\n</span></div>\n\n<!-- ═══ 第九章：最终裁决 ═══ -->\n<div class='card' style='background:linear-gradient(135deg,#1a1a2e,#0f172a);color:#fff;border:1px solid #2a2d3a'>\n<h3 style='font-size:18px;font-weight:700;margin:0 0 14px;color:#fbbf24'>AI最终裁决</h3>\n<div style='font-size:13px;line-height:1.9;color:#d1d5db'>\n\n<b>你的恐惧是理性的——但不需要变成行动。</b><br>\n-45%的浮亏在2倍杠杆ETF上是正常现象（不是你的错，是工具特性）。彭博BI的数据证明了这一点。<br><br>\n\n<b>最务实的方案：分两笔（4.5+4.5万），在58以下建仓完。</b><br>\n如果明天开55-60→先买4.5万。如果7/15-7/16回踩52-55→补4.5万。<br>\n如果明天就开48-54→全买9万（送钱）。<br>\n如果明天开63以上→不追·等CPI/ASML/加息制造的回踩。<br><br>\n\n<b>不要做T。</b> 07709的磨损公式决定了做T的期望值为负（卖在跟踪100%准的下跌、买在跟踪落后25基点的上涨→每轮损失1.8-2.2%）。这不是\"你会不会T\"的问题——是数学。<br><br>\n\n<b>调整你的心理预期：95回本→120减仓→150是彩票。</b><br>\n券商目标价320-430万（+70-133%），但正股到目标价≠07709翻倍。磨损吃掉了中间的差距。取现实目标：正股320万→07709约120→你+26%。这个目标是合理的、可实现的。<br><br>\n\n<b>退出条件：</b>正股跌破140,000 KRW（再跌24%）+ HBM4出货被证伪。否则死拿。<br>\n<b>减仓纪律：</b>07709到120减仓30%（回收约28万HKD），到150减仓50%。<br>\n<b>最大错误是今天恐慌离场。</b> -45%的浮亏在杠杆ETF持有者中是常态。从59.9到95只需要正股涨30%+07709路径是急涨（34-44%概率）。等待比恐慌更有价值。\n\n</div></div>\n\n<div style='font-size:11px;color:#9ca3af;text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid #2a2d3a'>\n⚡ 以上为AI独立研判 · 不构成投资建议 · 数据截至2026-07-13 23:55 · ADR $152.58(-9.18%)盘中<br>\n数据源：Bloomberg BI · 8家券商研报 · neodata · WebSearch · TDX MCP · Westock-data\n</div></div>"

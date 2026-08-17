@@ -227,7 +227,7 @@ var researchData = {
         {"trigger": "怎么看 XXX / 分析一下 XXX", "action": "自由研判文章"},
         {"trigger": "修改任务：XXX / 更新持仓：XXX", "action": "全链路同步"}
       ],
-      "mobile_note": "手机Claw：加前缀 "投资分析："·用通达信：发指令时右下角打开「通达信」开关"
+      "mobile_note": "手机Claw：加前缀 [投资分析]：·用通达信：发指令时右下角打开「通达信」开关"
     }
   }
 };
